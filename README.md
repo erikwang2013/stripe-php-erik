@@ -88,6 +88,73 @@ This library provides out-of-the-box integration for the following PHP framework
 
 ---
 
+### Framework Comparison · 框架对比
+
+| 特性 / Feature | Laravel | Webman | Hyperf | ThinkPHP |
+|---|---|---|---|---|
+| **注册方式** Registration | Composer auto-discovery `extra.laravel` | `WEBMAN_PLUGIN` 常量标记 | `ConfigProvider` + `extra.hyperf.config` | `think\Service` + `extra.think.services` |
+| **DI 支持** DI Support | ✅ 容器单例绑定 | ❌ 无容器 | ✅ 工厂 + 注解注入 | ✅ 容器绑定 |
+| **Facade** 门面 | ✅ `Stripe\Laravel\Facade\Stripe` | ❌ | ❌ | ❌ |
+| **配置发布** Config Publish | `artisan vendor:publish` | 自动拷贝到 `config/plugin/stripe/` | `php bin/hyperf.php vendor:publish` | 手动复制到 `config/stripe.php` |
+| **配置路径** Config Path | `config/stripe.php` | `config/plugin/stripe/app.php` | `config/autoload/stripe.php` | `config/stripe.php` |
+| **配置访问** Config Access | `config('stripe.*')` | `config('plugin.stripe.*')` | `config('stripe.*')` | `config('stripe.*')` |
+| **Webhook 示例** Webhook Example | ✅ | ✅ | ✅ | ✅ |
+| **运行模式** Runtime | PHP-FPM / Octane | Workerman 常驻进程 | Swoole 协程 | PHP-FPM / Swoole |
+| **协程安全** Coroutine Safe | N/A | N/A | ⚠️ 需配置 SwooleCurl hook | N/A |
+
+### Architecture · 架构说明
+
+```
+src/
+├── Laravel/
+│   ├── StripeServiceProvider.php   # 服务提供者：注册、配置发布、别名
+│   └── Facade/
+│       └── Stripe.php              # 门面：静态代理 StripeClient
+├── Webman/
+│   ├── Install.php                 # 插件安装器：WEBMAN_PLUGIN 标记 + 配置拷贝
+│   └── StripeHelper.php            # 辅助类：init() + client()
+├── Hyperf/
+│   ├── ConfigProvider.php          # 配置提供器：DI 定义 + 配置发布 + boot()
+│   └── StripeClientFactory.php     # 工厂：从容器创建 StripeClient
+├── ThinkPHP/
+│   ├── StripeService.php           # think\Service：容器绑定 + 自动注册
+│   └── StripeHelper.php            # 辅助类：init() + client()
+config/
+└── stripe.php                      # 通用配置模板（含中英文注释）
+```
+
+| 类 / Class | 框架 / Framework | 作用 / Purpose |
+|---|---|---|
+| `Stripe\Laravel\StripeServiceProvider` | Laravel | 注册 `StripeClient` 单例、合并配置、发布 config |
+| `Stripe\Laravel\Facade\Stripe` | Laravel | Facade 静态代理，IDE 友好的 `@method` 提示 |
+| `Stripe\Webman\Install` | Webman | `WEBMAN_PLUGIN` 标记，`install()`/`uninstall()` 配置拷贝 |
+| `Stripe\Webman\StripeHelper` | Webman | 从 `config('plugin.stripe')` 初始化全局静态属性 |
+| `Stripe\Hyperf\ConfigProvider` | Hyperf | 注册 DI 工厂、定义配置发布源和目的地 |
+| `Stripe\Hyperf\StripeClientFactory` | Hyperf | 实现 `__invoke(ContainerInterface)`, 返回 `StripeClient` |
+| `Stripe\ThinkPHP\StripeService` | ThinkPHP | 继承 `think\Service`，`register()` 绑定容器，`boot()` 初始化 |
+| `Stripe\ThinkPHP\StripeHelper` | ThinkPHP | 无框架启动时的后备方案，手动 `init()` + `client()` |
+
+### Lifecycle · 生命周期
+
+```
+composer require
+      │
+      ├─── Laravel ──→ auto-discovery → ServiceProvider::register() → 容器绑定
+      │                                 → ServiceProvider::boot()     → 配置合并
+      │
+      ├─── Webman  ──→ WEBMAN_PLUGIN 标记 → webman 启动时自动发现
+      │             ──→ process.php 中手动 StripeHelper::init()
+      │
+      ├─── Hyperf  ──→ ConfigProvider::__invoke() → DI 定义注册
+      │             ──→ 手动 php bin/hyperf.php vendor:publish
+      │             ──→ 应用启动时 ConfigProvider::boot()
+      │
+      └─── ThinkPHP ──→ extra.think.services → StripeService::register() → 容器绑定
+                                                StripeService::boot()     → 初始化
+```
+
+---
+
 ### Laravel
 
 **Auto-discovery** · **自动发现**: The package registers itself automatically via Composer. No manual setup required.
