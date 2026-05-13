@@ -54,8 +54,19 @@
   "suggest": {
     "laravel/framework": "For Laravel integration with service provider and facade",
     "hyperf/framework": "For Hyperf coroutine-safe integration",
-    "topthink/framework": "For ThinkPHP integration",
-    "workerman/webman-framework": "For webman integration"
+    "topthink/framework": "For ThinkPHP integration with service and helper",
+    "workerman/webman-framework": "For webman integration with auto-config and helper"
+  },
+  "scripts": {
+    "post-package-install": [
+      "Stripe\\Webman\\Install::install"
+    ],
+    "post-package-update": [
+      "Stripe\\Webman\\Install::install"
+    ],
+    "pre-package-uninstall": [
+      "Stripe\\Webman\\Install::uninstall"
+    ]
   },
   "extra": {
     "branch-alias": {
@@ -71,6 +82,11 @@
     },
     "hyperf": {
       "config": "Stripe\\Hyperf\\ConfigProvider"
+    },
+    "think": {
+      "services": [
+        "Stripe\\ThinkPHP\\StripeService"
+      ]
     }
   },
   "config": {

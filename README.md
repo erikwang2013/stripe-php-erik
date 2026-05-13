@@ -173,13 +173,21 @@ Route::post('/stripe/webhook', function (Request $request) {
 
 ### Webman
 
+This package follows **webman basic plugin conventions** (`WEBMAN_PLUGIN`).
+
+本包遵循 **webman 基础插件规范**（`WEBMAN_PLUGIN` 标记）。
+
 Install · 安装：
 
 ```bash
 composer require erikwang2013/stripe-php-erik
 ```
 
-Create config file at `config/plugin/stripe.php` · 创建配置文件 `config/plugin/stripe.php`：
+安装时自动将配置拷贝到 `config/plugin/erikwang2013/stripe-php-erik/app.php`，webman 会自动识别并合并该配置。
+
+On install, the config is automatically copied to `config/plugin/erikwang2013/stripe-php-erik/app.php`, which webman auto-detects and merges.
+
+The auto-generated config file · 自动生成的配置文件 `config/plugin/erikwang2013/stripe-php-erik/app.php`：
 
 ```php
 <?php
@@ -225,6 +233,11 @@ $customer = $stripe->customers->create([
 $stripe = new StripeClient(getenv('STRIPE_API_KEY'));
 ```
 
+**Webman 插件机制说明**：
+- `Stripe\Webman\Install` 类含 `WEBMAN_PLUGIN = true` 常量，标记为 webman 基础插件
+- `composer install/update` 时触发 `Install::install()` 自动拷贝配置
+- `composer remove` 时触发 `Install::uninstall()` 自动清理配置
+
 **Webhook handling in webman** · **Webman 中处理 Webhook**：
 
 ```php
@@ -237,7 +250,7 @@ class StripeWebhook
     public function index(Request $request): Response
     {
         $signature = $request->header('Stripe-Signature');
-        $secret = config('plugin.stripe.webhook_secret');
+        $secret = config('plugin.erikwang2013.stripe-php-erik.webhook_secret');
 
         try {
             $event = Webhook::constructEvent(
@@ -259,6 +272,10 @@ class StripeWebhook
 ---
 
 ### Hyperf
+
+This package follows **Hyperf component conventions** via `ConfigProvider`.
+
+本包遵循 **Hyperf 组件规范**，通过 `ConfigProvider` 自动注册。
 
 Install · 安装：
 
@@ -303,19 +320,36 @@ class PaymentController extends AbstractController
 }
 ```
 
+**Configuration via ConfigProvider** · **ConfigProvider 配置机制**：
+- `Stripe\Hyperf\ConfigProvider` 通过 `composer.json` 中 `extra.hyperf.config` 自动发现
+- `StripeClient` 通过 `StripeClientFactory` 工厂由 DI 容器管理
+- 配置文件发布到 `config/autoload/stripe.php`，Hyperf 自动加载
+
 **Coroutine safety** · **协程安全说明**: The Stripe library uses curl, which is blocking. For non-blocking operation in Hyperf, consider wrapping calls with `Hyperf\Coroutine\Parallel` or enabling Hyperf's `SwooleCurl` hook in your server config.
 
-Stripe 库底层使用 curl，是同步阻塞的。如需在 Hyperf 中非阻塞运行，建议使用 `Hyperf\Coroutine\Parallel` 包裹调用，或在服务器配置中启用 `SwooleCurl` hook。
+Stripe 库底层使用 curl，是同步阻塞的。如需在 Hyperf 中非阻塞运行，建议：
+1. 使用 `Hyperf\Coroutine\Parallel` 包裹调用
+2. 在 `config/autoload/server.php` 中启用 `SWOOLE_HOOK_CURL`
 
 ---
 
 ### ThinkPHP
+
+This package follows **ThinkPHP 8 service conventions** via `think\Service`.
+
+本包遵循 **ThinkPHP 8 服务规范**，通过 `think\Service` 自动注册。
 
 Install · 安装：
 
 ```bash
 composer require erikwang2013/stripe-php-erik
 ```
+
+**方式一：自动注册（推荐）** · **Auto-registration (recommended)**
+
+`Stripe\ThinkPHP\StripeService` 通过 `composer.json` 中 `extra.think.services` 自动发现，无需手动配置。
+
+The `Stripe\ThinkPHP\StripeService` is auto-discovered via `extra.think.services` in composer.json — no manual setup required.
 
 Create config at `config/stripe.php` · 在 `config/stripe.php` 创建配置文件：
 
@@ -338,7 +372,9 @@ return [
 ];
 ```
 
-Initialize in your app's `AppService.php` or controller · 在 `AppService.php` 或控制器中初始化：
+**方式二：手动初始化** · **Manual initialization**
+
+在 `AppService.php` 或控制器中手动调用 `StripeHelper::init()`：
 
 ```php
 use Stripe\ThinkPHP\StripeHelper;
@@ -363,6 +399,11 @@ $stripe = StripeHelper::client();
 $customer = $stripe->customers->create([
     'email' => 'user@example.com',
 ]);
+
+// Via container (when StripeService is registered) · 通过容器（StripeService 注册后）
+$stripe = app('stripe');
+// Or via DI · 或依赖注入
+// public function __construct(StripeClient $stripe) { ... }
 
 // Or directly · 或直接使用
 $stripe = new StripeClient(config('stripe.api_key'));
