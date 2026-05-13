@@ -2,7 +2,7 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Service\FinancialConnections;
+namespace Erikwang2013\Stripe\Service\FinancialConnections;
 
 /**
  * Service factory class for API resources in the FinancialConnections namespace.
@@ -11,7 +11,7 @@ namespace Stripe\Service\FinancialConnections;
  * @property SessionService $sessions
  * @property TransactionService $transactions
  */
-class FinancialConnectionsServiceFactory extends \Stripe\Service\AbstractServiceFactory
+class FinancialConnectionsServiceFactory extends \Erikwang2013\Stripe\Service\AbstractServiceFactory
 {
     /**
      * @var array<string, string>

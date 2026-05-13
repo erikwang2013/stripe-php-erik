@@ -2,26 +2,26 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Treasury;
+namespace Erikwang2013\Stripe\Treasury;
 
 /**
  * TransactionEntries represent individual units of money movements within a single <a href="https://api.stripe.com#transactions">Transaction</a>.
  *
  * @property string $id Unique identifier for the object.
  * @property string $object String representing the object's type. Objects of the same type share the same value.
- * @property (object{cash: int, inbound_pending: int, outbound_pending: int}&\Stripe\StripeObject) $balance_impact Change to a FinancialAccount's balance
+ * @property (object{cash: int, inbound_pending: int, outbound_pending: int}&\Erikwang2013\Stripe\StripeObject) $balance_impact Change to a FinancialAccount's balance
  * @property int $created Time at which the object was created. Measured in seconds since the Unix epoch.
  * @property string $currency Three-letter <a href="https://www.iso.org/iso-4217-currency-codes.html">ISO currency code</a>, in lowercase. Must be a <a href="https://stripe.com/docs/currencies">supported currency</a>.
  * @property int $effective_at When the TransactionEntry will impact the FinancialAccount's balance.
  * @property string $financial_account The FinancialAccount associated with this object.
  * @property null|string $flow Token of the flow associated with the TransactionEntry.
- * @property null|(object{credit_reversal?: CreditReversal, debit_reversal?: DebitReversal, inbound_transfer?: InboundTransfer, issuing_authorization?: \Stripe\Issuing\Authorization, outbound_payment?: OutboundPayment, outbound_transfer?: OutboundTransfer, received_credit?: ReceivedCredit, received_debit?: ReceivedDebit, type: string}&\Stripe\StripeObject) $flow_details Details of the flow associated with the TransactionEntry.
+ * @property null|(object{credit_reversal?: CreditReversal, debit_reversal?: DebitReversal, inbound_transfer?: InboundTransfer, issuing_authorization?: \Erikwang2013\Stripe\Issuing\Authorization, outbound_payment?: OutboundPayment, outbound_transfer?: OutboundTransfer, received_credit?: ReceivedCredit, received_debit?: ReceivedDebit, type: string}&\Erikwang2013\Stripe\StripeObject) $flow_details Details of the flow associated with the TransactionEntry.
  * @property string $flow_type Type of the flow associated with the TransactionEntry.
  * @property bool $livemode If the object exists in live mode, the value is <code>true</code>. If the object exists in test mode, the value is <code>false</code>.
  * @property string|Transaction $transaction The Transaction associated with this object.
  * @property string $type The specific money movement that generated the TransactionEntry.
  */
-class TransactionEntry extends \Stripe\ApiResource
+class TransactionEntry extends \Erikwang2013\Stripe\ApiResource
 {
     const OBJECT_NAME = 'treasury.transaction_entry';
 
@@ -62,15 +62,15 @@ class TransactionEntry extends \Stripe\ApiResource
      * @param null|array{created?: array|int, effective_at?: array|int, ending_before?: string, expand?: string[], financial_account: string, limit?: int, order_by?: string, starting_after?: string, transaction?: string} $params
      * @param null|array|string $opts
      *
-     * @return \Stripe\Collection<TransactionEntry> of ApiResources
+     * @return \Erikwang2013\Stripe\Collection<TransactionEntry> of ApiResources
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public static function all($params = null, $opts = null)
     {
         $url = static::classUrl();
 
-        return static::_requestPage($url, \Stripe\Collection::class, $params, $opts);
+        return static::_requestPage($url, \Erikwang2013\Stripe\Collection::class, $params, $opts);
     }
 
     /**
@@ -81,11 +81,11 @@ class TransactionEntry extends \Stripe\ApiResource
      *
      * @return TransactionEntry
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public static function retrieve($id, $opts = null)
     {
-        $opts = \Stripe\Util\RequestOptions::parse($opts);
+        $opts = \Erikwang2013\Stripe\Util\RequestOptions::parse($opts);
         $instance = new static($id, $opts);
         $instance->refresh();
 

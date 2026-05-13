@@ -1,6 +1,6 @@
 <?php
 
-namespace Stripe\Service;
+namespace Erikwang2013\Stripe\Service;
 
 /**
  * Trait for service factories or auxiliary services
@@ -11,7 +11,7 @@ trait ServiceNavigatorTrait
     /** @var array<string, AbstractService|AbstractServiceFactory> */
     protected $services = [];
 
-    /** @var \Stripe\StripeClientInterface */
+    /** @var \Erikwang2013\Stripe\StripeClientInterface */
     protected $client;
 
     protected function getServiceClass($name)

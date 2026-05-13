@@ -1,15 +1,15 @@
 <?php
 
-namespace Stripe\Exception;
+namespace Erikwang2013\Stripe\Exception;
 
 /**
  * @internal
  *
- * @covers \Stripe\Exception\SignatureVerificationException
+ * @covers \Erikwang2013\Stripe\Exception\SignatureVerificationException
  */
-final class SignatureVerificationExceptionTest extends \Stripe\TestCase
+final class SignatureVerificationExceptionTest extends \Erikwang2013\Stripe\TestCase
 {
-    use \Stripe\TestHelper;
+    use \Erikwang2013\Stripe\TestHelper;
 
     public function testGetters()
     {

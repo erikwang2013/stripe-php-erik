@@ -94,7 +94,7 @@ This library provides out-of-the-box integration for the following PHP framework
 |---|---|---|---|---|
 | **注册方式** Registration | Composer auto-discovery `extra.laravel` | `WEBMAN_PLUGIN` 常量标记 | `ConfigProvider` + `extra.hyperf.config` | `think\Service` + `extra.think.services` |
 | **DI 支持** DI Support | ✅ 容器单例绑定 | ❌ 无容器 | ✅ 工厂 + 注解注入 | ✅ 容器绑定 |
-| **Facade** 门面 | ✅ `Stripe\Laravel\Facade\Stripe` | ❌ | ❌ | ❌ |
+| **Facade** 门面 | ✅ `Erikwang2013\Stripe\Laravel\Facade\Stripe` | ❌ | ❌ | ❌ |
 | **配置发布** Config Publish | `artisan vendor:publish` | 自动拷贝到 `config/plugin/stripe/` | `php bin/hyperf.php vendor:publish` | 手动复制到 `config/stripe.php` |
 | **配置路径** Config Path | `config/stripe.php` | `config/plugin/stripe/app.php` | `config/autoload/stripe.php` | `config/stripe.php` |
 | **配置访问** Config Access | `config('stripe.*')` | `config('plugin.stripe.*')` | `config('stripe.*')` | `config('stripe.*')` |
@@ -125,14 +125,14 @@ config/
 
 | 类 / Class | 框架 / Framework | 作用 / Purpose |
 |---|---|---|
-| `Stripe\Laravel\StripeServiceProvider` | Laravel | 注册 `StripeClient` 单例、合并配置、发布 config |
-| `Stripe\Laravel\Facade\Stripe` | Laravel | Facade 静态代理，IDE 友好的 `@method` 提示 |
-| `Stripe\Webman\Install` | Webman | `WEBMAN_PLUGIN` 标记，`install()`/`uninstall()` 配置拷贝 |
-| `Stripe\Webman\StripeHelper` | Webman | 从 `config('plugin.stripe')` 初始化全局静态属性 |
-| `Stripe\Hyperf\ConfigProvider` | Hyperf | 注册 DI 工厂、定义配置发布源和目的地 |
-| `Stripe\Hyperf\StripeClientFactory` | Hyperf | 实现 `__invoke(ContainerInterface)`, 返回 `StripeClient` |
-| `Stripe\ThinkPHP\StripeService` | ThinkPHP | 继承 `think\Service`，`register()` 绑定容器，`boot()` 初始化 |
-| `Stripe\ThinkPHP\StripeHelper` | ThinkPHP | 无框架启动时的后备方案，手动 `init()` + `client()` |
+| `Erikwang2013\Stripe\Laravel\StripeServiceProvider` | Laravel | 注册 `StripeClient` 单例、合并配置、发布 config |
+| `Erikwang2013\Stripe\Laravel\Facade\Stripe` | Laravel | Facade 静态代理，IDE 友好的 `@method` 提示 |
+| `Erikwang2013\Stripe\Webman\Install` | Webman | `WEBMAN_PLUGIN` 标记，`install()`/`uninstall()` 配置拷贝 |
+| `Erikwang2013\Stripe\Webman\StripeHelper` | Webman | 从 `config('plugin.stripe')` 初始化全局静态属性 |
+| `Erikwang2013\Stripe\Hyperf\ConfigProvider` | Hyperf | 注册 DI 工厂、定义配置发布源和目的地 |
+| `Erikwang2013\Stripe\Hyperf\StripeClientFactory` | Hyperf | 实现 `__invoke(ContainerInterface)`, 返回 `StripeClient` |
+| `Erikwang2013\Stripe\ThinkPHP\StripeService` | ThinkPHP | 继承 `think\Service`，`register()` 绑定容器，`boot()` 初始化 |
+| `Erikwang2013\Stripe\ThinkPHP\StripeHelper` | ThinkPHP | 无框架启动时的后备方案，手动 `init()` + `client()` |
 
 ### Lifecycle · 生命周期
 
@@ -176,7 +176,7 @@ STRIPE_WEBHOOK_SECRET=whsec_your_secret
 **Using Dependency Injection** · **依赖注入方式**：
 
 ```php
-use Stripe\StripeClient;
+use Erikwang2013\Stripe\StripeClient;
 
 class PaymentController
 {
@@ -196,7 +196,7 @@ class PaymentController
 **Using the Facade** · **门面方式**：
 
 ```php
-use Stripe\Laravel\Facade\Stripe;
+use Erikwang2013\Stripe\Laravel\Facade\Stripe;
 
 $customer = Stripe::customers()->create([
     'email' => 'user@example.com',
@@ -213,7 +213,7 @@ $customer = $stripe->customers->create(['email' => 'user@example.com']);
 **Webhook handling** · **处理 Webhook**：
 
 ```php
-use Stripe\Webhook;
+use Erikwang2013\Stripe\Webhook;
 use Illuminate\Http\Request;
 
 Route::post('/stripe/webhook', function (Request $request) {
@@ -278,7 +278,7 @@ return [
 Initialize in `process.php` or `bootstrap.php` · 在 `process.php` 或 `bootstrap.php` 中初始化：
 
 ```php
-use Stripe\Webman\StripeHelper;
+use Erikwang2013\Stripe\Webman\StripeHelper;
 
 // Initialize on worker start · 在 Worker 启动时初始化
 StripeHelper::init();
@@ -287,8 +287,8 @@ StripeHelper::init();
 Basic usage · 基本用法：
 
 ```php
-use Stripe\Webman\StripeHelper;
-use Stripe\StripeClient;
+use Erikwang2013\Stripe\Webman\StripeHelper;
+use Erikwang2013\Stripe\StripeClient;
 
 // Via helper · 通过辅助类
 $stripe = StripeHelper::client();
@@ -301,14 +301,14 @@ $stripe = new StripeClient(getenv('STRIPE_API_KEY'));
 ```
 
 **Webman 插件机制说明**：
-- `Stripe\Webman\Install` 类含 `WEBMAN_PLUGIN = true` 常量，标记为 webman 基础插件
+- `Erikwang2013\Stripe\Webman\Install` 类含 `WEBMAN_PLUGIN = true` 常量，标记为 webman 基础插件
 - `composer install/update` 时触发 `Install::install()` 自动拷贝配置
 - `composer remove` 时触发 `Install::uninstall()` 自动清理配置
 
 **Webhook handling in webman** · **Webman 中处理 Webhook**：
 
 ```php
-use Stripe\Webhook;
+use Erikwang2013\Stripe\Webhook;
 use Webman\Http\Request;
 use Webman\Http\Response;
 
@@ -366,7 +366,7 @@ STRIPE_WEBHOOK_SECRET=whsec_your_secret
 **Using Dependency Injection** · **依赖注入方式**：
 
 ```php
-use Stripe\StripeClient;
+use Erikwang2013\Stripe\StripeClient;
 use Hyperf\Di\Annotation\Inject;
 
 class PaymentController extends AbstractController
@@ -388,7 +388,7 @@ class PaymentController extends AbstractController
 ```
 
 **Configuration via ConfigProvider** · **ConfigProvider 配置机制**：
-- `Stripe\Hyperf\ConfigProvider` 通过 `composer.json` 中 `extra.hyperf.config` 自动发现
+- `Erikwang2013\Stripe\Hyperf\ConfigProvider` 通过 `composer.json` 中 `extra.hyperf.config` 自动发现
 - `StripeClient` 通过 `StripeClientFactory` 工厂由 DI 容器管理
 - 配置文件发布到 `config/autoload/stripe.php`，Hyperf 自动加载
 
@@ -414,9 +414,9 @@ composer require erikwang2013/stripe-php-erik
 
 **方式一：自动注册（推荐）** · **Auto-registration (recommended)**
 
-`Stripe\ThinkPHP\StripeService` 通过 `composer.json` 中 `extra.think.services` 自动发现，无需手动配置。
+`Erikwang2013\Stripe\ThinkPHP\StripeService` 通过 `composer.json` 中 `extra.think.services` 自动发现，无需手动配置。
 
-The `Stripe\ThinkPHP\StripeService` is auto-discovered via `extra.think.services` in composer.json — no manual setup required.
+The `Erikwang2013\Stripe\ThinkPHP\StripeService` is auto-discovered via `extra.think.services` in composer.json — no manual setup required.
 
 Create config at `config/stripe.php` · 在 `config/stripe.php` 创建配置文件：
 
@@ -444,7 +444,7 @@ return [
 在 `AppService.php` 或控制器中手动调用 `StripeHelper::init()`：
 
 ```php
-use Stripe\ThinkPHP\StripeHelper;
+use Erikwang2013\Stripe\ThinkPHP\StripeHelper;
 
 class AppService extends Service
 {
@@ -458,8 +458,8 @@ class AppService extends Service
 Usage · 用法：
 
 ```php
-use Stripe\ThinkPHP\StripeHelper;
-use Stripe\StripeClient;
+use Erikwang2013\Stripe\ThinkPHP\StripeHelper;
+use Erikwang2013\Stripe\StripeClient;
 
 // Via helper · 通过辅助类
 $stripe = StripeHelper::client();
@@ -479,7 +479,7 @@ $stripe = new StripeClient(config('stripe.api_key'));
 **Webhook handling in ThinkPHP** · **ThinkPHP 中处理 Webhook**：
 
 ```php
-use Stripe\Webhook;
+use Erikwang2013\Stripe\Webhook;
 
 class StripeWebhook
 {
@@ -530,7 +530,7 @@ If you use Composer, these dependencies should be handled automatically. If you 
 Simple usage looks like · 简单用法示例：
 
 ```php
-$stripe = new \Stripe\StripeClient('sk_test_...');
+$stripe = new \Erikwang2013\Stripe\StripeClient('sk_test_...');
 $customer = $stripe->customers->create([
     'description' => 'example customer',
     'email' => 'email@example.com',
@@ -563,15 +563,15 @@ To modify request timeouts (connect or total, in seconds) you'll need to tell th
 
 ```php
 // set up your tweaked Curl client · 配置自定义 Curl 客户端
-$curl = new \Stripe\HttpClient\CurlClient();
-$curl->setTimeout(10); // default is \Stripe\HttpClient\CurlClient::DEFAULT_TIMEOUT
-$curl->setConnectTimeout(5); // default is \Stripe\HttpClient\CurlClient::DEFAULT_CONNECT_TIMEOUT
+$curl = new \Erikwang2013\Stripe\HttpClient\CurlClient();
+$curl->setTimeout(10); // default is \Erikwang2013\Stripe\HttpClient\CurlClient::DEFAULT_TIMEOUT
+$curl->setConnectTimeout(5); // default is \Erikwang2013\Stripe\HttpClient\CurlClient::DEFAULT_CONNECT_TIMEOUT
 
 echo $curl->getTimeout(); // 10
 echo $curl->getConnectTimeout(); // 5
 
 // tell Stripe to use the tweaked client · 让 Stripe 使用自定义客户端
-\Stripe\ApiRequestor::setHttpClient($curl);
+\Erikwang2013\Stripe\ApiRequestor::setHttpClient($curl);
 
 // use the Stripe API client as you normally would · 正常使用即可
 ```
@@ -584,9 +584,9 @@ Need to set a proxy for your requests? Pass in the requisite `CURLOPT_*` array t
 
 ```php
 // set up your tweaked Curl client · 配置带代理的 Curl 客户端
-$curl = new \Stripe\HttpClient\CurlClient([CURLOPT_PROXY => 'proxy.local:80']);
+$curl = new \Erikwang2013\Stripe\HttpClient\CurlClient([CURLOPT_PROXY => 'proxy.local:80']);
 // tell Stripe to use the tweaked client · 让 Stripe 使用此客户端
-\Stripe\ApiRequestor::setHttpClient($curl);
+\Erikwang2013\Stripe\ApiRequestor::setHttpClient($curl);
 ```
 
 Alternately, a callable can be passed to the CurlClient constructor that returns the above array based on request inputs. See `testDefaultOptions()` in `tests/CurlClientTest.php` for an example of this behavior. Note that the callable is called at the beginning of every API request, before the request is sent.
@@ -600,7 +600,7 @@ end up there instead of `error_log`:
 本库内置少量日志，可配置为 [`PSR-3` 兼容的日志记录器][psr3]：
 
 ```php
-\Stripe\Stripe::setLogger($logger);
+\Erikwang2013\Stripe\Stripe::setLogger($logger);
 ```
 
 ### Accessing response data · 访问响应数据
@@ -627,8 +627,8 @@ The recommended course of action is to [upgrade your cURL and OpenSSL packages](
 建议[升级 cURL 和 OpenSSL](https://support.stripe.com/questions/how-do-i-upgrade-my-stripe-integration-from-tls-1-0-to-tls-1-2#php)，或手动设置 SSL 版本：
 
 ```php
-$curl = new \Stripe\HttpClient\CurlClient([CURLOPT_SSLVERSION => CURL_SSLVERSION_TLSv1]);
-\Stripe\ApiRequestor::setHttpClient($curl);
+$curl = new \Erikwang2013\Stripe\HttpClient\CurlClient([CURLOPT_SSLVERSION => CURL_SSLVERSION_TLSv1]);
+\Erikwang2013\Stripe\ApiRequestor::setHttpClient($curl);
 ```
 
 ### Per-request Configuration · 单次请求配置
@@ -659,7 +659,7 @@ certificates, but it's possible to configure your own:
 默认使用内置 CA 证书包，也可以自定义：
 
 ```php
-\Stripe\Stripe::setCABundlePath("path/to/ca/bundle");
+\Erikwang2013\Stripe\Stripe::setCABundlePath("path/to/ca/bundle");
 ```
 
 ### Configuring Automatic Retries · 配置自动重试
@@ -670,7 +670,7 @@ an intermittent network problem. [Idempotency keys][idempotency-keys] are added 
 可配置自动重试因间歇性网络问题失败的请求。请求会自动附加[幂等令牌][idempotency-keys]确保重试安全：
 
 ```php
-\Stripe\Stripe::setMaxNetworkRetries(2);
+\Erikwang2013\Stripe\Stripe::setMaxNetworkRetries(2);
 ```
 
 ### Telemetry · 遥测
@@ -684,7 +684,7 @@ You can disable this behavior if you prefer:
 默认会向 Stripe 发送请求延迟和功能使用的遥测数据，用于优化 API 性能。可以禁用：
 
 ```php
-\Stripe\Stripe::setEnableTelemetry(false);
+\Erikwang2013\Stripe\Stripe::setEnableTelemetry(false);
 ```
 
 ### How to use undocumented parameters and properties · 使用未文档化的参数
@@ -723,13 +723,13 @@ If you would like to send a request to an undocumented API (for example you are 
 如需向未文档化的 API 发送请求，或想绕过库中的方法定义直接指定请求细节，可使用 `rawRequest`：
 
 ```php
-$stripe = new \Stripe\StripeClient('sk_test_xyz');
+$stripe = new \Erikwang2013\Stripe\StripeClient('sk_test_xyz');
 $response = $stripe->rawRequest('post', '/v1/beta_endpoint', [
   "caveat": "emptor"
 ], [
   "stripe_version" => "2022-11_15",
 ]);
-// $response->body is a string, you can call $stripe->deserialize to get a \Stripe\StripeObject.
+// $response->body is a string, you can call $stripe->deserialize to get a \Erikwang2013\Stripe\StripeObject.
 $obj = $stripe->deserialize($response->body);
 
 // For GET requests, the params argument must be null, and you should write the query string explicitly.
@@ -816,7 +816,7 @@ Are you writing a plugin that integrates Stripe and embeds our library? Then ple
 如果你正在开发集成 Stripe 并嵌入本库的插件，请使用 `setAppInfo` 标识你的插件：
 
 ```php
-\Stripe\Stripe::setAppInfo("MyAwesomePlugin", "1.2.34", "https://myawesomeplugin.info");
+\Erikwang2013\Stripe\Stripe::setAppInfo("MyAwesomePlugin", "1.2.34", "https://myawesomeplugin.info");
 ```
 
 The method should be called once, before any request is sent to the API. The second and third parameters are optional.

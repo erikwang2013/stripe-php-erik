@@ -1,11 +1,11 @@
 <?php
 
-namespace Stripe;
+namespace Erikwang2013\Stripe;
 
 /**
  * @internal
  *
- * @covers \Stripe\CreditNote
+ * @covers \Erikwang2013\Stripe\CreditNote
  */
 final class CreditNoteTest extends TestCase
 {

@@ -1,14 +1,14 @@
 <?php
 
-namespace Stripe;
+namespace Erikwang2013\Stripe;
 
-use Stripe\Util\RequestOptions;
-use Stripe\V2\Core\EventNotification;
+use Erikwang2013\Stripe\Util\RequestOptions;
+use Erikwang2013\Stripe\V2\Core\EventNotification;
 
 /**
  * @internal
  *
- * @covers \Stripe\StripeContext
+ * @covers \Erikwang2013\Stripe\StripeContext
  */
 final class StripeContextIntegrationTest extends TestCase
 {

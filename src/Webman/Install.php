@@ -12,10 +12,10 @@
  *   loading plugin config automatically — no manual steps needed.
  *
  * 手动安装/卸载（可选）：
- *   \Stripe\Webman\Install::install();
- *   \Stripe\Webman\Install::uninstall();
+ *   \Erikwang2013\Stripe\Webman\Install::install();
+ *   \Erikwang2013\Stripe\Webman\Install::uninstall();
  */
-namespace Stripe\Webman;
+namespace Erikwang2013\Stripe\Webman;
 
 class Install
 {

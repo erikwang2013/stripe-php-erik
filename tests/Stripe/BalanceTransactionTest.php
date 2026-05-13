@@ -1,11 +1,11 @@
 <?php
 
-namespace Stripe;
+namespace Erikwang2013\Stripe;
 
 /**
  * @internal
  *
- * @covers \Stripe\BalanceTransaction
+ * @covers \Erikwang2013\Stripe\BalanceTransaction
  */
 final class BalanceTransactionTest extends TestCase
 {

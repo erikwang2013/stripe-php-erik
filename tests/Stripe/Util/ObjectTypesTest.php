@@ -1,19 +1,19 @@
 <?php
 
-namespace Stripe\Util;
+namespace Erikwang2013\Stripe\Util;
 
 /**
  * @internal
  *
- * @covers \Stripe\Util\ObjectTypes
+ * @covers \Erikwang2013\Stripe\Util\ObjectTypes
  */
-final class ObjectTypesTest extends \Stripe\TestCase
+final class ObjectTypesTest extends \Erikwang2013\Stripe\TestCase
 {
-    use \Stripe\TestHelper;
+    use \Erikwang2013\Stripe\TestHelper;
 
     public function testMapping()
     {
-        self::assertSame(ObjectTypes::mapping['charge'], \Stripe\Charge::class);
-        self::assertSame(ObjectTypes::mapping['checkout.session'], \Stripe\Checkout\Session::class);
+        self::assertSame(ObjectTypes::mapping['charge'], \Erikwang2013\Stripe\Charge::class);
+        self::assertSame(ObjectTypes::mapping['checkout.session'], \Erikwang2013\Stripe\Checkout\Session::class);
     }
 }

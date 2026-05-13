@@ -2,7 +2,7 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Radar;
+namespace Erikwang2013\Stripe\Radar;
 
 /**
  * Value lists allow you to group values together which can then be referenced in rules.
@@ -15,16 +15,16 @@ namespace Stripe\Radar;
  * @property int $created Time at which the object was created. Measured in seconds since the Unix epoch.
  * @property string $created_by The name or email address of the user who created this value list.
  * @property string $item_type The type of items in the value list. One of <code>card_fingerprint</code>, <code>card_bin</code>, <code>crypto_fingerprint</code>, <code>email</code>, <code>ip_address</code>, <code>country</code>, <code>string</code>, <code>case_sensitive_string</code>, <code>customer_id</code>, <code>account</code>, <code>sepa_debit_fingerprint</code>, or <code>us_bank_account_fingerprint</code>.
- * @property \Stripe\Collection<ValueListItem> $list_items List of items contained within this value list.
+ * @property \Erikwang2013\Stripe\Collection<ValueListItem> $list_items List of items contained within this value list.
  * @property bool $livemode If the object exists in live mode, the value is <code>true</code>. If the object exists in test mode, the value is <code>false</code>.
- * @property \Stripe\StripeObject $metadata Set of <a href="https://docs.stripe.com/api/metadata">key-value pairs</a> that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
+ * @property \Erikwang2013\Stripe\StripeObject $metadata Set of <a href="https://docs.stripe.com/api/metadata">key-value pairs</a> that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
  * @property string $name The name of the value list.
  */
-class ValueList extends \Stripe\ApiResource
+class ValueList extends \Erikwang2013\Stripe\ApiResource
 {
     const OBJECT_NAME = 'radar.value_list';
 
-    use \Stripe\ApiOperations\Update;
+    use \Erikwang2013\Stripe\ApiOperations\Update;
 
     const ITEM_TYPE_ACCOUNT = 'account';
     const ITEM_TYPE_CARD_BIN = 'card_bin';
@@ -48,7 +48,7 @@ class ValueList extends \Stripe\ApiResource
      *
      * @return ValueList the created resource
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public static function create($params = null, $options = null)
     {
@@ -56,7 +56,7 @@ class ValueList extends \Stripe\ApiResource
         $url = static::classUrl();
 
         list($response, $opts) = static::_staticRequest('post', $url, $params, $options);
-        $obj = \Stripe\Util\Util::convertToStripeObject($response->json, $opts);
+        $obj = \Erikwang2013\Stripe\Util\Util::convertToStripeObject($response->json, $opts);
         $obj->setLastResponse($response);
 
         return $obj;
@@ -72,7 +72,7 @@ class ValueList extends \Stripe\ApiResource
      *
      * @return ValueList the deleted resource
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public function delete($params = null, $opts = null)
     {
@@ -93,15 +93,15 @@ class ValueList extends \Stripe\ApiResource
      * @param null|array{alias?: string, contains?: string, created?: array|int, ending_before?: string, expand?: string[], limit?: int, starting_after?: string} $params
      * @param null|array|string $opts
      *
-     * @return \Stripe\Collection<ValueList> of ApiResources
+     * @return \Erikwang2013\Stripe\Collection<ValueList> of ApiResources
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public static function all($params = null, $opts = null)
     {
         $url = static::classUrl();
 
-        return static::_requestPage($url, \Stripe\Collection::class, $params, $opts);
+        return static::_requestPage($url, \Erikwang2013\Stripe\Collection::class, $params, $opts);
     }
 
     /**
@@ -112,11 +112,11 @@ class ValueList extends \Stripe\ApiResource
      *
      * @return ValueList
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public static function retrieve($id, $opts = null)
     {
-        $opts = \Stripe\Util\RequestOptions::parse($opts);
+        $opts = \Erikwang2013\Stripe\Util\RequestOptions::parse($opts);
         $instance = new static($id, $opts);
         $instance->refresh();
 
@@ -134,7 +134,7 @@ class ValueList extends \Stripe\ApiResource
      *
      * @return ValueList the updated resource
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public static function update($id, $params = null, $opts = null)
     {
@@ -142,7 +142,7 @@ class ValueList extends \Stripe\ApiResource
         $url = static::resourceUrl($id);
 
         list($response, $opts) = static::_staticRequest('post', $url, $params, $opts);
-        $obj = \Stripe\Util\Util::convertToStripeObject($response->json, $opts);
+        $obj = \Erikwang2013\Stripe\Util\Util::convertToStripeObject($response->json, $opts);
         $obj->setLastResponse($response);
 
         return $obj;

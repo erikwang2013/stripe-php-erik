@@ -1,15 +1,15 @@
 <?php
 
-namespace Stripe\Issuing;
+namespace Erikwang2013\Stripe\Issuing;
 
 /**
  * @internal
  *
- * @covers \Stripe\Issuing\Dispute
+ * @covers \Erikwang2013\Stripe\Issuing\Dispute
  */
-final class DisputeTest extends \Stripe\TestCase
+final class DisputeTest extends \Erikwang2013\Stripe\TestCase
 {
-    use \Stripe\TestHelper;
+    use \Erikwang2013\Stripe\TestHelper;
 
     const TEST_RESOURCE_ID = 'idp_123';
 

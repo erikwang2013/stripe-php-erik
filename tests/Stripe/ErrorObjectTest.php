@@ -1,11 +1,11 @@
 <?php
 
-namespace Stripe;
+namespace Erikwang2013\Stripe;
 
 /**
  * @internal
  *
- * @covers \Stripe\ErrorObject
+ * @covers \Erikwang2013\Stripe\ErrorObject
  */
 final class ErrorObjectTest extends TestCase
 {

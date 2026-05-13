@@ -1,11 +1,11 @@
 <?php
 
-namespace Stripe;
+namespace Erikwang2013\Stripe;
 
 /**
  * @internal
  *
- * @covers \Stripe\TaxCode
+ * @covers \Erikwang2013\Stripe\TaxCode
  */
 final class TaxCodeTest extends TestCase
 {

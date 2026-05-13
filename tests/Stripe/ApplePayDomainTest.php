@@ -1,11 +1,11 @@
 <?php
 
-namespace Stripe;
+namespace Erikwang2013\Stripe;
 
 /**
  * @internal
  *
- * @covers \Stripe\ApplePayDomain
+ * @covers \Erikwang2013\Stripe\ApplePayDomain
  */
 final class ApplePayDomainTest extends TestCase
 {

@@ -1,15 +1,15 @@
 <?php
 
-namespace Stripe\Terminal;
+namespace Erikwang2013\Stripe\Terminal;
 
 /**
  * @internal
  *
- * @covers \Stripe\Terminal\Location
+ * @covers \Erikwang2013\Stripe\Terminal\Location
  */
-final class LocationTest extends \Stripe\TestCase
+final class LocationTest extends \Erikwang2013\Stripe\TestCase
 {
-    use \Stripe\TestHelper;
+    use \Erikwang2013\Stripe\TestHelper;
 
     const TEST_RESOURCE_ID = 'loc_123';
 

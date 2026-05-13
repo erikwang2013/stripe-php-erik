@@ -1,11 +1,11 @@
 <?php
 
-namespace Stripe;
+namespace Erikwang2013\Stripe;
 
 /**
  * @internal
  *
- * @covers \Stripe\Mandate
+ * @covers \Erikwang2013\Stripe\Mandate
  */
 final class MandateTest extends TestCase
 {

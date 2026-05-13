@@ -2,7 +2,7 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe;
+namespace Erikwang2013\Stripe;
 
 /**
  * A subscription schedule allows you to create and manage the lifecycle of a subscription by predefining expected changes.

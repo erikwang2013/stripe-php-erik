@@ -2,14 +2,14 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Service\TestHelpers\Treasury;
+namespace Erikwang2013\Stripe\Service\TestHelpers\Treasury;
 
 /**
- * @phpstan-import-type RequestOptionsArray from \Stripe\Util\RequestOptions
+ * @phpstan-import-type RequestOptionsArray from \Erikwang2013\Stripe\Util\RequestOptions
  *
- * @psalm-import-type RequestOptionsArray from \Stripe\Util\RequestOptions
+ * @psalm-import-type RequestOptionsArray from \Erikwang2013\Stripe\Util\RequestOptions
  */
-class OutboundPaymentService extends \Stripe\Service\AbstractService
+class OutboundPaymentService extends \Erikwang2013\Stripe\Service\AbstractService
 {
     /**
      * Transitions a test mode created OutboundPayment to the <code>failed</code>
@@ -18,11 +18,11 @@ class OutboundPaymentService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array{expand?: string[]} $params
-     * @param null|RequestOptionsArray|\Stripe\Util\RequestOptions $opts
+     * @param null|RequestOptionsArray|\Erikwang2013\Stripe\Util\RequestOptions $opts
      *
-     * @return \Stripe\Treasury\OutboundPayment
+     * @return \Erikwang2013\Stripe\Treasury\OutboundPayment
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public function fail($id, $params = null, $opts = null)
     {
@@ -36,11 +36,11 @@ class OutboundPaymentService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array{expand?: string[]} $params
-     * @param null|RequestOptionsArray|\Stripe\Util\RequestOptions $opts
+     * @param null|RequestOptionsArray|\Erikwang2013\Stripe\Util\RequestOptions $opts
      *
-     * @return \Stripe\Treasury\OutboundPayment
+     * @return \Erikwang2013\Stripe\Treasury\OutboundPayment
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public function post($id, $params = null, $opts = null)
     {
@@ -54,11 +54,11 @@ class OutboundPaymentService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array{expand?: string[], returned_details?: array{code?: string}} $params
-     * @param null|RequestOptionsArray|\Stripe\Util\RequestOptions $opts
+     * @param null|RequestOptionsArray|\Erikwang2013\Stripe\Util\RequestOptions $opts
      *
-     * @return \Stripe\Treasury\OutboundPayment
+     * @return \Erikwang2013\Stripe\Treasury\OutboundPayment
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public function returnOutboundPayment($id, $params = null, $opts = null)
     {
@@ -72,11 +72,11 @@ class OutboundPaymentService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array{expand?: string[], tracking_details: array{ach?: array{trace_id: string}, type: string, us_domestic_wire?: array{chips?: string, imad?: string, omad?: string}}} $params
-     * @param null|RequestOptionsArray|\Stripe\Util\RequestOptions $opts
+     * @param null|RequestOptionsArray|\Erikwang2013\Stripe\Util\RequestOptions $opts
      *
-     * @return \Stripe\Treasury\OutboundPayment
+     * @return \Erikwang2013\Stripe\Treasury\OutboundPayment
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public function update($id, $params = null, $opts = null)
     {

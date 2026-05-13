@@ -2,7 +2,7 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Service\BillingPortal;
+namespace Erikwang2013\Stripe\Service\BillingPortal;
 
 /**
  * Service factory class for API resources in the BillingPortal namespace.
@@ -10,7 +10,7 @@ namespace Stripe\Service\BillingPortal;
  * @property ConfigurationService $configurations
  * @property SessionService $sessions
  */
-class BillingPortalServiceFactory extends \Stripe\Service\AbstractServiceFactory
+class BillingPortalServiceFactory extends \Erikwang2013\Stripe\Service\AbstractServiceFactory
 {
     /**
      * @var array<string, string>

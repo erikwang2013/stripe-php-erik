@@ -2,7 +2,7 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe;
+namespace Erikwang2013\Stripe;
 
 /**
  * Refund objects allow you to refund a previously created charge that isn't

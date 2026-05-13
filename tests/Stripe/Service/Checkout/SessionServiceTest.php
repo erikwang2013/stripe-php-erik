@@ -1,19 +1,19 @@
 <?php
 
-namespace Stripe\Service\Checkout;
+namespace Erikwang2013\Stripe\Service\Checkout;
 
 /**
  * @internal
  *
- * @covers \Stripe\Service\Checkout\SessionService
+ * @covers \Erikwang2013\Stripe\Service\Checkout\SessionService
  */
-final class SessionServiceTest extends \Stripe\TestCase
+final class SessionServiceTest extends \Erikwang2013\Stripe\TestCase
 {
-    use \Stripe\TestHelper;
+    use \Erikwang2013\Stripe\TestHelper;
 
     const TEST_RESOURCE_ID = 'cs_123';
 
-    /** @var \Stripe\StripeClient */
+    /** @var \Erikwang2013\Stripe\StripeClient */
     private $client;
 
     /** @var SessionService */
@@ -24,7 +24,7 @@ final class SessionServiceTest extends \Stripe\TestCase
      */
     protected function setUpService()
     {
-        $this->client = new \Stripe\StripeClient(['api_key' => 'sk_test_123', 'api_base' => MOCK_URL]);
+        $this->client = new \Erikwang2013\Stripe\StripeClient(['api_key' => 'sk_test_123', 'api_base' => MOCK_URL]);
         $this->service = new SessionService($this->client);
     }
 
@@ -36,7 +36,7 @@ final class SessionServiceTest extends \Stripe\TestCase
         );
         $resources = $this->service->all();
         self::compatAssertIsArray($resources->data);
-        self::assertInstanceOf(\Stripe\Checkout\Session::class, $resources->data[0]);
+        self::assertInstanceOf(\Erikwang2013\Stripe\Checkout\Session::class, $resources->data[0]);
     }
 
     public function testCreate()
@@ -66,7 +66,7 @@ final class SessionServiceTest extends \Stripe\TestCase
             'payment_method_types' => ['card'],
             'success_url' => 'https://stripe.com/success',
         ]);
-        self::assertInstanceOf(\Stripe\Checkout\Session::class, $resource);
+        self::assertInstanceOf(\Erikwang2013\Stripe\Checkout\Session::class, $resource);
     }
 
     public function testRetrieve()
@@ -76,6 +76,6 @@ final class SessionServiceTest extends \Stripe\TestCase
             '/v1/checkout/sessions/' . self::TEST_RESOURCE_ID
         );
         $resource = $this->service->retrieve(self::TEST_RESOURCE_ID);
-        self::assertInstanceOf(\Stripe\Checkout\Session::class, $resource);
+        self::assertInstanceOf(\Erikwang2013\Stripe\Checkout\Session::class, $resource);
     }
 }

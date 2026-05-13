@@ -2,7 +2,7 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe;
+namespace Erikwang2013\Stripe;
 
 /**
  * These bank accounts are payment methods on <code>Customer</code> objects.

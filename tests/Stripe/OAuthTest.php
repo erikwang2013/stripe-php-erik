@@ -1,11 +1,11 @@
 <?php
 
-namespace Stripe;
+namespace Erikwang2013\Stripe;
 
 /**
  * @internal
  *
- * @covers \Stripe\OAuth
+ * @covers \Erikwang2013\Stripe\OAuth
  */
 final class OAuthTest extends TestCase
 {

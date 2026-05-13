@@ -1,16 +1,16 @@
 <?php
 
-namespace Stripe\HttpClient;
+namespace Erikwang2013\Stripe\HttpClient;
 
 /**
  * @internal
  *
- * @covers \Stripe\HttpClient\CurlClient
+ * @covers \Erikwang2013\Stripe\HttpClient\CurlClient
  */
-final class CurlClientTest extends \Stripe\TestCase
+final class CurlClientTest extends \Erikwang2013\Stripe\TestCase
 {
-    use \Stripe\TestHelper;
-    use \Stripe\TestServer;
+    use \Erikwang2013\Stripe\TestHelper;
+    use \Erikwang2013\Stripe\TestServer;
 
     /** @var \ReflectionProperty */
     private $initialNetworkRetryDelayProperty;
@@ -44,9 +44,9 @@ final class CurlClientTest extends \Stripe\TestCase
      */
     public function saveOriginalNetworkValues()
     {
-        $this->origMaxNetworkRetries = \Stripe\Stripe::getMaxNetworkRetries();
-        $this->origMaxNetworkRetryDelay = \Stripe\Stripe::getMaxNetworkRetryDelay();
-        $this->origInitialNetworkRetryDelay = \Stripe\Stripe::getInitialNetworkRetryDelay();
+        $this->origMaxNetworkRetries = \Erikwang2013\Stripe\Stripe::getMaxNetworkRetries();
+        $this->origMaxNetworkRetryDelay = \Erikwang2013\Stripe\Stripe::getMaxNetworkRetryDelay();
+        $this->origInitialNetworkRetryDelay = \Erikwang2013\Stripe\Stripe::getInitialNetworkRetryDelay();
     }
 
     /**
@@ -54,7 +54,7 @@ final class CurlClientTest extends \Stripe\TestCase
      */
     public function setUpReflectors()
     {
-        $stripeReflector = new \ReflectionClass('\Stripe\Stripe');
+        $stripeReflector = new \ReflectionClass('\Erikwang2013\Stripe\Stripe');
 
         $this->maxNetworkRetryDelayProperty = $stripeReflector->getProperty('maxNetworkRetryDelay');
         $this->maxNetworkRetryDelayProperty->setAccessible(true);
@@ -62,7 +62,7 @@ final class CurlClientTest extends \Stripe\TestCase
         $this->initialNetworkRetryDelayProperty = $stripeReflector->getProperty('initialNetworkRetryDelay');
         $this->initialNetworkRetryDelayProperty->setAccessible(true);
 
-        $curlClientReflector = new \ReflectionClass('\Stripe\HttpClient\CurlClient');
+        $curlClientReflector = new \ReflectionClass('\Erikwang2013\Stripe\HttpClient\CurlClient');
 
         $this->shouldRetryMethod = $curlClientReflector->getMethod('shouldRetry');
         $this->shouldRetryMethod->setAccessible(true);
@@ -82,7 +82,7 @@ final class CurlClientTest extends \Stripe\TestCase
      */
     public function restoreOriginalNetworkValues()
     {
-        \Stripe\Stripe::setMaxNetworkRetries($this->origMaxNetworkRetries);
+        \Erikwang2013\Stripe\Stripe::setMaxNetworkRetries($this->origMaxNetworkRetries);
         $this->setMaxNetworkRetryDelay($this->origMaxNetworkRetryDelay);
         $this->setInitialNetworkRetryDelay($this->origInitialNetworkRetryDelay);
     }
@@ -105,7 +105,7 @@ final class CurlClientTest extends \Stripe\TestCase
 
     private function createFakeRandomGenerator($returnValue = 1.0)
     {
-        $fakeRandomGenerator = $this->createMock('\Stripe\Util\RandomGenerator');
+        $fakeRandomGenerator = $this->createMock('\Erikwang2013\Stripe\Util\RandomGenerator');
         $fakeRandomGenerator->method('randFloat')->willReturn($returnValue);
 
         return $fakeRandomGenerator;
@@ -188,7 +188,7 @@ final class CurlClientTest extends \Stripe\TestCase
         self::assertTrue($this->shouldRetryMethod->invoke($curlClient, \CURLE_OPERATION_TIMEOUTED, 0, [], 0, 2));
 
         // and when the arg is `null` and the value is read globally instead
-        \Stripe\Stripe::setMaxNetworkRetries(2);
+        \Erikwang2013\Stripe\Stripe::setMaxNetworkRetries(2);
         self::assertTrue($this->shouldRetryMethod->invoke($curlClient, \CURLE_OPERATION_TIMEOUTED, 0, [], 0, null));
     }
 
@@ -200,7 +200,7 @@ final class CurlClientTest extends \Stripe\TestCase
         self::assertTrue($this->shouldRetryMethod->invoke($curlClient, \CURLE_COULDNT_CONNECT, 0, [], 0, 2));
 
         // and when the arg is `null` and the value is read globally instead
-        \Stripe\Stripe::setMaxNetworkRetries(2);
+        \Erikwang2013\Stripe\Stripe::setMaxNetworkRetries(2);
         self::assertTrue($this->shouldRetryMethod->invoke($curlClient, \CURLE_COULDNT_CONNECT, 0, [], 0, null));
     }
 
@@ -212,7 +212,7 @@ final class CurlClientTest extends \Stripe\TestCase
         self::assertTrue($this->shouldRetryMethod->invoke($curlClient, 0, 409, [], 0, 2));
 
         // and when the arg is `null` and the value is read globally instead
-        \Stripe\Stripe::setMaxNetworkRetries(2);
+        \Erikwang2013\Stripe\Stripe::setMaxNetworkRetries(2);
         self::assertTrue($this->shouldRetryMethod->invoke($curlClient, 0, 409, [], 0, null));
     }
 
@@ -224,7 +224,7 @@ final class CurlClientTest extends \Stripe\TestCase
         self::assertFalse($this->shouldRetryMethod->invoke($curlClient, 0, 429, [], 0, 2));
 
         // and when the arg is `null` and the value is read globally instead
-        \Stripe\Stripe::setMaxNetworkRetries(2);
+        \Erikwang2013\Stripe\Stripe::setMaxNetworkRetries(2);
         self::assertFalse($this->shouldRetryMethod->invoke($curlClient, 0, 429, [], 0, null));
     }
 
@@ -236,7 +236,7 @@ final class CurlClientTest extends \Stripe\TestCase
         self::assertTrue($this->shouldRetryMethod->invoke($curlClient, 0, 500, [], 0, 2));
 
         // and when the arg is `null` and the value is read globally instead
-        \Stripe\Stripe::setMaxNetworkRetries(2);
+        \Erikwang2013\Stripe\Stripe::setMaxNetworkRetries(2);
         self::assertTrue($this->shouldRetryMethod->invoke($curlClient, 0, 500, [], 0, null));
     }
 
@@ -248,7 +248,7 @@ final class CurlClientTest extends \Stripe\TestCase
         self::assertTrue($this->shouldRetryMethod->invoke($curlClient, 0, 503, [], 0, 2));
 
         // and when the arg is `null` and the value is read globally instead
-        \Stripe\Stripe::setMaxNetworkRetries(2);
+        \Erikwang2013\Stripe\Stripe::setMaxNetworkRetries(2);
         self::assertTrue($this->shouldRetryMethod->invoke($curlClient, 0, 503, [], 0, null));
     }
 
@@ -261,7 +261,7 @@ final class CurlClientTest extends \Stripe\TestCase
         self::assertTrue($this->shouldRetryMethod->invoke($curlClient, 0, 400, ['stripe-should-retry' => 'true'], 0, 2));
 
         // and when the arg is `null` and the value is read globally instead
-        \Stripe\Stripe::setMaxNetworkRetries(2);
+        \Erikwang2013\Stripe\Stripe::setMaxNetworkRetries(2);
         self::assertFalse($this->shouldRetryMethod->invoke($curlClient, 0, 400, [], 0, null));
         self::assertTrue($this->shouldRetryMethod->invoke($curlClient, 0, 400, ['stripe-should-retry' => 'true'], 0, null));
     }
@@ -275,7 +275,7 @@ final class CurlClientTest extends \Stripe\TestCase
         self::assertFalse($this->shouldRetryMethod->invoke($curlClient, 0, 500, ['stripe-should-retry' => 'false'], 0, 2));
 
         // and when the arg is `null` and the value is read globally instead
-        \Stripe\Stripe::setMaxNetworkRetries(2);
+        \Erikwang2013\Stripe\Stripe::setMaxNetworkRetries(2);
         self::assertTrue($this->shouldRetryMethod->invoke($curlClient, 0, 500, [], 0, null));
         self::assertFalse($this->shouldRetryMethod->invoke($curlClient, 0, 500, ['stripe-should-retry' => 'false'], 0, null));
     }
@@ -285,11 +285,11 @@ final class CurlClientTest extends \Stripe\TestCase
         $curlClient = new CurlClient();
 
         // call works when `maxNetworkRetries` is provided directly
-        self::assertFalse($this->shouldRetryMethod->invoke($curlClient, 0, 0, [], \Stripe\Stripe::getMaxNetworkRetries(), null));
+        self::assertFalse($this->shouldRetryMethod->invoke($curlClient, 0, 0, [], \Erikwang2013\Stripe\Stripe::getMaxNetworkRetries(), null));
 
         // and when the arg is `null` and the value is read globally instead
-        \Stripe\Stripe::setMaxNetworkRetries(2);
-        self::assertFalse($this->shouldRetryMethod->invoke($curlClient, 0, 0, [], \Stripe\Stripe::getMaxNetworkRetries(), null));
+        \Erikwang2013\Stripe\Stripe::setMaxNetworkRetries(2);
+        self::assertFalse($this->shouldRetryMethod->invoke($curlClient, 0, 0, [], \Erikwang2013\Stripe\Stripe::getMaxNetworkRetries(), null));
     }
 
     public function testShouldNotRetryOnCertValidationError()
@@ -300,7 +300,7 @@ final class CurlClientTest extends \Stripe\TestCase
         self::assertFalse($this->shouldRetryMethod->invoke($curlClient, \CURLE_SSL_PEER_CERTIFICATE, -1, [], 0, null));
 
         // and when the arg is `null` and the value is read globally instead
-        \Stripe\Stripe::setMaxNetworkRetries(2);
+        \Erikwang2013\Stripe\Stripe::setMaxNetworkRetries(2);
         self::assertFalse($this->shouldRetryMethod->invoke($curlClient, \CURLE_SSL_PEER_CERTIFICATE, -1, [], 0, null));
     }
 
@@ -311,19 +311,19 @@ final class CurlClientTest extends \Stripe\TestCase
         $curlClient = new CurlClient(null, $this->createFakeRandomGenerator());
 
         self::assertSame(
-            \Stripe\Stripe::getInitialNetworkRetryDelay() * 1,
+            \Erikwang2013\Stripe\Stripe::getInitialNetworkRetryDelay() * 1,
             $this->sleepTimeMethod->invoke($curlClient, 1, [])
         );
         self::assertSame(
-            \Stripe\Stripe::getInitialNetworkRetryDelay() * 2,
+            \Erikwang2013\Stripe\Stripe::getInitialNetworkRetryDelay() * 2,
             $this->sleepTimeMethod->invoke($curlClient, 2, [])
         );
         self::assertSame(
-            \Stripe\Stripe::getInitialNetworkRetryDelay() * 4,
+            \Erikwang2013\Stripe\Stripe::getInitialNetworkRetryDelay() * 4,
             $this->sleepTimeMethod->invoke($curlClient, 3, [])
         );
         self::assertSame(
-            \Stripe\Stripe::getInitialNetworkRetryDelay() * 8,
+            \Erikwang2013\Stripe\Stripe::getInitialNetworkRetryDelay() * 8,
             $this->sleepTimeMethod->invoke($curlClient, 4, [])
         );
     }
@@ -364,11 +364,11 @@ final class CurlClientTest extends \Stripe\TestCase
 
         $curlClient = new CurlClient(null, $this->createFakeRandomGenerator($randomValue));
 
-        $baseValue = \Stripe\Stripe::getInitialNetworkRetryDelay() * (0.5 * (1 + $randomValue));
+        $baseValue = \Erikwang2013\Stripe\Stripe::getInitialNetworkRetryDelay() * (0.5 * (1 + $randomValue));
 
         // the initial value cannot be smaller than the base,
         // so the randomness is ignored
-        self::assertSame(\Stripe\Stripe::getInitialNetworkRetryDelay(), $this->sleepTimeMethod->invoke($curlClient, 1, []));
+        self::assertSame(\Erikwang2013\Stripe\Stripe::getInitialNetworkRetryDelay(), $this->sleepTimeMethod->invoke($curlClient, 1, []));
 
         // after the first one, the randomness is applied
         self::assertSame($baseValue * 2, $this->sleepTimeMethod->invoke($curlClient, 2, []));
@@ -397,7 +397,7 @@ final class CurlClientTest extends \Stripe\TestCase
 
     public function testIdempotencyKeyV2PostRequestsNoRetry()
     {
-        \Stripe\Stripe::setMaxNetworkRetries(0);
+        \Erikwang2013\Stripe\Stripe::setMaxNetworkRetries(0);
         $curlClient = new CurlClient();
         $curlOpts = $this->constructCurlOptionsMethod->invoke($curlClient, 'post', '', [], '', [], 'v2');
         $headers = $curlOpts[\CURLOPT_HTTPHEADER];
@@ -406,7 +406,7 @@ final class CurlClientTest extends \Stripe\TestCase
 
     public function testIdempotencyKeyV2DeleteRequestsNoRetry()
     {
-        \Stripe\Stripe::setMaxNetworkRetries(0);
+        \Erikwang2013\Stripe\Stripe::setMaxNetworkRetries(0);
         $curlClient = new CurlClient();
         $curlOpts = $this->constructCurlOptionsMethod->invoke($curlClient, 'delete', '', [], '', [], 'v2');
         $headers = $curlOpts[\CURLOPT_HTTPHEADER];
@@ -415,7 +415,7 @@ final class CurlClientTest extends \Stripe\TestCase
 
     public function testIdempotencyKeyAllV2RequestsWithRetry()
     {
-        \Stripe\Stripe::setMaxNetworkRetries(3);
+        \Erikwang2013\Stripe\Stripe::setMaxNetworkRetries(3);
         $curlClient = new CurlClient();
         $curlOpts = $this->constructCurlOptionsMethod->invoke($curlClient, 'post', '', [], '', [], 'v2');
         $headers = $curlOpts[\CURLOPT_HTTPHEADER];
@@ -425,7 +425,7 @@ final class CurlClientTest extends \Stripe\TestCase
     // we don't want this behavior - write requests should basically always have an IK. But until we fix it, let's test it
     public function testNoIdempotencyKeyV1PostRequestsNoRetry()
     {
-        \Stripe\Stripe::setMaxNetworkRetries(0);
+        \Erikwang2013\Stripe\Stripe::setMaxNetworkRetries(0);
         $curlClient = new CurlClient();
         $curlOpts = $this->constructCurlOptionsMethod->invoke($curlClient, 'post', '', [], '', [], 'v1');
         $headers = $curlOpts[\CURLOPT_HTTPHEADER];
@@ -434,7 +434,7 @@ final class CurlClientTest extends \Stripe\TestCase
 
     public function testNoIdempotencyKeyV1DeleteRequestsNoRetry()
     {
-        \Stripe\Stripe::setMaxNetworkRetries(0);
+        \Erikwang2013\Stripe\Stripe::setMaxNetworkRetries(0);
         $curlClient = new CurlClient();
         $curlOpts = $this->constructCurlOptionsMethod->invoke($curlClient, 'delete', '', [], '', [], 'v1');
         $headers = $curlOpts[\CURLOPT_HTTPHEADER];
@@ -443,7 +443,7 @@ final class CurlClientTest extends \Stripe\TestCase
 
     public function testIdempotencyKeyV1PostRequestsWithRetry()
     {
-        \Stripe\Stripe::setMaxNetworkRetries(3);
+        \Erikwang2013\Stripe\Stripe::setMaxNetworkRetries(3);
         $curlClient = new CurlClient();
         $curlOpts = $this->constructCurlOptionsMethod->invoke($curlClient, 'post', '', [], '', [], 'v1');
         $headers = $curlOpts[\CURLOPT_HTTPHEADER];
@@ -452,7 +452,7 @@ final class CurlClientTest extends \Stripe\TestCase
 
     public function testNoIdempotencyKeyV1DeleteRequestsWithRetry()
     {
-        \Stripe\Stripe::setMaxNetworkRetries(3);
+        \Erikwang2013\Stripe\Stripe::setMaxNetworkRetries(3);
         $curlClient = new CurlClient();
         $curlOpts = $this->constructCurlOptionsMethod->invoke($curlClient, 'delete', '', [], '', [], 'v1');
         $headers = $curlOpts[\CURLOPT_HTTPHEADER];
@@ -461,7 +461,7 @@ final class CurlClientTest extends \Stripe\TestCase
 
     public function testResponseHeadersCaseInsensitive()
     {
-        $charge = \Stripe\Charge::all();
+        $charge = \Erikwang2013\Stripe\Charge::all();
 
         $headers = $charge->getLastResponse()->headers;
         self::assertNotNull($headers['request-id']);
@@ -486,13 +486,13 @@ final class CurlClientTest extends \Stripe\TestCase
                 $this->assertSame(0, $numRetries);
             });
 
-            \Stripe\ApiRequestor::setHttpClient($curl);
+            \Erikwang2013\Stripe\ApiRequestor::setHttpClient($curl);
 
-            \Stripe\Charge::all();
+            \Erikwang2013\Stripe\Charge::all();
 
             self::assertTrue($called);
         } finally {
-            \Stripe\ApiRequestor::setHttpClient(null);
+            \Erikwang2013\Stripe\ApiRequestor::setHttpClient(null);
         }
     }
 
@@ -514,7 +514,7 @@ header("stripe-should-retry: true");
 {}
 EOF;
 
-        \Stripe\Stripe::setMaxNetworkRetries(3);
+        \Erikwang2013\Stripe\Stripe::setMaxNetworkRetries(3);
         $this->fastRetries();
         $absUrl = $this->startTestServer($serverCode);
         $opts = [];
@@ -583,9 +583,9 @@ EOF;
     public function testExecuteStreamingRequestWithRetriesPersistentConnection()
     {
         $curl = new CurlClient();
-        $coupon = \Stripe\Coupon::retrieve('coupon_xyz');
+        $coupon = \Erikwang2013\Stripe\Coupon::retrieve('coupon_xyz');
 
-        $absUrl = \Stripe\Stripe::$apiBase . '/v1/coupons/xyz';
+        $absUrl = \Erikwang2013\Stripe\Stripe::$apiBase . '/v1/coupons/xyz';
         $opts[\CURLOPT_HTTPGET] = 1;
         $opts[\CURLOPT_URL] = $absUrl;
         $opts[\CURLOPT_HTTPHEADER] = ['Authorization: Basic c2tfdGVzdF94eXo6'];

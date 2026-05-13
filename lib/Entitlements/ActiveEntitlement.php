@@ -2,7 +2,7 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Entitlements;
+namespace Erikwang2013\Stripe\Entitlements;
 
 /**
  * An active entitlement describes access to a feature for a customer.
@@ -13,7 +13,7 @@ namespace Stripe\Entitlements;
  * @property bool $livemode If the object exists in live mode, the value is <code>true</code>. If the object exists in test mode, the value is <code>false</code>.
  * @property string $lookup_key A unique key you provide as your own system identifier. This may be up to 80 characters.
  */
-class ActiveEntitlement extends \Stripe\ApiResource
+class ActiveEntitlement extends \Erikwang2013\Stripe\ApiResource
 {
     const OBJECT_NAME = 'entitlements.active_entitlement';
 
@@ -23,15 +23,15 @@ class ActiveEntitlement extends \Stripe\ApiResource
      * @param null|array{customer: string, ending_before?: string, expand?: string[], limit?: int, starting_after?: string} $params
      * @param null|array|string $opts
      *
-     * @return \Stripe\Collection<ActiveEntitlement> of ApiResources
+     * @return \Erikwang2013\Stripe\Collection<ActiveEntitlement> of ApiResources
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public static function all($params = null, $opts = null)
     {
         $url = static::classUrl();
 
-        return static::_requestPage($url, \Stripe\Collection::class, $params, $opts);
+        return static::_requestPage($url, \Erikwang2013\Stripe\Collection::class, $params, $opts);
     }
 
     /**
@@ -42,11 +42,11 @@ class ActiveEntitlement extends \Stripe\ApiResource
      *
      * @return ActiveEntitlement
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public static function retrieve($id, $opts = null)
     {
-        $opts = \Stripe\Util\RequestOptions::parse($opts);
+        $opts = \Erikwang2013\Stripe\Util\RequestOptions::parse($opts);
         $instance = new static($id, $opts);
         $instance->refresh();
 

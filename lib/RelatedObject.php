@@ -1,6 +1,6 @@
 <?php
 
-namespace Stripe;
+namespace Erikwang2013\Stripe;
 
 /**
  * @property string $id Unique identifier for the event.

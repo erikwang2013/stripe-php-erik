@@ -2,7 +2,7 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe;
+namespace Erikwang2013\Stripe;
 
 /**
  * A coupon contains information about a percent-off or amount-off discount you

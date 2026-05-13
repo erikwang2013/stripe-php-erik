@@ -1,11 +1,11 @@
 <?php
 
-namespace Stripe;
+namespace Erikwang2013\Stripe;
 
 /**
  * @internal
  *
- * @covers \Stripe\CountrySpec
+ * @covers \Erikwang2013\Stripe\CountrySpec
  */
 final class CountrySpecTest extends TestCase
 {

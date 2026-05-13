@@ -2,7 +2,7 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe;
+namespace Erikwang2013\Stripe;
 
 /**
  * A Payment Attempt Record represents an individual attempt at making a payment, on or off Stripe.

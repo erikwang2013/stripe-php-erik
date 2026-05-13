@@ -2,14 +2,14 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Service\Forwarding;
+namespace Erikwang2013\Stripe\Service\Forwarding;
 
 /**
  * Service factory class for API resources in the Forwarding namespace.
  *
  * @property RequestService $requests
  */
-class ForwardingServiceFactory extends \Stripe\Service\AbstractServiceFactory
+class ForwardingServiceFactory extends \Erikwang2013\Stripe\Service\AbstractServiceFactory
 {
     /**
      * @var array<string, string>

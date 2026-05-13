@@ -1,6 +1,6 @@
 <?php
 
-namespace Stripe;
+namespace Erikwang2013\Stripe;
 
 /**
  * Information on the API request that instigated the event.

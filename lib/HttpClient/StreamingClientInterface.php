@@ -1,6 +1,6 @@
 <?php
 
-namespace Stripe\HttpClient;
+namespace Erikwang2013\Stripe\HttpClient;
 
 interface StreamingClientInterface
 {
@@ -17,8 +17,8 @@ interface StreamingClientInterface
      * @return array an array whose first element is raw request body, second
      *    element is HTTP status code and third array of HTTP headers
      *
-     * @throws \Stripe\Exception\ApiConnectionException
-     * @throws \Stripe\Exception\UnexpectedValueException
+     * @throws \Erikwang2013\Stripe\Exception\ApiConnectionException
+     * @throws \Erikwang2013\Stripe\Exception\UnexpectedValueException
      */
     public function requestStream($method, $absUrl, $headers, $params, $hasFile, $readBodyChunkCallable, $maxNetworkRetries = null);
 }

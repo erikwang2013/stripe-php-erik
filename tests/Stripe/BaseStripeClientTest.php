@@ -1,15 +1,15 @@
 <?php
 
-namespace Stripe;
+namespace Erikwang2013\Stripe;
 
-use Stripe\Events\UnknownEventNotification;
-use Stripe\Events\V1BillingMeterErrorReportTriggeredEventNotification;
-use Stripe\Util\ApiVersion;
+use Erikwang2013\Stripe\Events\UnknownEventNotification;
+use Erikwang2013\Stripe\Events\V1BillingMeterErrorReportTriggeredEventNotification;
+use Erikwang2013\Stripe\Util\ApiVersion;
 
 /**
  * @internal
  *
- * @covers \Stripe\BaseStripeClient
+ * @covers \Erikwang2013\Stripe\BaseStripeClient
  */
 final class BaseStripeClientTest extends TestCase
 {

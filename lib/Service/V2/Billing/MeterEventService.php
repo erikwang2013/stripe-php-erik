@@ -2,14 +2,14 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Service\V2\Billing;
+namespace Erikwang2013\Stripe\Service\V2\Billing;
 
 /**
- * @phpstan-import-type RequestOptionsArray from \Stripe\Util\RequestOptions
+ * @phpstan-import-type RequestOptionsArray from \Erikwang2013\Stripe\Util\RequestOptions
  *
- * @psalm-import-type RequestOptionsArray from \Stripe\Util\RequestOptions
+ * @psalm-import-type RequestOptionsArray from \Erikwang2013\Stripe\Util\RequestOptions
  */
-class MeterEventService extends \Stripe\Service\AbstractService
+class MeterEventService extends \Erikwang2013\Stripe\Service\AbstractService
 {
     /**
      * Creates a meter event. Events are validated synchronously, but are processed
@@ -17,11 +17,11 @@ class MeterEventService extends \Stripe\Service\AbstractService
      * rate-limits, please use meter event streams instead.
      *
      * @param null|array{event_name: string, identifier?: string, payload: array<string, string>, timestamp?: string} $params
-     * @param null|RequestOptionsArray|\Stripe\Util\RequestOptions $opts
+     * @param null|RequestOptionsArray|\Erikwang2013\Stripe\Util\RequestOptions $opts
      *
-     * @return \Stripe\V2\Billing\MeterEvent
+     * @return \Erikwang2013\Stripe\V2\Billing\MeterEvent
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public function create($params = null, $opts = null)
     {

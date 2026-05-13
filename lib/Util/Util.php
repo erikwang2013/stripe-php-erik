@@ -1,9 +1,9 @@
 <?php
 
-namespace Stripe\Util;
+namespace Erikwang2013\Stripe\Util;
 
-use Stripe\StripeObject;
-use Stripe\V2\DeletedObject;
+use Erikwang2013\Stripe\StripeObject;
+use Erikwang2013\Stripe\V2\DeletedObject;
 
 abstract class Util
 {
@@ -69,13 +69,13 @@ abstract class Util
                     if (\array_key_exists('type', $resp) && \array_key_exists($resp['type'], $eventTypes)) {
                         $class = $eventTypes[$resp['type']];
                     } else {
-                        $class = \Stripe\V2\Core\Event::class;
+                        $class = \Erikwang2013\Stripe\V2\Core\Event::class;
                     }
                 }
             } elseif (\array_key_exists('data', $resp) && \array_key_exists('next_page_url', $resp)) {
                 // TODO: this is a horrible hack. The API needs
                 // to return something for `object` here.
-                $class = \Stripe\V2\Collection::class;
+                $class = \Erikwang2013\Stripe\V2\Collection::class;
             } else {
                 $class = StripeObject::class;
             }
@@ -166,7 +166,7 @@ abstract class Util
      */
     public static function objectsToIds($h, $serializeNull)
     {
-        if ($h instanceof \Stripe\ApiResource) {
+        if ($h instanceof \Erikwang2013\Stripe\ApiResource) {
             return $h->id;
         }
         if (static::isList($h)) {

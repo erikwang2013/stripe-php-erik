@@ -2,7 +2,7 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Service\V2;
+namespace Erikwang2013\Stripe\Service\V2;
 
 /**
  * Service factory class for API resources in the V2 namespace.
@@ -10,7 +10,7 @@ namespace Stripe\Service\V2;
  * @property Billing\BillingServiceFactory $billing
  * @property Core\CoreServiceFactory $core
  */
-class V2ServiceFactory extends \Stripe\Service\AbstractServiceFactory
+class V2ServiceFactory extends \Erikwang2013\Stripe\Service\AbstractServiceFactory
 {
     /**
      * @var array<string, string>

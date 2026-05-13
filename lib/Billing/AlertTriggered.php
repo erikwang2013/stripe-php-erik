@@ -2,7 +2,7 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Billing;
+namespace Erikwang2013\Stripe\Billing;
 
 /**
  * @property string $object String representing the object's type. Objects of the same type share the same value.
@@ -12,7 +12,7 @@ namespace Stripe\Billing;
  * @property bool $livemode If the object exists in live mode, the value is <code>true</code>. If the object exists in test mode, the value is <code>false</code>.
  * @property int $value The value triggering the alert
  */
-class AlertTriggered extends \Stripe\ApiResource
+class AlertTriggered extends \Erikwang2013\Stripe\ApiResource
 {
     const OBJECT_NAME = 'billing.alert_triggered';
 }

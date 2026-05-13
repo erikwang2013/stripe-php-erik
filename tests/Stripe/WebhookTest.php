@@ -1,12 +1,12 @@
 <?php
 
-namespace Stripe;
+namespace Erikwang2013\Stripe;
 
 /**
  * @internal
  *
- * @covers \Stripe\Webhook
- * @covers \Stripe\WebhookSignature
+ * @covers \Erikwang2013\Stripe\Webhook
+ * @covers \Erikwang2013\Stripe\WebhookSignature
  */
 final class WebhookTest extends TestCase
 {

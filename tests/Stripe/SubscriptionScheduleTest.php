@@ -1,11 +1,11 @@
 <?php
 
-namespace Stripe;
+namespace Erikwang2013\Stripe;
 
 /**
  * @internal
  *
- * @covers \Stripe\SubscriptionSchedule
+ * @covers \Erikwang2013\Stripe\SubscriptionSchedule
  */
 final class SubscriptionScheduleTest extends TestCase
 {

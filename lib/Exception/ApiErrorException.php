@@ -1,6 +1,6 @@
 <?php
 
-namespace Stripe\Exception;
+namespace Erikwang2013\Stripe\Exception;
 
 /**
  * Implements properties and methods common to all (non-SPL) Stripe exceptions.
@@ -22,7 +22,7 @@ abstract class ApiErrorException extends \Exception implements ExceptionInterfac
      * @param null|int $httpStatus the HTTP status code
      * @param null|string $httpBody the HTTP body as a string
      * @param null|array $jsonBody the JSON deserialized body
-     * @param null|array|\Stripe\Util\CaseInsensitiveArray $httpHeaders the HTTP headers array
+     * @param null|array|\Erikwang2013\Stripe\Util\CaseInsensitiveArray $httpHeaders the HTTP headers array
      * @param null|string $stripeCode the Stripe error code
      *
      * @return static
@@ -55,7 +55,7 @@ abstract class ApiErrorException extends \Exception implements ExceptionInterfac
     /**
      * Gets the Stripe error object.
      *
-     * @return null|\Stripe\ErrorObject
+     * @return null|\Erikwang2013\Stripe\ErrorObject
      */
     public function getError()
     {
@@ -65,7 +65,7 @@ abstract class ApiErrorException extends \Exception implements ExceptionInterfac
     /**
      * Sets the Stripe error object.
      *
-     * @param null|\Stripe\ErrorObject $error
+     * @param null|\Erikwang2013\Stripe\ErrorObject $error
      */
     public function setError($error)
     {
@@ -95,7 +95,7 @@ abstract class ApiErrorException extends \Exception implements ExceptionInterfac
     /**
      * Gets the HTTP headers array.
      *
-     * @return null|array|\Stripe\Util\CaseInsensitiveArray
+     * @return null|array|\Erikwang2013\Stripe\Util\CaseInsensitiveArray
      */
     public function getHttpHeaders()
     {
@@ -105,7 +105,7 @@ abstract class ApiErrorException extends \Exception implements ExceptionInterfac
     /**
      * Sets the HTTP headers array.
      *
-     * @param null|array|\Stripe\Util\CaseInsensitiveArray $httpHeaders
+     * @param null|array|\Erikwang2013\Stripe\Util\CaseInsensitiveArray $httpHeaders
      */
     public function setHttpHeaders($httpHeaders)
     {
@@ -175,7 +175,7 @@ abstract class ApiErrorException extends \Exception implements ExceptionInterfac
     /**
      * Gets the Stripe error code.
      *
-     * Cf. the `CODE_*` constants on {@see \Stripe\ErrorObject} for possible
+     * Cf. the `CODE_*` constants on {@see \Erikwang2013\Stripe\ErrorObject} for possible
      * values.
      *
      * @return null|string
@@ -215,6 +215,6 @@ abstract class ApiErrorException extends \Exception implements ExceptionInterfac
             return null;
         }
 
-        return \Stripe\ErrorObject::constructFrom($this->jsonBody['error']);
+        return \Erikwang2013\Stripe\ErrorObject::constructFrom($this->jsonBody['error']);
     }
 }

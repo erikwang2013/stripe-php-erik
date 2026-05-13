@@ -1,11 +1,11 @@
 <?php
 
-namespace Stripe;
+namespace Erikwang2013\Stripe;
 
 /**
  * @internal
  *
- * @covers \Stripe\StripeContext
+ * @covers \Erikwang2013\Stripe\StripeContext
  */
 final class StripeContextTest extends TestCase
 {

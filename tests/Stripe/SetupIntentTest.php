@@ -1,11 +1,11 @@
 <?php
 
-namespace Stripe;
+namespace Erikwang2013\Stripe;
 
 /**
  * @internal
  *
- * @covers \Stripe\SetupIntent
+ * @covers \Erikwang2013\Stripe\SetupIntent
  */
 final class SetupIntentTest extends TestCase
 {

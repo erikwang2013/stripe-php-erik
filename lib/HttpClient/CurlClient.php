@@ -1,10 +1,10 @@
 <?php
 
-namespace Stripe\HttpClient;
+namespace Erikwang2013\Stripe\HttpClient;
 
-use Stripe\Exception;
-use Stripe\Stripe;
-use Stripe\Util;
+use Erikwang2013\Stripe\Exception;
+use Erikwang2013\Stripe\Stripe;
+use Erikwang2013\Stripe\Util;
 
 // @codingStandardsIgnoreStart
 // PSR2 requires all constants be upper case. Sadly, the CURL_SSLVERSION
@@ -145,7 +145,7 @@ class CurlClient implements ClientInterface, StreamingClientInterface
      * <ol>
      *   <li>string $rbody The response body</li>
      *   <li>integer $rcode The response status code</li>
-     *   <li>\Stripe\Util\CaseInsensitiveArray $rheaders The response headers</li>
+     *   <li>\Erikwang2013\Stripe\Util\CaseInsensitiveArray $rheaders The response headers</li>
      *   <li>integer $errno The curl error number</li>
      *   <li>string|null $message The curl error message</li>
      *   <li>boolean $shouldRetry Whether the request will be retried</li>

@@ -1,11 +1,11 @@
 <?php
 
-namespace Stripe;
+namespace Erikwang2013\Stripe;
 
 /**
  * @internal
  *
- * @covers \Stripe\ExchangeRate
+ * @covers \Erikwang2013\Stripe\ExchangeRate
  */
 final class ExchangeRateTest extends TestCase
 {

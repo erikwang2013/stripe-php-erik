@@ -1,17 +1,17 @@
 <?php
 
-namespace Stripe;
+namespace Erikwang2013\Stripe;
 
-use Stripe\Events\UnknownEventNotification;
-use Stripe\Events\V1BillingMeterErrorReportTriggeredEventNotification;
-use Stripe\Events\V1BillingMeterNoMeterFoundEventNotification;
-use Stripe\V2\Core\EventNotification;
+use Erikwang2013\Stripe\Events\UnknownEventNotification;
+use Erikwang2013\Stripe\Events\V1BillingMeterErrorReportTriggeredEventNotification;
+use Erikwang2013\Stripe\Events\V1BillingMeterNoMeterFoundEventNotification;
+use Erikwang2013\Stripe\V2\Core\EventNotification;
 
 /**
  * @internal
  *
- * @covers \Stripe\Event
- * @covers \Stripe\V2\Core\Event
+ * @covers \Erikwang2013\Stripe\Event
+ * @covers \Erikwang2013\Stripe\V2\Core\Event
  */
 final class EventTest extends TestCase
 {

@@ -5,13 +5,13 @@
  *
  * 用法 / Usage:
  *   在 process.php 中初始化 / Initialize in process.php:
- *     \Stripe\Webman\StripeHelper::init();
- *     $stripe = \Stripe\Webman\StripeHelper::client();
+ *     \Erikwang2013\Stripe\Webman\StripeHelper::init();
+ *     $stripe = \Erikwang2013\Stripe\Webman\StripeHelper::client();
  */
-namespace Stripe\Webman;
+namespace Erikwang2013\Stripe\Webman;
 
-use Stripe\Stripe;
-use Stripe\StripeClient;
+use Erikwang2013\Stripe\Stripe;
+use Erikwang2013\Stripe\StripeClient;
 
 class StripeHelper
 {

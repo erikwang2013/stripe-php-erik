@@ -2,7 +2,7 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Issuing;
+namespace Erikwang2013\Stripe\Issuing;
 
 /**
  * As a <a href="https://docs.stripe.com/issuing">card issuer</a>, you can dispute transactions that the cardholder does not recognize, suspects to be fraudulent, or has other issues with.
@@ -12,22 +12,22 @@ namespace Stripe\Issuing;
  * @property string $id Unique identifier for the object.
  * @property string $object String representing the object's type. Objects of the same type share the same value.
  * @property int $amount Disputed amount in the card's currency and in the <a href="https://docs.stripe.com/currencies#zero-decimal">smallest currency unit</a>. Usually the amount of the <code>transaction</code>, but can differ (usually because of currency fluctuation).
- * @property null|\Stripe\BalanceTransaction[] $balance_transactions List of balance transactions associated with the dispute.
+ * @property null|\Erikwang2013\Stripe\BalanceTransaction[] $balance_transactions List of balance transactions associated with the dispute.
  * @property int $created Time at which the object was created. Measured in seconds since the Unix epoch.
  * @property string $currency The currency the <code>transaction</code> was made in.
- * @property (object{canceled?: (object{additional_documentation: null|string|\Stripe\File, canceled_at: null|int, cancellation_policy_provided: null|bool, cancellation_reason: null|string, expected_at: null|int, explanation: null|string, product_description: null|string, product_type: null|string, return_status: null|string, returned_at: null|int}&\Stripe\StripeObject), duplicate?: (object{additional_documentation: null|string|\Stripe\File, card_statement: null|string|\Stripe\File, cash_receipt: null|string|\Stripe\File, check_image: null|string|\Stripe\File, explanation: null|string, original_transaction: null|string}&\Stripe\StripeObject), fraudulent?: (object{additional_documentation: null|string|\Stripe\File, explanation: null|string}&\Stripe\StripeObject), merchandise_not_as_described?: (object{additional_documentation: null|string|\Stripe\File, explanation: null|string, received_at: null|int, return_description: null|string, return_status: null|string, returned_at: null|int}&\Stripe\StripeObject), no_valid_authorization?: (object{additional_documentation: null|string|\Stripe\File, explanation: null|string}&\Stripe\StripeObject), not_received?: (object{additional_documentation: null|string|\Stripe\File, expected_at: null|int, explanation: null|string, product_description: null|string, product_type: null|string}&\Stripe\StripeObject), other?: (object{additional_documentation: null|string|\Stripe\File, explanation: null|string, product_description: null|string, product_type: null|string}&\Stripe\StripeObject), reason: string, service_not_as_described?: (object{additional_documentation: null|string|\Stripe\File, canceled_at: null|int, cancellation_reason: null|string, explanation: null|string, received_at: null|int}&\Stripe\StripeObject)}&\Stripe\StripeObject) $evidence
+ * @property (object{canceled?: (object{additional_documentation: null|string|\Erikwang2013\Stripe\File, canceled_at: null|int, cancellation_policy_provided: null|bool, cancellation_reason: null|string, expected_at: null|int, explanation: null|string, product_description: null|string, product_type: null|string, return_status: null|string, returned_at: null|int}&\Erikwang2013\Stripe\StripeObject), duplicate?: (object{additional_documentation: null|string|\Erikwang2013\Stripe\File, card_statement: null|string|\Erikwang2013\Stripe\File, cash_receipt: null|string|\Erikwang2013\Stripe\File, check_image: null|string|\Erikwang2013\Stripe\File, explanation: null|string, original_transaction: null|string}&\Erikwang2013\Stripe\StripeObject), fraudulent?: (object{additional_documentation: null|string|\Erikwang2013\Stripe\File, explanation: null|string}&\Erikwang2013\Stripe\StripeObject), merchandise_not_as_described?: (object{additional_documentation: null|string|\Erikwang2013\Stripe\File, explanation: null|string, received_at: null|int, return_description: null|string, return_status: null|string, returned_at: null|int}&\Erikwang2013\Stripe\StripeObject), no_valid_authorization?: (object{additional_documentation: null|string|\Erikwang2013\Stripe\File, explanation: null|string}&\Erikwang2013\Stripe\StripeObject), not_received?: (object{additional_documentation: null|string|\Erikwang2013\Stripe\File, expected_at: null|int, explanation: null|string, product_description: null|string, product_type: null|string}&\Erikwang2013\Stripe\StripeObject), other?: (object{additional_documentation: null|string|\Erikwang2013\Stripe\File, explanation: null|string, product_description: null|string, product_type: null|string}&\Erikwang2013\Stripe\StripeObject), reason: string, service_not_as_described?: (object{additional_documentation: null|string|\Erikwang2013\Stripe\File, canceled_at: null|int, cancellation_reason: null|string, explanation: null|string, received_at: null|int}&\Erikwang2013\Stripe\StripeObject)}&\Erikwang2013\Stripe\StripeObject) $evidence
  * @property bool $livemode If the object exists in live mode, the value is <code>true</code>. If the object exists in test mode, the value is <code>false</code>.
  * @property null|string $loss_reason The enum that describes the dispute loss outcome. If the dispute is not lost, this field will be absent. New enum values may be added in the future, so be sure to handle unknown values.
- * @property \Stripe\StripeObject $metadata Set of <a href="https://docs.stripe.com/api/metadata">key-value pairs</a> that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
+ * @property \Erikwang2013\Stripe\StripeObject $metadata Set of <a href="https://docs.stripe.com/api/metadata">key-value pairs</a> that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
  * @property string $status Current status of the dispute.
  * @property string|Transaction $transaction The transaction being disputed.
- * @property null|(object{debit_reversal: null|string, received_debit: string}&\Stripe\StripeObject) $treasury <a href="https://docs.stripe.com/api/treasury">Treasury</a> details related to this dispute if it was created on a [FinancialAccount](/docs/api/treasury/financial_accounts
+ * @property null|(object{debit_reversal: null|string, received_debit: string}&\Erikwang2013\Stripe\StripeObject) $treasury <a href="https://docs.stripe.com/api/treasury">Treasury</a> details related to this dispute if it was created on a [FinancialAccount](/docs/api/treasury/financial_accounts
  */
-class Dispute extends \Stripe\ApiResource
+class Dispute extends \Erikwang2013\Stripe\ApiResource
 {
     const OBJECT_NAME = 'issuing.dispute';
 
-    use \Stripe\ApiOperations\Update;
+    use \Erikwang2013\Stripe\ApiOperations\Update;
 
     const LOSS_REASON_CARDHOLDER_AUTHENTICATION_ISSUER_LIABILITY = 'cardholder_authentication_issuer_liability';
     const LOSS_REASON_ECI5_TOKEN_TRANSACTION_WITH_TAVV = 'eci5_token_transaction_with_tavv';
@@ -68,7 +68,7 @@ class Dispute extends \Stripe\ApiResource
      *
      * @return Dispute the created resource
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public static function create($params = null, $options = null)
     {
@@ -76,7 +76,7 @@ class Dispute extends \Stripe\ApiResource
         $url = static::classUrl();
 
         list($response, $opts) = static::_staticRequest('post', $url, $params, $options);
-        $obj = \Stripe\Util\Util::convertToStripeObject($response->json, $opts);
+        $obj = \Erikwang2013\Stripe\Util\Util::convertToStripeObject($response->json, $opts);
         $obj->setLastResponse($response);
 
         return $obj;
@@ -90,15 +90,15 @@ class Dispute extends \Stripe\ApiResource
      * @param null|array{created?: array|int, ending_before?: string, expand?: string[], limit?: int, starting_after?: string, status?: string, transaction?: string} $params
      * @param null|array|string $opts
      *
-     * @return \Stripe\Collection<Dispute> of ApiResources
+     * @return \Erikwang2013\Stripe\Collection<Dispute> of ApiResources
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public static function all($params = null, $opts = null)
     {
         $url = static::classUrl();
 
-        return static::_requestPage($url, \Stripe\Collection::class, $params, $opts);
+        return static::_requestPage($url, \Erikwang2013\Stripe\Collection::class, $params, $opts);
     }
 
     /**
@@ -109,11 +109,11 @@ class Dispute extends \Stripe\ApiResource
      *
      * @return Dispute
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public static function retrieve($id, $opts = null)
     {
-        $opts = \Stripe\Util\RequestOptions::parse($opts);
+        $opts = \Erikwang2013\Stripe\Util\RequestOptions::parse($opts);
         $instance = new static($id, $opts);
         $instance->refresh();
 
@@ -132,7 +132,7 @@ class Dispute extends \Stripe\ApiResource
      *
      * @return Dispute the updated resource
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public static function update($id, $params = null, $opts = null)
     {
@@ -140,7 +140,7 @@ class Dispute extends \Stripe\ApiResource
         $url = static::resourceUrl($id);
 
         list($response, $opts) = static::_staticRequest('post', $url, $params, $opts);
-        $obj = \Stripe\Util\Util::convertToStripeObject($response->json, $opts);
+        $obj = \Erikwang2013\Stripe\Util\Util::convertToStripeObject($response->json, $opts);
         $obj->setLastResponse($response);
 
         return $obj;
@@ -152,7 +152,7 @@ class Dispute extends \Stripe\ApiResource
      *
      * @return Dispute the submited dispute
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public function submit($params = null, $opts = null)
     {

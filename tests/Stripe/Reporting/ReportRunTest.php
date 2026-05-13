@@ -1,15 +1,15 @@
 <?php
 
-namespace Stripe\Reporting;
+namespace Erikwang2013\Stripe\Reporting;
 
 /**
  * @internal
  *
- * @covers \Stripe\Reporting\ReportRun
+ * @covers \Erikwang2013\Stripe\Reporting\ReportRun
  */
-final class ReportRunTest extends \Stripe\TestCase
+final class ReportRunTest extends \Erikwang2013\Stripe\TestCase
 {
-    use \Stripe\TestHelper;
+    use \Erikwang2013\Stripe\TestHelper;
 
     const TEST_RESOURCE_ID = 'frr_123';
 

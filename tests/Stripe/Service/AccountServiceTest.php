@@ -1,22 +1,22 @@
 <?php
 
-namespace Stripe\Service;
+namespace Erikwang2013\Stripe\Service;
 
 /**
  * @internal
  *
- * @covers \Stripe\Service\AccountService
+ * @covers \Erikwang2013\Stripe\Service\AccountService
  */
-final class AccountServiceTest extends \Stripe\TestCase
+final class AccountServiceTest extends \Erikwang2013\Stripe\TestCase
 {
-    use \Stripe\TestHelper;
+    use \Erikwang2013\Stripe\TestHelper;
 
     const TEST_RESOURCE_ID = 'acct_123';
     const TEST_CAPABILITY_ID = 'acap_123';
     const TEST_EXTERNALACCOUNT_ID = 'ba_123';
     const TEST_PERSON_ID = 'person_123';
 
-    /** @var \Stripe\StripeClient */
+    /** @var \Erikwang2013\Stripe\StripeClient */
     private $client;
 
     /** @var AccountService */
@@ -27,7 +27,7 @@ final class AccountServiceTest extends \Stripe\TestCase
      */
     protected function setUpService()
     {
-        $this->client = new \Stripe\StripeClient(['api_key' => 'sk_test_123', 'api_base' => MOCK_URL]);
+        $this->client = new \Erikwang2013\Stripe\StripeClient(['api_key' => 'sk_test_123', 'api_base' => MOCK_URL]);
         $this->service = new AccountService($this->client);
     }
 
@@ -39,7 +39,7 @@ final class AccountServiceTest extends \Stripe\TestCase
         );
         $resources = $this->service->all();
         self::compatAssertIsArray($resources->data);
-        self::assertInstanceOf(\Stripe\Account::class, $resources->data[0]);
+        self::assertInstanceOf(\Erikwang2013\Stripe\Account::class, $resources->data[0]);
     }
 
     public function testAllCapabilities()
@@ -50,7 +50,7 @@ final class AccountServiceTest extends \Stripe\TestCase
         );
         $resources = $this->service->allCapabilities(self::TEST_RESOURCE_ID);
         self::compatAssertIsArray($resources->data);
-        self::assertInstanceOf(\Stripe\Capability::class, $resources->data[0]);
+        self::assertInstanceOf(\Erikwang2013\Stripe\Capability::class, $resources->data[0]);
     }
 
     public function testAllExternalAccounts()
@@ -61,7 +61,7 @@ final class AccountServiceTest extends \Stripe\TestCase
         );
         $resources = $this->service->allExternalAccounts(self::TEST_RESOURCE_ID);
         self::compatAssertIsArray($resources->data);
-        self::assertInstanceOf(\Stripe\BankAccount::class, $resources->data[0]);
+        self::assertInstanceOf(\Erikwang2013\Stripe\BankAccount::class, $resources->data[0]);
     }
 
     public function testAllPersons()
@@ -72,7 +72,7 @@ final class AccountServiceTest extends \Stripe\TestCase
         );
         $resources = $this->service->allPersons(self::TEST_RESOURCE_ID);
         self::compatAssertIsArray($resources->data);
-        self::assertInstanceOf(\Stripe\Person::class, $resources->data[0]);
+        self::assertInstanceOf(\Erikwang2013\Stripe\Person::class, $resources->data[0]);
     }
 
     public function testCreate()
@@ -82,7 +82,7 @@ final class AccountServiceTest extends \Stripe\TestCase
             '/v1/accounts'
         );
         $resource = $this->service->create(['type' => 'custom']);
-        self::assertInstanceOf(\Stripe\Account::class, $resource);
+        self::assertInstanceOf(\Erikwang2013\Stripe\Account::class, $resource);
     }
 
     public function testCreateExternalAccount()
@@ -94,7 +94,7 @@ final class AccountServiceTest extends \Stripe\TestCase
         $resource = $this->service->createExternalAccount(self::TEST_RESOURCE_ID, [
             'external_account' => 'btok_123',
         ]);
-        self::assertInstanceOf(\Stripe\BankAccount::class, $resource);
+        self::assertInstanceOf(\Erikwang2013\Stripe\BankAccount::class, $resource);
     }
 
     public function testCreateLoginLink()
@@ -104,7 +104,7 @@ final class AccountServiceTest extends \Stripe\TestCase
             '/v1/accounts/' . self::TEST_RESOURCE_ID . '/login_links'
         );
         $resource = $this->service->createLoginLink(self::TEST_RESOURCE_ID);
-        self::assertInstanceOf(\Stripe\LoginLink::class, $resource);
+        self::assertInstanceOf(\Erikwang2013\Stripe\LoginLink::class, $resource);
     }
 
     public function testCreatePerson()
@@ -120,7 +120,7 @@ final class AccountServiceTest extends \Stripe\TestCase
                 'year' => 1980,
             ],
         ]);
-        self::assertInstanceOf(\Stripe\Person::class, $resource);
+        self::assertInstanceOf(\Erikwang2013\Stripe\Person::class, $resource);
     }
 
     public function testDelete()
@@ -130,7 +130,7 @@ final class AccountServiceTest extends \Stripe\TestCase
             '/v1/accounts/' . self::TEST_RESOURCE_ID
         );
         $resource = $this->service->delete(self::TEST_RESOURCE_ID);
-        self::assertInstanceOf(\Stripe\Account::class, $resource);
+        self::assertInstanceOf(\Erikwang2013\Stripe\Account::class, $resource);
         self::assertTrue($resource->isDeleted());
     }
 
@@ -141,7 +141,7 @@ final class AccountServiceTest extends \Stripe\TestCase
             '/v1/accounts/' . self::TEST_RESOURCE_ID . '/external_accounts/' . self::TEST_EXTERNALACCOUNT_ID
         );
         $resource = $this->service->deleteExternalAccount(self::TEST_RESOURCE_ID, self::TEST_EXTERNALACCOUNT_ID);
-        self::assertInstanceOf(\Stripe\BankAccount::class, $resource);
+        self::assertInstanceOf(\Erikwang2013\Stripe\BankAccount::class, $resource);
         self::assertTrue($resource->isDeleted());
     }
 
@@ -152,7 +152,7 @@ final class AccountServiceTest extends \Stripe\TestCase
             '/v1/accounts/' . self::TEST_RESOURCE_ID . '/persons/' . self::TEST_PERSON_ID
         );
         $resource = $this->service->deletePerson(self::TEST_RESOURCE_ID, self::TEST_PERSON_ID);
-        self::assertInstanceOf(\Stripe\Person::class, $resource);
+        self::assertInstanceOf(\Erikwang2013\Stripe\Person::class, $resource);
         self::assertTrue($resource->isDeleted());
     }
 
@@ -163,7 +163,7 @@ final class AccountServiceTest extends \Stripe\TestCase
             '/v1/accounts/' . self::TEST_RESOURCE_ID . '/reject'
         );
         $resource = $this->service->reject(self::TEST_RESOURCE_ID, ['reason' => 'fraud']);
-        self::assertInstanceOf(\Stripe\Account::class, $resource);
+        self::assertInstanceOf(\Erikwang2013\Stripe\Account::class, $resource);
     }
 
     public function testRetrieveCapability()
@@ -173,7 +173,7 @@ final class AccountServiceTest extends \Stripe\TestCase
             '/v1/accounts/' . self::TEST_RESOURCE_ID . '/capabilities/' . self::TEST_CAPABILITY_ID
         );
         $resource = $this->service->retrieveCapability(self::TEST_RESOURCE_ID, self::TEST_CAPABILITY_ID);
-        self::assertInstanceOf(\Stripe\Capability::class, $resource);
+        self::assertInstanceOf(\Erikwang2013\Stripe\Capability::class, $resource);
     }
 
     public function testRetrieveExternalAccount()
@@ -183,7 +183,7 @@ final class AccountServiceTest extends \Stripe\TestCase
             '/v1/accounts/' . self::TEST_RESOURCE_ID . '/external_accounts/' . self::TEST_EXTERNALACCOUNT_ID
         );
         $resource = $this->service->retrieveExternalAccount(self::TEST_RESOURCE_ID, self::TEST_EXTERNALACCOUNT_ID);
-        self::assertInstanceOf(\Stripe\BankAccount::class, $resource);
+        self::assertInstanceOf(\Erikwang2013\Stripe\BankAccount::class, $resource);
     }
 
     public function testRetrievePerson()
@@ -193,7 +193,7 @@ final class AccountServiceTest extends \Stripe\TestCase
             '/v1/accounts/' . self::TEST_RESOURCE_ID . '/persons/' . self::TEST_PERSON_ID
         );
         $resource = $this->service->retrievePerson(self::TEST_RESOURCE_ID, self::TEST_PERSON_ID);
-        self::assertInstanceOf(\Stripe\Person::class, $resource);
+        self::assertInstanceOf(\Erikwang2013\Stripe\Person::class, $resource);
     }
 
     public function testUpdate()
@@ -205,7 +205,7 @@ final class AccountServiceTest extends \Stripe\TestCase
         $resource = $this->service->update(self::TEST_RESOURCE_ID, [
             'metadata' => ['key' => 'value'],
         ]);
-        self::assertInstanceOf(\Stripe\Account::class, $resource);
+        self::assertInstanceOf(\Erikwang2013\Stripe\Account::class, $resource);
     }
 
     public function testUpdateCapability()
@@ -217,7 +217,7 @@ final class AccountServiceTest extends \Stripe\TestCase
         $resource = $this->service->updateCapability(self::TEST_RESOURCE_ID, self::TEST_CAPABILITY_ID, [
             'requested' => true,
         ]);
-        self::assertInstanceOf(\Stripe\Capability::class, $resource);
+        self::assertInstanceOf(\Erikwang2013\Stripe\Capability::class, $resource);
     }
 
     public function testUpdateExternalAccount()
@@ -229,7 +229,7 @@ final class AccountServiceTest extends \Stripe\TestCase
         $resource = $this->service->updateExternalAccount(self::TEST_RESOURCE_ID, self::TEST_EXTERNALACCOUNT_ID, [
             'name' => 'name',
         ]);
-        self::assertInstanceOf(\Stripe\BankAccount::class, $resource);
+        self::assertInstanceOf(\Erikwang2013\Stripe\BankAccount::class, $resource);
     }
 
     public function testUpdatePerson()
@@ -241,7 +241,7 @@ final class AccountServiceTest extends \Stripe\TestCase
         $resource = $this->service->updatePerson(self::TEST_RESOURCE_ID, self::TEST_PERSON_ID, [
             'first_name' => 'First name',
         ]);
-        self::assertInstanceOf(\Stripe\Person::class, $resource);
+        self::assertInstanceOf(\Erikwang2013\Stripe\Person::class, $resource);
     }
 
     public function testRetrieveWithId()
@@ -251,7 +251,7 @@ final class AccountServiceTest extends \Stripe\TestCase
             '/v1/accounts/' . self::TEST_RESOURCE_ID
         );
         $resource = $this->service->retrieve(self::TEST_RESOURCE_ID);
-        self::assertInstanceOf(\Stripe\Account::class, $resource);
+        self::assertInstanceOf(\Erikwang2013\Stripe\Account::class, $resource);
     }
 
     public function testRetrieveWithoutId()
@@ -261,6 +261,6 @@ final class AccountServiceTest extends \Stripe\TestCase
             '/v1/account'
         );
         $resource = $this->service->retrieve();
-        self::assertInstanceOf(\Stripe\Account::class, $resource);
+        self::assertInstanceOf(\Erikwang2013\Stripe\Account::class, $resource);
     }
 }

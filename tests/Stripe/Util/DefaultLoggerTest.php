@@ -1,15 +1,15 @@
 <?php
 
-namespace Stripe\Util;
+namespace Erikwang2013\Stripe\Util;
 
 /**
  * @internal
  *
- * @covers \Stripe\Util\DefaultLogger
+ * @covers \Erikwang2013\Stripe\Util\DefaultLogger
  */
-final class DefaultLoggerTest extends \Stripe\TestCase
+final class DefaultLoggerTest extends \Erikwang2013\Stripe\TestCase
 {
-    use \Stripe\TestHelper;
+    use \Erikwang2013\Stripe\TestHelper;
 
     public function testDefaultLogger()
     {

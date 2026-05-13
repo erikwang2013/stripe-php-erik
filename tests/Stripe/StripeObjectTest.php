@@ -1,11 +1,11 @@
 <?php
 
-namespace Stripe;
+namespace Erikwang2013\Stripe;
 
 /**
  * @internal
  *
- * @covers \Stripe\StripeObject
+ * @covers \Erikwang2013\Stripe\StripeObject
  */
 final class StripeObjectTest extends TestCase
 {
@@ -160,7 +160,7 @@ final class StripeObjectTest extends TestCase
             self::assertNull($s->nonexistent);
 
             self::compatAssertMatchesRegularExpression(
-                '/Stripe Notice: Undefined property of Stripe\\\StripeObject instance: nonexistent/',
+                '/Stripe Notice: Undefined property of Erikwang2013\\\\Stripe\\\\StripeObject instance: nonexistent/',
                 \stream_get_contents($capture)
             );
         } finally {
@@ -193,7 +193,7 @@ final class StripeObjectTest extends TestCase
 
         $string = (string) $s;
         $expected = <<<'EOS'
-Stripe\StripeObject JSON: {
+Erikwang2013\Stripe\StripeObject JSON: {
     "foo": "a"
 }
 EOS;
@@ -422,7 +422,7 @@ EOS;
             self::fail('Did not raise error');
         } catch (\InvalidArgumentException $e) {
             self::assertSame(
-                'Cannot save property `customer` containing an API resource of type Stripe\Customer. '
+                'Cannot save property `customer` containing an API resource of type Erikwang2013\Stripe\Customer. '
                     . "It doesn't appear to be persisted and is not marked as `saveWithParent`.",
                 $e->getMessage()
             );

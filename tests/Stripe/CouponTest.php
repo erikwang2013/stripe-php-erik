@@ -1,11 +1,11 @@
 <?php
 
-namespace Stripe;
+namespace Erikwang2013\Stripe;
 
 /**
  * @internal
  *
- * @covers \Stripe\Coupon
+ * @covers \Erikwang2013\Stripe\Coupon
  */
 final class CouponTest extends TestCase
 {

@@ -2,14 +2,14 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Service\V2\Billing;
+namespace Erikwang2013\Stripe\Service\V2\Billing;
 
 /**
- * @phpstan-import-type RequestOptionsArray from \Stripe\Util\RequestOptions
+ * @phpstan-import-type RequestOptionsArray from \Erikwang2013\Stripe\Util\RequestOptions
  *
- * @psalm-import-type RequestOptionsArray from \Stripe\Util\RequestOptions
+ * @psalm-import-type RequestOptionsArray from \Erikwang2013\Stripe\Util\RequestOptions
  */
-class MeterEventSessionService extends \Stripe\Service\AbstractService
+class MeterEventSessionService extends \Erikwang2013\Stripe\Service\AbstractService
 {
     /**
      * Creates a meter event session to send usage on the high-throughput meter event
@@ -17,11 +17,11 @@ class MeterEventSessionService extends \Stripe\Service\AbstractService
      * create a new meter event session when your token expires.
      *
      * @param null|array $params
-     * @param null|RequestOptionsArray|\Stripe\Util\RequestOptions $opts
+     * @param null|RequestOptionsArray|\Erikwang2013\Stripe\Util\RequestOptions $opts
      *
-     * @return \Stripe\V2\Billing\MeterEventSession
+     * @return \Erikwang2013\Stripe\V2\Billing\MeterEventSession
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public function create($params = null, $opts = null)
     {

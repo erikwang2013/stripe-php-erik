@@ -2,12 +2,12 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Events;
+namespace Erikwang2013\Stripe\Events;
 
 /**
- * @property \Stripe\EventData\V1BillingMeterNoMeterFoundEventData $data data associated with the event
+ * @property \Erikwang2013\Stripe\EventData\V1BillingMeterNoMeterFoundEventData $data data associated with the event
  */
-class V1BillingMeterNoMeterFoundEvent extends \Stripe\V2\Core\Event
+class V1BillingMeterNoMeterFoundEvent extends \Erikwang2013\Stripe\V2\Core\Event
 {
     const LOOKUP_TYPE = 'v1.billing.meter.no_meter_found';
 
@@ -15,7 +15,7 @@ class V1BillingMeterNoMeterFoundEvent extends \Stripe\V2\Core\Event
     {
         $evt = parent::constructFrom($values, $opts, $apiMode);
         if (null !== $evt->data) {
-            $evt->data = \Stripe\EventData\V1BillingMeterNoMeterFoundEventData::constructFrom($evt->data, $opts, $apiMode);
+            $evt->data = \Erikwang2013\Stripe\EventData\V1BillingMeterNoMeterFoundEventData::constructFrom($evt->data, $opts, $apiMode);
         }
 
         return $evt;

@@ -2,7 +2,7 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Billing;
+namespace Erikwang2013\Stripe\Billing;
 
 /**
  * Meter events represent actions that customers take in your system. You can use meter events to bill a customer based on their usage. Meter events are associated with billing meters, which define both the contents of the event’s payload and how to aggregate those events.
@@ -12,10 +12,10 @@ namespace Stripe\Billing;
  * @property string $event_name The name of the meter event. Corresponds with the <code>event_name</code> field on a meter.
  * @property string $identifier A unique identifier for the event.
  * @property bool $livemode If the object exists in live mode, the value is <code>true</code>. If the object exists in test mode, the value is <code>false</code>.
- * @property \Stripe\StripeObject $payload The payload of the event. This contains the fields corresponding to a meter's <code>customer_mapping.event_payload_key</code> (default is <code>stripe_customer_id</code>) and <code>value_settings.event_payload_key</code> (default is <code>value</code>). Read more about the <a href="https://docs.stripe.com/billing/subscriptions/usage-based/meters/configure#meter-configuration-attributes">payload</a>.
+ * @property \Erikwang2013\Stripe\StripeObject $payload The payload of the event. This contains the fields corresponding to a meter's <code>customer_mapping.event_payload_key</code> (default is <code>stripe_customer_id</code>) and <code>value_settings.event_payload_key</code> (default is <code>value</code>). Read more about the <a href="https://docs.stripe.com/billing/subscriptions/usage-based/meters/configure#meter-configuration-attributes">payload</a>.
  * @property int $timestamp The timestamp passed in when creating the event. Measured in seconds since the Unix epoch.
  */
-class MeterEvent extends \Stripe\ApiResource
+class MeterEvent extends \Erikwang2013\Stripe\ApiResource
 {
     const OBJECT_NAME = 'billing.meter_event';
 
@@ -27,7 +27,7 @@ class MeterEvent extends \Stripe\ApiResource
      *
      * @return MeterEvent the created resource
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public static function create($params = null, $options = null)
     {
@@ -35,7 +35,7 @@ class MeterEvent extends \Stripe\ApiResource
         $url = static::classUrl();
 
         list($response, $opts) = static::_staticRequest('post', $url, $params, $options);
-        $obj = \Stripe\Util\Util::convertToStripeObject($response->json, $opts);
+        $obj = \Erikwang2013\Stripe\Util\Util::convertToStripeObject($response->json, $opts);
         $obj->setLastResponse($response);
 
         return $obj;

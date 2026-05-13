@@ -1,19 +1,19 @@
 <?php
 
-namespace Stripe\Service;
+namespace Erikwang2013\Stripe\Service;
 
 /**
  * @internal
  *
- * @covers \Stripe\Service\BalanceTransactionService
+ * @covers \Erikwang2013\Stripe\Service\BalanceTransactionService
  */
-final class BalanceTransactionServiceTest extends \Stripe\TestCase
+final class BalanceTransactionServiceTest extends \Erikwang2013\Stripe\TestCase
 {
-    use \Stripe\TestHelper;
+    use \Erikwang2013\Stripe\TestHelper;
 
     const TEST_RESOURCE_ID = 'txn_123';
 
-    /** @var \Stripe\StripeClient */
+    /** @var \Erikwang2013\Stripe\StripeClient */
     private $client;
 
     /** @var BalanceTransactionService */
@@ -24,7 +24,7 @@ final class BalanceTransactionServiceTest extends \Stripe\TestCase
      */
     protected function setUpService()
     {
-        $this->client = new \Stripe\StripeClient(['api_key' => 'sk_test_123', 'api_base' => MOCK_URL]);
+        $this->client = new \Erikwang2013\Stripe\StripeClient(['api_key' => 'sk_test_123', 'api_base' => MOCK_URL]);
         $this->service = new BalanceTransactionService($this->client);
     }
 
@@ -36,7 +36,7 @@ final class BalanceTransactionServiceTest extends \Stripe\TestCase
         );
         $resources = $this->service->all();
         self::compatAssertIsArray($resources->data);
-        self::assertInstanceOf(\Stripe\BalanceTransaction::class, $resources->data[0]);
+        self::assertInstanceOf(\Erikwang2013\Stripe\BalanceTransaction::class, $resources->data[0]);
     }
 
     public function testRetrieve()
@@ -46,6 +46,6 @@ final class BalanceTransactionServiceTest extends \Stripe\TestCase
             '/v1/balance_transactions/' . self::TEST_RESOURCE_ID
         );
         $resource = $this->service->retrieve(self::TEST_RESOURCE_ID);
-        self::assertInstanceOf(\Stripe\BalanceTransaction::class, $resource);
+        self::assertInstanceOf(\Erikwang2013\Stripe\BalanceTransaction::class, $resource);
     }
 }

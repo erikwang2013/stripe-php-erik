@@ -2,7 +2,7 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\FinancialConnections;
+namespace Erikwang2013\Stripe\FinancialConnections;
 
 /**
  * A Transaction represents a real transaction that affects a Financial Connections Account balance.
@@ -15,12 +15,12 @@ namespace Stripe\FinancialConnections;
  * @property string $description The description of this transaction.
  * @property bool $livemode If the object exists in live mode, the value is <code>true</code>. If the object exists in test mode, the value is <code>false</code>.
  * @property string $status The status of the transaction.
- * @property (object{posted_at: null|int, void_at: null|int}&\Stripe\StripeObject) $status_transitions
+ * @property (object{posted_at: null|int, void_at: null|int}&\Erikwang2013\Stripe\StripeObject) $status_transitions
  * @property int $transacted_at Time at which the transaction was transacted. Measured in seconds since the Unix epoch.
  * @property string $transaction_refresh The token of the transaction refresh that last updated or created this transaction.
  * @property int $updated Time at which the object was last updated. Measured in seconds since the Unix epoch.
  */
-class Transaction extends \Stripe\ApiResource
+class Transaction extends \Erikwang2013\Stripe\ApiResource
 {
     const OBJECT_NAME = 'financial_connections.transaction';
 
@@ -34,15 +34,15 @@ class Transaction extends \Stripe\ApiResource
      * @param null|array{account: string, ending_before?: string, expand?: string[], limit?: int, starting_after?: string, transacted_at?: array|int, transaction_refresh?: array{after: string}} $params
      * @param null|array|string $opts
      *
-     * @return \Stripe\Collection<Transaction> of ApiResources
+     * @return \Erikwang2013\Stripe\Collection<Transaction> of ApiResources
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public static function all($params = null, $opts = null)
     {
         $url = static::classUrl();
 
-        return static::_requestPage($url, \Stripe\Collection::class, $params, $opts);
+        return static::_requestPage($url, \Erikwang2013\Stripe\Collection::class, $params, $opts);
     }
 
     /**
@@ -53,11 +53,11 @@ class Transaction extends \Stripe\ApiResource
      *
      * @return Transaction
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public static function retrieve($id, $opts = null)
     {
-        $opts = \Stripe\Util\RequestOptions::parse($opts);
+        $opts = \Erikwang2013\Stripe\Util\RequestOptions::parse($opts);
         $instance = new static($id, $opts);
         $instance->refresh();
 

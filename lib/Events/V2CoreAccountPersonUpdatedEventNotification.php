@@ -2,12 +2,12 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Events;
+namespace Erikwang2013\Stripe\Events;
 
 /**
- * @property \Stripe\RelatedObject $related_object Object containing the reference to API resource relevant to the event
+ * @property \Erikwang2013\Stripe\RelatedObject $related_object Object containing the reference to API resource relevant to the event
  */
-class V2CoreAccountPersonUpdatedEventNotification extends \Stripe\V2\Core\EventNotification
+class V2CoreAccountPersonUpdatedEventNotification extends \Erikwang2013\Stripe\V2\Core\EventNotification
 {
     const LOOKUP_TYPE = 'v2.core.account_person.updated';
     public $related_object;
@@ -17,7 +17,7 @@ class V2CoreAccountPersonUpdatedEventNotification extends \Stripe\V2\Core\EventN
      *
      * @return V2CoreAccountPersonUpdatedEvent
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public function fetchEvent()
     {
@@ -27,9 +27,9 @@ class V2CoreAccountPersonUpdatedEventNotification extends \Stripe\V2\Core\EventN
     /**
      * Retrieves the related object from the API. Make an API request on every call.
      *
-     * @return \Stripe\V2\Core\AccountPerson
+     * @return \Erikwang2013\Stripe\V2\Core\AccountPerson
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public function fetchRelatedObject()
     {

@@ -1,11 +1,11 @@
 <?php
 
-namespace Stripe;
+namespace Erikwang2013\Stripe;
 
 /**
  * @internal
  *
- * @covers \Stripe\AccountLink
+ * @covers \Erikwang2013\Stripe\AccountLink
  */
 final class AccountLinkTest extends TestCase
 {

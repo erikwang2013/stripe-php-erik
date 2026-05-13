@@ -2,14 +2,14 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Service\TestHelpers\Treasury;
+namespace Erikwang2013\Stripe\Service\TestHelpers\Treasury;
 
 /**
- * @phpstan-import-type RequestOptionsArray from \Stripe\Util\RequestOptions
+ * @phpstan-import-type RequestOptionsArray from \Erikwang2013\Stripe\Util\RequestOptions
  *
- * @psalm-import-type RequestOptionsArray from \Stripe\Util\RequestOptions
+ * @psalm-import-type RequestOptionsArray from \Erikwang2013\Stripe\Util\RequestOptions
  */
-class ReceivedCreditService extends \Stripe\Service\AbstractService
+class ReceivedCreditService extends \Erikwang2013\Stripe\Service\AbstractService
 {
     /**
      * Use this endpoint to simulate a test mode ReceivedCredit initiated by a third
@@ -17,11 +17,11 @@ class ReceivedCreditService extends \Stripe\Service\AbstractService
      * third parties.
      *
      * @param null|array{amount: int, currency: string, description?: string, expand?: string[], financial_account: string, initiating_payment_method_details?: array{type: string, us_bank_account?: array{account_holder_name?: string, account_number?: string, routing_number?: string}}, network: string} $params
-     * @param null|RequestOptionsArray|\Stripe\Util\RequestOptions $opts
+     * @param null|RequestOptionsArray|\Erikwang2013\Stripe\Util\RequestOptions $opts
      *
-     * @return \Stripe\Treasury\ReceivedCredit
+     * @return \Erikwang2013\Stripe\Treasury\ReceivedCredit
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public function create($params = null, $opts = null)
     {

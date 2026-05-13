@@ -1,15 +1,15 @@
 <?php
 
-namespace Stripe\Tax;
+namespace Erikwang2013\Stripe\Tax;
 
 /**
  * @internal
  *
- * @covers \Stripe\Terminal\ConnectionToken
+ * @covers \Erikwang2013\Stripe\Terminal\ConnectionToken
  */
-final class SettingsTest extends \Stripe\TestCase
+final class SettingsTest extends \Erikwang2013\Stripe\TestCase
 {
-    use \Stripe\TestHelper;
+    use \Erikwang2013\Stripe\TestHelper;
 
     public function testIsUpdateable()
     {

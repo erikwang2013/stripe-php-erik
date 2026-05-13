@@ -33,11 +33,11 @@
   },
   "autoload": {
     "psr-4": {
-      "Stripe\\": "lib/",
-      "Stripe\\Laravel\\": "src/Laravel/",
-      "Stripe\\Hyperf\\": "src/Hyperf/",
-      "Stripe\\ThinkPHP\\": "src/ThinkPHP/",
-      "Stripe\\Webman\\": "src/Webman/"
+      "Erikwang2013\\Stripe\\": "lib/",
+      "Erikwang2013\\Stripe\\Laravel\\": "src/Laravel/",
+      "Erikwang2013\\Stripe\\Hyperf\\": "src/Hyperf/",
+      "Erikwang2013\\Stripe\\ThinkPHP\\": "src/ThinkPHP/",
+      "Erikwang2013\\Stripe\\Webman\\": "src/Webman/"
     },
     "files": [
       "lib/version_check.php"
@@ -45,7 +45,7 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Stripe\\": [
+      "Erikwang2013\\Stripe\\": [
         "tests/",
         "tests/Stripe/"
       ]
@@ -63,18 +63,18 @@
     },
     "laravel": {
       "providers": [
-        "Stripe\\Laravel\\StripeServiceProvider"
+        "Erikwang2013\\Stripe\\Laravel\\StripeServiceProvider"
       ],
       "aliases": {
-        "Stripe": "Stripe\\Laravel\\Facade\\Stripe"
+        "Stripe": "Erikwang2013\\Stripe\\Laravel\\Facade\\Stripe"
       }
     },
     "hyperf": {
-      "config": "Stripe\\Hyperf\\ConfigProvider"
+      "config": "Erikwang2013\\Stripe\\Hyperf\\ConfigProvider"
     },
     "think": {
       "services": [
-        "Stripe\\ThinkPHP\\StripeService"
+        "Erikwang2013\\Stripe\\ThinkPHP\\StripeService"
       ]
     }
   },

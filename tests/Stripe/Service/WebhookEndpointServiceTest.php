@@ -1,19 +1,19 @@
 <?php
 
-namespace Stripe\Service;
+namespace Erikwang2013\Stripe\Service;
 
 /**
  * @internal
  *
- * @covers \Stripe\Service\WebhookEndpointService
+ * @covers \Erikwang2013\Stripe\Service\WebhookEndpointService
  */
-final class WebhookEndpointServiceTest extends \Stripe\TestCase
+final class WebhookEndpointServiceTest extends \Erikwang2013\Stripe\TestCase
 {
-    use \Stripe\TestHelper;
+    use \Erikwang2013\Stripe\TestHelper;
 
     const TEST_RESOURCE_ID = 'we_123';
 
-    /** @var \Stripe\StripeClient */
+    /** @var \Erikwang2013\Stripe\StripeClient */
     private $client;
 
     /** @var WebhookEndpointService */
@@ -24,7 +24,7 @@ final class WebhookEndpointServiceTest extends \Stripe\TestCase
      */
     protected function setUpService()
     {
-        $this->client = new \Stripe\StripeClient(['api_key' => 'sk_test_123', 'api_base' => MOCK_URL]);
+        $this->client = new \Erikwang2013\Stripe\StripeClient(['api_key' => 'sk_test_123', 'api_base' => MOCK_URL]);
         $this->service = new WebhookEndpointService($this->client);
     }
 
@@ -36,7 +36,7 @@ final class WebhookEndpointServiceTest extends \Stripe\TestCase
         );
         $resources = $this->service->all();
         self::compatAssertIsArray($resources->data);
-        self::assertInstanceOf(\Stripe\WebhookEndpoint::class, $resources->data[0]);
+        self::assertInstanceOf(\Erikwang2013\Stripe\WebhookEndpoint::class, $resources->data[0]);
     }
 
     public function testCreate()
@@ -49,7 +49,7 @@ final class WebhookEndpointServiceTest extends \Stripe\TestCase
             'enabled_events' => ['charge.succeeded'],
             'url' => 'https://stripe.com',
         ]);
-        self::assertInstanceOf(\Stripe\WebhookEndpoint::class, $resource);
+        self::assertInstanceOf(\Erikwang2013\Stripe\WebhookEndpoint::class, $resource);
     }
 
     public function testDelete()
@@ -59,7 +59,7 @@ final class WebhookEndpointServiceTest extends \Stripe\TestCase
             '/v1/webhook_endpoints/' . self::TEST_RESOURCE_ID
         );
         $resource = $this->service->delete(self::TEST_RESOURCE_ID);
-        self::assertInstanceOf(\Stripe\WebhookEndpoint::class, $resource);
+        self::assertInstanceOf(\Erikwang2013\Stripe\WebhookEndpoint::class, $resource);
     }
 
     public function testRetrieve()
@@ -69,7 +69,7 @@ final class WebhookEndpointServiceTest extends \Stripe\TestCase
             '/v1/webhook_endpoints/' . self::TEST_RESOURCE_ID
         );
         $resource = $this->service->retrieve(self::TEST_RESOURCE_ID);
-        self::assertInstanceOf(\Stripe\WebhookEndpoint::class, $resource);
+        self::assertInstanceOf(\Erikwang2013\Stripe\WebhookEndpoint::class, $resource);
     }
 
     public function testUpdate()
@@ -81,6 +81,6 @@ final class WebhookEndpointServiceTest extends \Stripe\TestCase
         $resource = $this->service->update(self::TEST_RESOURCE_ID, [
             'enabled_events' => ['charge.succeeded'],
         ]);
-        self::assertInstanceOf(\Stripe\WebhookEndpoint::class, $resource);
+        self::assertInstanceOf(\Erikwang2013\Stripe\WebhookEndpoint::class, $resource);
     }
 }

@@ -1,9 +1,9 @@
 <?php
 
-namespace Stripe;
+namespace Erikwang2013\Stripe;
 
-use Stripe\Util\Util;
-use Stripe\V2\Core\EventNotification;
+use Erikwang2013\Stripe\Util\Util;
+use Erikwang2013\Stripe\V2\Core\EventNotification;
 
 class BaseStripeClient implements StripeClientInterface, StripeStreamingClientInterface
 {
@@ -26,7 +26,7 @@ class BaseStripeClient implements StripeClientInterface, StripeStreamingClientIn
         'client_id' => null,
         'stripe_account' => null,
         'stripe_context' => null,
-        'stripe_version' => \Stripe\Util\ApiVersion::CURRENT,
+        'stripe_version' => \Erikwang2013\Stripe\Util\ApiVersion::CURRENT,
         'api_base' => self::DEFAULT_API_BASE,
         'connect_base' => self::DEFAULT_CONNECT_BASE,
         'files_base' => self::DEFAULT_FILES_BASE,
@@ -38,7 +38,7 @@ class BaseStripeClient implements StripeClientInterface, StripeStreamingClientIn
     /** @var array<string, mixed> */
     private $config;
 
-    /** @var \Stripe\Util\RequestOptions */
+    /** @var \Erikwang2013\Stripe\Util\RequestOptions */
     private $defaultOpts;
 
     /**
@@ -55,7 +55,7 @@ class BaseStripeClient implements StripeClientInterface, StripeStreamingClientIn
      * - client_id (null|string): the Stripe client ID, to be used in OAuth requests.
      * - stripe_account (null|string): a Stripe account ID. If set, all requests sent by the client
      *   will automatically use the {@code Stripe-Account} header with that account ID.
-     * - stripe_context (null|string|\Stripe\StripeContext): a Stripe account or compartment ID. If set, all requests sent by the client
+     * - stripe_context (null|string|\Erikwang2013\Stripe\StripeContext): a Stripe account or compartment ID. If set, all requests sent by the client
      *   will automatically use the {@code Stripe-Context} header with that ID.
      * - stripe_version (null|string): a Stripe API version. If set, all requests sent by the client
      *   will include the {@code Stripe-Version} header with that API version.
@@ -94,7 +94,7 @@ class BaseStripeClient implements StripeClientInterface, StripeStreamingClientIn
 
         $this->config = $config;
 
-        $this->defaultOpts = \Stripe\Util\RequestOptions::parse([
+        $this->defaultOpts = \Erikwang2013\Stripe\Util\RequestOptions::parse([
             'stripe_account' => $config['stripe_account'],
             'stripe_context' => $config['stripe_context'],
             'stripe_version' => $config['stripe_version'],
@@ -218,7 +218,7 @@ class BaseStripeClient implements StripeClientInterface, StripeStreamingClientIn
      * @param 'delete'|'get'|'post' $method the HTTP method
      * @param string $path the path of the request
      * @param array $params the parameters of the request
-     * @param array|\Stripe\Util\RequestOptions $opts the special modifiers of the request
+     * @param array|\Erikwang2013\Stripe\Util\RequestOptions $opts the special modifiers of the request
      *
      * @return StripeObject the object returned by Stripe's API
      */
@@ -296,7 +296,7 @@ class BaseStripeClient implements StripeClientInterface, StripeStreamingClientIn
      * @param string $path the path of the request
      * @param callable $readBodyChunkCallable a function that will be called
      * @param array $params the parameters of the request
-     * @param array|\Stripe\Util\RequestOptions $opts the special modifiers of the request
+     * @param array|\Erikwang2013\Stripe\Util\RequestOptions $opts the special modifiers of the request
      *
      * with chunks of bytes from the body if the request is successful
      */
@@ -315,7 +315,7 @@ class BaseStripeClient implements StripeClientInterface, StripeStreamingClientIn
      * @param 'delete'|'get'|'post' $method the HTTP method
      * @param string $path the path of the request
      * @param array $params the parameters of the request
-     * @param array|\Stripe\Util\RequestOptions $opts the special modifiers of the request
+     * @param array|\Erikwang2013\Stripe\Util\RequestOptions $opts the special modifiers of the request
      *
      * @return Collection|V2\Collection of ApiResources
      */
@@ -326,7 +326,7 @@ class BaseStripeClient implements StripeClientInterface, StripeStreamingClientIn
         if ('v1' === $apiMode) {
             if (!$obj instanceof Collection) {
                 $received_class = \get_class($obj);
-                $msg = "Expected to receive `Stripe\\Collection` object from Stripe API. Instead received `{$received_class}`.";
+                $msg = "Expected to receive `Erikwang2013\\Stripe\\Collection` object from Stripe API. Instead received `{$received_class}`.";
 
                 throw new Exception\UnexpectedValueException($msg);
             }
@@ -334,7 +334,7 @@ class BaseStripeClient implements StripeClientInterface, StripeStreamingClientIn
         } else {
             if (!$obj instanceof V2\Collection) {
                 $received_class = \get_class($obj);
-                $msg = "Expected to receive `Stripe\\V2\\Collection` object from Stripe API. Instead received `{$received_class}`.";
+                $msg = "Expected to receive `Erikwang2013\\Stripe\\V2\\Collection` object from Stripe API. Instead received `{$received_class}`.";
 
                 throw new Exception\UnexpectedValueException($msg);
             }
@@ -349,7 +349,7 @@ class BaseStripeClient implements StripeClientInterface, StripeStreamingClientIn
      * @param 'delete'|'get'|'post' $method the HTTP method
      * @param string $path the path of the request
      * @param array $params the parameters of the request
-     * @param array|\Stripe\Util\RequestOptions $opts the special modifiers of the request
+     * @param array|\Erikwang2013\Stripe\Util\RequestOptions $opts the special modifiers of the request
      *
      * @return SearchResult of ApiResources
      */
@@ -358,7 +358,7 @@ class BaseStripeClient implements StripeClientInterface, StripeStreamingClientIn
         $obj = $this->request($method, $path, $params, $opts);
         if (!$obj instanceof SearchResult) {
             $received_class = \get_class($obj);
-            $msg = "Expected to receive `Stripe\\SearchResult` object from Stripe API. Instead received `{$received_class}`.";
+            $msg = "Expected to receive `Erikwang2013\\Stripe\\SearchResult` object from Stripe API. Instead received `{$received_class}`.";
 
             throw new Exception\UnexpectedValueException($msg);
         }
@@ -368,7 +368,7 @@ class BaseStripeClient implements StripeClientInterface, StripeStreamingClientIn
     }
 
     /**
-     * @param \Stripe\Util\RequestOptions $opts
+     * @param \Erikwang2013\Stripe\Util\RequestOptions $opts
      *
      * @return string
      *
@@ -489,7 +489,7 @@ class BaseStripeClient implements StripeClientInterface, StripeStreamingClientIn
     }
 
     /**
-     * Returns a \Stripe\V2\Core\Events instance using the provided JSON payload. Throws an
+     * Returns a \Erikwang2013\Stripe\V2\Core\Events instance using the provided JSON payload. Throws an
      * Exception\UnexpectedValueException if the payload is not valid JSON, and
      * an Exception\SignatureVerificationException if the signature
      * verification fails for any reason.

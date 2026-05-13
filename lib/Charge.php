@@ -2,7 +2,7 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe;
+namespace Erikwang2013\Stripe;
 
 /**
  * The <code>Charge</code> object represents a single attempt to move money into your Stripe account.
@@ -160,7 +160,7 @@ class Charge extends ApiResource
 
     /**
      * Possible string representations of decline codes.
-     * These strings are applicable to the decline_code property of the \Stripe\Exception\CardException exception.
+     * These strings are applicable to the decline_code property of the \Erikwang2013\Stripe\Exception\CardException exception.
      *
      * @see https://stripe.com/docs/declines/codes
      */

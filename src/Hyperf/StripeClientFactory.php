@@ -6,11 +6,11 @@
  * 为 Hyperf DI 容器创建 StripeClient 实例。
  * Creates StripeClient instances for the Hyperf DI container.
  */
-namespace Stripe\Hyperf;
+namespace Erikwang2013\Stripe\Hyperf;
 
 use Hyperf\Contract\ConfigInterface;
 use Psr\Container\ContainerInterface;
-use Stripe\StripeClient;
+use Erikwang2013\Stripe\StripeClient;
 
 class StripeClientFactory
 {

@@ -2,14 +2,14 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Service\TestHelpers\Issuing;
+namespace Erikwang2013\Stripe\Service\TestHelpers\Issuing;
 
 /**
- * @phpstan-import-type RequestOptionsArray from \Stripe\Util\RequestOptions
+ * @phpstan-import-type RequestOptionsArray from \Erikwang2013\Stripe\Util\RequestOptions
  *
- * @psalm-import-type RequestOptionsArray from \Stripe\Util\RequestOptions
+ * @psalm-import-type RequestOptionsArray from \Erikwang2013\Stripe\Util\RequestOptions
  */
-class PersonalizationDesignService extends \Stripe\Service\AbstractService
+class PersonalizationDesignService extends \Erikwang2013\Stripe\Service\AbstractService
 {
     /**
      * Updates the <code>status</code> of the specified testmode personalization design
@@ -17,11 +17,11 @@ class PersonalizationDesignService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array{expand?: string[]} $params
-     * @param null|RequestOptionsArray|\Stripe\Util\RequestOptions $opts
+     * @param null|RequestOptionsArray|\Erikwang2013\Stripe\Util\RequestOptions $opts
      *
-     * @return \Stripe\Issuing\PersonalizationDesign
+     * @return \Erikwang2013\Stripe\Issuing\PersonalizationDesign
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public function activate($id, $params = null, $opts = null)
     {
@@ -34,11 +34,11 @@ class PersonalizationDesignService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array{expand?: string[]} $params
-     * @param null|RequestOptionsArray|\Stripe\Util\RequestOptions $opts
+     * @param null|RequestOptionsArray|\Erikwang2013\Stripe\Util\RequestOptions $opts
      *
-     * @return \Stripe\Issuing\PersonalizationDesign
+     * @return \Erikwang2013\Stripe\Issuing\PersonalizationDesign
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public function deactivate($id, $params = null, $opts = null)
     {
@@ -51,11 +51,11 @@ class PersonalizationDesignService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array{expand?: string[], rejection_reasons: array{card_logo?: string[], carrier_text?: string[]}} $params
-     * @param null|RequestOptionsArray|\Stripe\Util\RequestOptions $opts
+     * @param null|RequestOptionsArray|\Erikwang2013\Stripe\Util\RequestOptions $opts
      *
-     * @return \Stripe\Issuing\PersonalizationDesign
+     * @return \Erikwang2013\Stripe\Issuing\PersonalizationDesign
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public function reject($id, $params = null, $opts = null)
     {

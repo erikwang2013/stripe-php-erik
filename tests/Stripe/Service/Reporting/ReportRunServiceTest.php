@@ -1,19 +1,19 @@
 <?php
 
-namespace Stripe\Service\Reporting;
+namespace Erikwang2013\Stripe\Service\Reporting;
 
 /**
  * @internal
  *
- * @covers \Stripe\Service\Reporting\ReportRunService
+ * @covers \Erikwang2013\Stripe\Service\Reporting\ReportRunService
  */
-final class ReportRunServiceTest extends \Stripe\TestCase
+final class ReportRunServiceTest extends \Erikwang2013\Stripe\TestCase
 {
-    use \Stripe\TestHelper;
+    use \Erikwang2013\Stripe\TestHelper;
 
     const TEST_RESOURCE_ID = 'frr_123';
 
-    /** @var \Stripe\StripeClient */
+    /** @var \Erikwang2013\Stripe\StripeClient */
     private $client;
 
     /** @var ReportRunService */
@@ -24,7 +24,7 @@ final class ReportRunServiceTest extends \Stripe\TestCase
      */
     protected function setUpService()
     {
-        $this->client = new \Stripe\StripeClient(['api_key' => 'sk_test_123', 'api_base' => MOCK_URL]);
+        $this->client = new \Erikwang2013\Stripe\StripeClient(['api_key' => 'sk_test_123', 'api_base' => MOCK_URL]);
         $this->service = new ReportRunService($this->client);
     }
 
@@ -36,7 +36,7 @@ final class ReportRunServiceTest extends \Stripe\TestCase
         );
         $resources = $this->service->all();
         self::compatAssertIsArray($resources->data);
-        self::assertInstanceOf(\Stripe\Reporting\ReportRun::class, $resources->data[0]);
+        self::assertInstanceOf(\Erikwang2013\Stripe\Reporting\ReportRun::class, $resources->data[0]);
     }
 
     public function testCreate()
@@ -54,7 +54,7 @@ final class ReportRunServiceTest extends \Stripe\TestCase
             $params
         );
         $resource = $this->service->create($params);
-        self::assertInstanceOf(\Stripe\Reporting\ReportRun::class, $resource);
+        self::assertInstanceOf(\Erikwang2013\Stripe\Reporting\ReportRun::class, $resource);
     }
 
     public function testRetrieve()
@@ -64,6 +64,6 @@ final class ReportRunServiceTest extends \Stripe\TestCase
             '/v1/reporting/report_runs/' . self::TEST_RESOURCE_ID
         );
         $resource = $this->service->retrieve(self::TEST_RESOURCE_ID);
-        self::assertInstanceOf(\Stripe\Reporting\ReportRun::class, $resource);
+        self::assertInstanceOf(\Erikwang2013\Stripe\Reporting\ReportRun::class, $resource);
     }
 }

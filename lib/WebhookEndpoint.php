@@ -2,7 +2,7 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe;
+namespace Erikwang2013\Stripe;
 
 /**
  * You can configure <a href="https://docs.stripe.com/webhooks/">webhook endpoints</a> via the API to be

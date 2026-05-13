@@ -2,7 +2,7 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe;
+namespace Erikwang2013\Stripe;
 
 /**
  * You can add one or multiple tax IDs to a <a href="https://docs.stripe.com/api/customers">customer</a> or account.

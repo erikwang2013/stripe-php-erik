@@ -2,7 +2,7 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe;
+namespace Erikwang2013\Stripe;
 
 /**
  * <a href="https://docs.stripe.com/connect">Stripe Connect</a> platforms can reverse transfers made to a

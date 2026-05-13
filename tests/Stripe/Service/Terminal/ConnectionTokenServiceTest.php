@@ -1,17 +1,17 @@
 <?php
 
-namespace Stripe\Service\Terminal;
+namespace Erikwang2013\Stripe\Service\Terminal;
 
 /**
  * @internal
  *
- * @covers \Stripe\Service\Terminal\ConnectionTokenService
+ * @covers \Erikwang2013\Stripe\Service\Terminal\ConnectionTokenService
  */
-final class ConnectionTokenServiceTest extends \Stripe\TestCase
+final class ConnectionTokenServiceTest extends \Erikwang2013\Stripe\TestCase
 {
-    use \Stripe\TestHelper;
+    use \Erikwang2013\Stripe\TestHelper;
 
-    /** @var \Stripe\StripeClient */
+    /** @var \Erikwang2013\Stripe\StripeClient */
     private $client;
 
     /** @var ConnectionTokenService */
@@ -22,7 +22,7 @@ final class ConnectionTokenServiceTest extends \Stripe\TestCase
      */
     protected function setUpService()
     {
-        $this->client = new \Stripe\StripeClient(['api_key' => 'sk_test_123', 'api_base' => MOCK_URL]);
+        $this->client = new \Erikwang2013\Stripe\StripeClient(['api_key' => 'sk_test_123', 'api_base' => MOCK_URL]);
         $this->service = new ConnectionTokenService($this->client);
     }
 
@@ -33,6 +33,6 @@ final class ConnectionTokenServiceTest extends \Stripe\TestCase
             '/v1/terminal/connection_tokens'
         );
         $resource = $this->service->create();
-        self::assertInstanceOf(\Stripe\Terminal\ConnectionToken::class, $resource);
+        self::assertInstanceOf(\Erikwang2013\Stripe\Terminal\ConnectionToken::class, $resource);
     }
 }

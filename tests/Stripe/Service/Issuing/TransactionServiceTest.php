@@ -1,19 +1,19 @@
 <?php
 
-namespace Stripe\Service\Issuing;
+namespace Erikwang2013\Stripe\Service\Issuing;
 
 /**
  * @internal
  *
- * @covers \Stripe\Service\Issuing\TransactionService
+ * @covers \Erikwang2013\Stripe\Service\Issuing\TransactionService
  */
-final class TransactionServiceTest extends \Stripe\TestCase
+final class TransactionServiceTest extends \Erikwang2013\Stripe\TestCase
 {
-    use \Stripe\TestHelper;
+    use \Erikwang2013\Stripe\TestHelper;
 
     const TEST_RESOURCE_ID = 'ipi_123';
 
-    /** @var \Stripe\StripeClient */
+    /** @var \Erikwang2013\Stripe\StripeClient */
     private $client;
 
     /** @var TransactionService */
@@ -24,7 +24,7 @@ final class TransactionServiceTest extends \Stripe\TestCase
      */
     protected function setUpService()
     {
-        $this->client = new \Stripe\StripeClient(['api_key' => 'sk_test_123', 'api_base' => MOCK_URL]);
+        $this->client = new \Erikwang2013\Stripe\StripeClient(['api_key' => 'sk_test_123', 'api_base' => MOCK_URL]);
         $this->service = new TransactionService($this->client);
     }
 
@@ -36,7 +36,7 @@ final class TransactionServiceTest extends \Stripe\TestCase
         );
         $resources = $this->service->all();
         self::compatAssertIsArray($resources->data);
-        self::assertInstanceOf(\Stripe\Issuing\Transaction::class, $resources->data[0]);
+        self::assertInstanceOf(\Erikwang2013\Stripe\Issuing\Transaction::class, $resources->data[0]);
     }
 
     public function testRetrieve()
@@ -46,7 +46,7 @@ final class TransactionServiceTest extends \Stripe\TestCase
             '/v1/issuing/transactions/' . self::TEST_RESOURCE_ID
         );
         $resource = $this->service->retrieve(self::TEST_RESOURCE_ID);
-        self::assertInstanceOf(\Stripe\Issuing\Transaction::class, $resource);
+        self::assertInstanceOf(\Erikwang2013\Stripe\Issuing\Transaction::class, $resource);
     }
 
     public function testUpdate()
@@ -59,6 +59,6 @@ final class TransactionServiceTest extends \Stripe\TestCase
         $resource = $this->service->update(self::TEST_RESOURCE_ID, [
             'metadata' => ['key' => 'value'],
         ]);
-        self::assertInstanceOf(\Stripe\Issuing\Transaction::class, $resource);
+        self::assertInstanceOf(\Erikwang2013\Stripe\Issuing\Transaction::class, $resource);
     }
 }

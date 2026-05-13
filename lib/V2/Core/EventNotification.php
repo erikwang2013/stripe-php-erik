@@ -1,11 +1,11 @@
 <?php
 
-namespace Stripe\V2\Core;
+namespace Erikwang2013\Stripe\V2\Core;
 
-use Stripe\Events\UnknownEventNotification;
-use Stripe\Reason;
-use Stripe\RelatedObject;
-use Stripe\Util\EventNotificationTypes;
+use Erikwang2013\Stripe\Events\UnknownEventNotification;
+use Erikwang2013\Stripe\Reason;
+use Erikwang2013\Stripe\RelatedObject;
+use Erikwang2013\Stripe\Util\EventNotificationTypes;
 
 /**
  * EventNotification represents the json that's delivered from an Event Destination.
@@ -15,7 +15,7 @@ use Stripe\Util\EventNotificationTypes;
  * @property string             $id       Unique identifier for the event.
  * @property string             $type     The type of the event.
  * @property string             $created  Time at which the object was created.
- * @property null|\Stripe\StripeContext        $context  Authentication context needed to fetch the event or related object.
+ * @property null|\Erikwang2013\Stripe\StripeContext        $context  Authentication context needed to fetch the event or related object.
  * @property null|Reason $reason Reason for the event.
  * @property bool $livemode Livemode indicates if the event is from a production(true) or test(false) account.
  */
@@ -34,7 +34,7 @@ abstract class EventNotification
 
     /**
      * @param array $json the raw json body
-     * @param \Stripe\StripeClient $client a StripeClient instance that this can use to make requests
+     * @param \Erikwang2013\Stripe\StripeClient $client a StripeClient instance that this can use to make requests
      */
     public function __construct($json, $client)
     {
@@ -50,7 +50,7 @@ abstract class EventNotification
             $this->created = $json['created'];
         }
         if (\array_key_exists('context', $json) && null !== $json['context']) {
-            $this->context = \Stripe\StripeContext::parse($json['context']);
+            $this->context = \Erikwang2013\Stripe\StripeContext::parse($json['context']);
         }
         if (\array_key_exists('livemode', $json)) {
             $this->livemode = $json['livemode'];
@@ -65,12 +65,12 @@ abstract class EventNotification
 
     /**
      * Helper for constructing an Event Notification. Doesn't perform signature validation, so you
-     * should use \Stripe\BaseStripeClient::parseEventNotification instead for
+     * should use \Erikwang2013\Stripe\BaseStripeClient::parseEventNotification instead for
      * initial handling. This is useful in unit tests and working with EventNotifications that you've
      * already validated the authenticity of.
      *
      * @param string $jsonStr the raw json payload
-     * @param \Stripe\StripeClient $client a StripeClient instance that this can use to make requests
+     * @param \Erikwang2013\Stripe\StripeClient $client a StripeClient instance that this can use to make requests
      *
      * @return EventNotification
      */
@@ -79,7 +79,7 @@ abstract class EventNotification
         $json = json_decode($jsonStr, true);
 
         if (isset($json['object']) && 'event' === $json['object']) {
-            throw new \Stripe\Exception\UnexpectedValueException(
+            throw new \Erikwang2013\Stripe\Exception\UnexpectedValueException(
                 'You passed a webhook payload to StripeClient::parseEventNotification, which expects an event notification. Use Webhook::constructEvent instead.'
             );
         }
@@ -137,6 +137,6 @@ abstract class EventNotification
             ['fetch_related_object']
         );
 
-        return $this->client->deserialize($response->body, \Stripe\Util\Util::getApiMode($this->related_object->url));
+        return $this->client->deserialize($response->body, \Erikwang2013\Stripe\Util\Util::getApiMode($this->related_object->url));
     }
 }

@@ -2,7 +2,7 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Billing;
+namespace Erikwang2013\Stripe\Billing;
 
 /**
  * Meters specify how to aggregate meter events over a billing period. Meter events represent the actions that customers take in your system. Meters attach to prices and form the basis of the bill.
@@ -12,23 +12,23 @@ namespace Stripe\Billing;
  * @property string $id Unique identifier for the object.
  * @property string $object String representing the object's type. Objects of the same type share the same value.
  * @property int $created Time at which the object was created. Measured in seconds since the Unix epoch.
- * @property (object{event_payload_key: string, type: string}&\Stripe\StripeObject) $customer_mapping
- * @property (object{formula: string}&\Stripe\StripeObject) $default_aggregation
+ * @property (object{event_payload_key: string, type: string}&\Erikwang2013\Stripe\StripeObject) $customer_mapping
+ * @property (object{formula: string}&\Erikwang2013\Stripe\StripeObject) $default_aggregation
  * @property string $display_name The meter's name.
  * @property string $event_name The name of the meter event to record usage for. Corresponds with the <code>event_name</code> field on meter events.
  * @property null|string $event_time_window The time window which meter events have been pre-aggregated for, if any.
  * @property bool $livemode If the object exists in live mode, the value is <code>true</code>. If the object exists in test mode, the value is <code>false</code>.
  * @property string $status The meter's status.
- * @property (object{deactivated_at: null|int}&\Stripe\StripeObject) $status_transitions
+ * @property (object{deactivated_at: null|int}&\Erikwang2013\Stripe\StripeObject) $status_transitions
  * @property int $updated Time at which the object was last updated. Measured in seconds since the Unix epoch.
- * @property (object{event_payload_key: string}&\Stripe\StripeObject) $value_settings
+ * @property (object{event_payload_key: string}&\Erikwang2013\Stripe\StripeObject) $value_settings
  */
-class Meter extends \Stripe\ApiResource
+class Meter extends \Erikwang2013\Stripe\ApiResource
 {
     const OBJECT_NAME = 'billing.meter';
 
-    use \Stripe\ApiOperations\NestedResource;
-    use \Stripe\ApiOperations\Update;
+    use \Erikwang2013\Stripe\ApiOperations\NestedResource;
+    use \Erikwang2013\Stripe\ApiOperations\Update;
 
     const EVENT_TIME_WINDOW_DAY = 'day';
     const EVENT_TIME_WINDOW_HOUR = 'hour';
@@ -44,7 +44,7 @@ class Meter extends \Stripe\ApiResource
      *
      * @return Meter the created resource
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public static function create($params = null, $options = null)
     {
@@ -52,7 +52,7 @@ class Meter extends \Stripe\ApiResource
         $url = static::classUrl();
 
         list($response, $opts) = static::_staticRequest('post', $url, $params, $options);
-        $obj = \Stripe\Util\Util::convertToStripeObject($response->json, $opts);
+        $obj = \Erikwang2013\Stripe\Util\Util::convertToStripeObject($response->json, $opts);
         $obj->setLastResponse($response);
 
         return $obj;
@@ -64,15 +64,15 @@ class Meter extends \Stripe\ApiResource
      * @param null|array{ending_before?: string, expand?: string[], limit?: int, starting_after?: string, status?: string} $params
      * @param null|array|string $opts
      *
-     * @return \Stripe\Collection<Meter> of ApiResources
+     * @return \Erikwang2013\Stripe\Collection<Meter> of ApiResources
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public static function all($params = null, $opts = null)
     {
         $url = static::classUrl();
 
-        return static::_requestPage($url, \Stripe\Collection::class, $params, $opts);
+        return static::_requestPage($url, \Erikwang2013\Stripe\Collection::class, $params, $opts);
     }
 
     /**
@@ -83,11 +83,11 @@ class Meter extends \Stripe\ApiResource
      *
      * @return Meter
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public static function retrieve($id, $opts = null)
     {
-        $opts = \Stripe\Util\RequestOptions::parse($opts);
+        $opts = \Erikwang2013\Stripe\Util\RequestOptions::parse($opts);
         $instance = new static($id, $opts);
         $instance->refresh();
 
@@ -103,7 +103,7 @@ class Meter extends \Stripe\ApiResource
      *
      * @return Meter the updated resource
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public static function update($id, $params = null, $opts = null)
     {
@@ -111,7 +111,7 @@ class Meter extends \Stripe\ApiResource
         $url = static::resourceUrl($id);
 
         list($response, $opts) = static::_staticRequest('post', $url, $params, $opts);
-        $obj = \Stripe\Util\Util::convertToStripeObject($response->json, $opts);
+        $obj = \Erikwang2013\Stripe\Util\Util::convertToStripeObject($response->json, $opts);
         $obj->setLastResponse($response);
 
         return $obj;
@@ -123,7 +123,7 @@ class Meter extends \Stripe\ApiResource
      *
      * @return Meter the deactivated meter
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public function deactivate($params = null, $opts = null)
     {
@@ -140,7 +140,7 @@ class Meter extends \Stripe\ApiResource
      *
      * @return Meter the reactivated meter
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public function reactivate($params = null, $opts = null)
     {
@@ -158,9 +158,9 @@ class Meter extends \Stripe\ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \Stripe\Collection<MeterEventSummary> the list of meter event summaries
+     * @return \Erikwang2013\Stripe\Collection<MeterEventSummary> the list of meter event summaries
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public static function allEventSummaries($id, $params = null, $opts = null)
     {

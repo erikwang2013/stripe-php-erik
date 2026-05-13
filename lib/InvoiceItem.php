@@ -2,7 +2,7 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe;
+namespace Erikwang2013\Stripe;
 
 /**
  * Invoice Items represent the component lines of an <a href="https://docs.stripe.com/api/invoices">invoice</a>. When you create an invoice item with an <code>invoice</code> field, it is attached to the specified invoice and included as <a href="https://docs.stripe.com/api/invoices/line_item">an invoice line item</a> within <a href="https://docs.stripe.com/api/invoices/object#invoice_object-lines">invoice.lines</a>.

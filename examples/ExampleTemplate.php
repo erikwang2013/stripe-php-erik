@@ -29,7 +29,7 @@ class ExampleTemplate
     public function doSomethingGreat()
     {
         echo "Hello World\n";
-        // $client = new \Stripe\StripeClient($this->apiKey);
+        // $client = new \Erikwang2013\Stripe\StripeClient($this->apiKey);
     }
 }
 

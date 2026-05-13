@@ -1,6 +1,6 @@
 <?php
 
-namespace Stripe\Exception;
+namespace Erikwang2013\Stripe\Exception;
 
 /**
  * AuthenticationException is thrown when invalid credentials are used to

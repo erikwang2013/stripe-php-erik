@@ -1,11 +1,11 @@
 <?php
 
-namespace Stripe;
+namespace Erikwang2013\Stripe;
 
 /**
  * @internal
  *
- * @covers \Stripe\Account
+ * @covers \Erikwang2013\Stripe\Account
  */
 final class AccountTest extends TestCase
 {

@@ -1,19 +1,19 @@
 <?php
 
-namespace Stripe\Service\Issuing;
+namespace Erikwang2013\Stripe\Service\Issuing;
 
 /**
  * @internal
  *
- * @covers \Stripe\Service\Issuing\AuthorizationService
+ * @covers \Erikwang2013\Stripe\Service\Issuing\AuthorizationService
  */
-final class AuthorizationServiceTest extends \Stripe\TestCase
+final class AuthorizationServiceTest extends \Erikwang2013\Stripe\TestCase
 {
-    use \Stripe\TestHelper;
+    use \Erikwang2013\Stripe\TestHelper;
 
     const TEST_RESOURCE_ID = 'iauth_123';
 
-    /** @var \Stripe\StripeClient */
+    /** @var \Erikwang2013\Stripe\StripeClient */
     private $client;
 
     /** @var AuthorizationService */
@@ -24,7 +24,7 @@ final class AuthorizationServiceTest extends \Stripe\TestCase
      */
     protected function setUpService()
     {
-        $this->client = new \Stripe\StripeClient(['api_key' => 'sk_test_123', 'api_base' => MOCK_URL]);
+        $this->client = new \Erikwang2013\Stripe\StripeClient(['api_key' => 'sk_test_123', 'api_base' => MOCK_URL]);
         $this->service = new AuthorizationService($this->client);
     }
 
@@ -36,7 +36,7 @@ final class AuthorizationServiceTest extends \Stripe\TestCase
         );
         $resources = $this->service->all();
         self::compatAssertIsArray($resources->data);
-        self::assertInstanceOf(\Stripe\Issuing\Authorization::class, $resources->data[0]);
+        self::assertInstanceOf(\Erikwang2013\Stripe\Issuing\Authorization::class, $resources->data[0]);
     }
 
     public function testApprove()
@@ -46,7 +46,7 @@ final class AuthorizationServiceTest extends \Stripe\TestCase
             '/v1/issuing/authorizations/' . self::TEST_RESOURCE_ID . '/approve'
         );
         $resource = $this->service->approve(self::TEST_RESOURCE_ID);
-        self::assertInstanceOf(\Stripe\Issuing\Authorization::class, $resource);
+        self::assertInstanceOf(\Erikwang2013\Stripe\Issuing\Authorization::class, $resource);
     }
 
     public function testDecline()
@@ -56,7 +56,7 @@ final class AuthorizationServiceTest extends \Stripe\TestCase
             '/v1/issuing/authorizations/' . self::TEST_RESOURCE_ID . '/decline'
         );
         $resource = $this->service->decline(self::TEST_RESOURCE_ID);
-        self::assertInstanceOf(\Stripe\Issuing\Authorization::class, $resource);
+        self::assertInstanceOf(\Erikwang2013\Stripe\Issuing\Authorization::class, $resource);
     }
 
     public function testRetrieve()
@@ -66,7 +66,7 @@ final class AuthorizationServiceTest extends \Stripe\TestCase
             '/v1/issuing/authorizations/' . self::TEST_RESOURCE_ID
         );
         $resource = $this->service->retrieve(self::TEST_RESOURCE_ID);
-        self::assertInstanceOf(\Stripe\Issuing\Authorization::class, $resource);
+        self::assertInstanceOf(\Erikwang2013\Stripe\Issuing\Authorization::class, $resource);
     }
 
     public function testUpdate()
@@ -79,6 +79,6 @@ final class AuthorizationServiceTest extends \Stripe\TestCase
         $resource = $this->service->update(self::TEST_RESOURCE_ID, [
             'metadata' => ['key' => 'value'],
         ]);
-        self::assertInstanceOf(\Stripe\Issuing\Authorization::class, $resource);
+        self::assertInstanceOf(\Erikwang2013\Stripe\Issuing\Authorization::class, $resource);
     }
 }

@@ -2,7 +2,7 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Billing;
+namespace Erikwang2013\Stripe\Billing;
 
 /**
  * A billing alert is a resource that notifies you when a certain usage threshold on a meter is crossed. For example, you might create a billing alert to notify you when a certain user made 100 API requests.
@@ -13,9 +13,9 @@ namespace Stripe\Billing;
  * @property bool $livemode If the object exists in live mode, the value is <code>true</code>. If the object exists in test mode, the value is <code>false</code>.
  * @property null|string $status Status of the alert. This can be active, inactive or archived.
  * @property string $title Title of the alert.
- * @property null|(object{filters: null|((object{customer: null|string|\Stripe\Customer, type: string}&\Stripe\StripeObject))[], gte: int, meter: Meter|string, recurrence: string}&\Stripe\StripeObject) $usage_threshold Encapsulates configuration of the alert to monitor usage on a specific <a href="https://docs.stripe.com/api/billing/meter">Billing Meter</a>.
+ * @property null|(object{filters: null|((object{customer: null|string|\Erikwang2013\Stripe\Customer, type: string}&\Erikwang2013\Stripe\StripeObject))[], gte: int, meter: Meter|string, recurrence: string}&\Erikwang2013\Stripe\StripeObject) $usage_threshold Encapsulates configuration of the alert to monitor usage on a specific <a href="https://docs.stripe.com/api/billing/meter">Billing Meter</a>.
  */
-class Alert extends \Stripe\ApiResource
+class Alert extends \Erikwang2013\Stripe\ApiResource
 {
     const OBJECT_NAME = 'billing.alert';
 
@@ -31,7 +31,7 @@ class Alert extends \Stripe\ApiResource
      *
      * @return Alert the created resource
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public static function create($params = null, $options = null)
     {
@@ -39,7 +39,7 @@ class Alert extends \Stripe\ApiResource
         $url = static::classUrl();
 
         list($response, $opts) = static::_staticRequest('post', $url, $params, $options);
-        $obj = \Stripe\Util\Util::convertToStripeObject($response->json, $opts);
+        $obj = \Erikwang2013\Stripe\Util\Util::convertToStripeObject($response->json, $opts);
         $obj->setLastResponse($response);
 
         return $obj;
@@ -51,15 +51,15 @@ class Alert extends \Stripe\ApiResource
      * @param null|array{alert_type?: string, ending_before?: string, expand?: string[], limit?: int, meter?: string, starting_after?: string} $params
      * @param null|array|string $opts
      *
-     * @return \Stripe\Collection<Alert> of ApiResources
+     * @return \Erikwang2013\Stripe\Collection<Alert> of ApiResources
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public static function all($params = null, $opts = null)
     {
         $url = static::classUrl();
 
-        return static::_requestPage($url, \Stripe\Collection::class, $params, $opts);
+        return static::_requestPage($url, \Erikwang2013\Stripe\Collection::class, $params, $opts);
     }
 
     /**
@@ -70,11 +70,11 @@ class Alert extends \Stripe\ApiResource
      *
      * @return Alert
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public static function retrieve($id, $opts = null)
     {
-        $opts = \Stripe\Util\RequestOptions::parse($opts);
+        $opts = \Erikwang2013\Stripe\Util\RequestOptions::parse($opts);
         $instance = new static($id, $opts);
         $instance->refresh();
 
@@ -87,7 +87,7 @@ class Alert extends \Stripe\ApiResource
      *
      * @return Alert the activated alert
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public function activate($params = null, $opts = null)
     {
@@ -104,7 +104,7 @@ class Alert extends \Stripe\ApiResource
      *
      * @return Alert the archived alert
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public function archive($params = null, $opts = null)
     {
@@ -121,7 +121,7 @@ class Alert extends \Stripe\ApiResource
      *
      * @return Alert the deactivated alert
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public function deactivate($params = null, $opts = null)
     {

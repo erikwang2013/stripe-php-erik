@@ -1,6 +1,6 @@
 <?php
 
-namespace Stripe\Exception\OAuth;
+namespace Erikwang2013\Stripe\Exception\OAuth;
 
 /**
  * InvalidRequestException is thrown when a code, refresh token, or grant

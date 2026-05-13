@@ -1,19 +1,19 @@
 <?php
 
-namespace Stripe\Service;
+namespace Erikwang2013\Stripe\Service;
 
 /**
  * @internal
  *
- * @covers \Stripe\Service\SetupIntentService
+ * @covers \Erikwang2013\Stripe\Service\SetupIntentService
  */
-final class SetupIntentServiceTest extends \Stripe\TestCase
+final class SetupIntentServiceTest extends \Erikwang2013\Stripe\TestCase
 {
-    use \Stripe\TestHelper;
+    use \Erikwang2013\Stripe\TestHelper;
 
     const TEST_RESOURCE_ID = 'seti_123';
 
-    /** @var \Stripe\StripeClient */
+    /** @var \Erikwang2013\Stripe\StripeClient */
     private $client;
 
     /** @var SetupIntentService */
@@ -24,7 +24,7 @@ final class SetupIntentServiceTest extends \Stripe\TestCase
      */
     protected function setUpService()
     {
-        $this->client = new \Stripe\StripeClient(['api_key' => 'sk_test_123', 'api_base' => MOCK_URL]);
+        $this->client = new \Erikwang2013\Stripe\StripeClient(['api_key' => 'sk_test_123', 'api_base' => MOCK_URL]);
         $this->service = new SetupIntentService($this->client);
     }
 
@@ -36,7 +36,7 @@ final class SetupIntentServiceTest extends \Stripe\TestCase
         );
         $resources = $this->service->all();
         self::compatAssertIsArray($resources->data);
-        self::assertInstanceOf(\Stripe\SetupIntent::class, $resources->data[0]);
+        self::assertInstanceOf(\Erikwang2013\Stripe\SetupIntent::class, $resources->data[0]);
     }
 
     public function testCancel()
@@ -46,7 +46,7 @@ final class SetupIntentServiceTest extends \Stripe\TestCase
             '/v1/setup_intents/' . self::TEST_RESOURCE_ID . '/cancel'
         );
         $resource = $this->service->cancel(self::TEST_RESOURCE_ID);
-        self::assertInstanceOf(\Stripe\SetupIntent::class, $resource);
+        self::assertInstanceOf(\Erikwang2013\Stripe\SetupIntent::class, $resource);
     }
 
     public function testConfirm()
@@ -56,7 +56,7 @@ final class SetupIntentServiceTest extends \Stripe\TestCase
             '/v1/setup_intents/' . self::TEST_RESOURCE_ID . '/confirm'
         );
         $resource = $this->service->confirm(self::TEST_RESOURCE_ID);
-        self::assertInstanceOf(\Stripe\SetupIntent::class, $resource);
+        self::assertInstanceOf(\Erikwang2013\Stripe\SetupIntent::class, $resource);
     }
 
     public function testCreate()
@@ -68,7 +68,7 @@ final class SetupIntentServiceTest extends \Stripe\TestCase
         $resource = $this->service->create([
             'payment_method_types' => ['card'],
         ]);
-        self::assertInstanceOf(\Stripe\SetupIntent::class, $resource);
+        self::assertInstanceOf(\Erikwang2013\Stripe\SetupIntent::class, $resource);
     }
 
     public function testRetrieve()
@@ -78,7 +78,7 @@ final class SetupIntentServiceTest extends \Stripe\TestCase
             '/v1/setup_intents/' . self::TEST_RESOURCE_ID
         );
         $resource = $this->service->retrieve(self::TEST_RESOURCE_ID);
-        self::assertInstanceOf(\Stripe\SetupIntent::class, $resource);
+        self::assertInstanceOf(\Erikwang2013\Stripe\SetupIntent::class, $resource);
     }
 
     public function testUpdate()
@@ -93,6 +93,6 @@ final class SetupIntentServiceTest extends \Stripe\TestCase
                 'metadata' => ['key' => 'value'],
             ]
         );
-        self::assertInstanceOf(\Stripe\SetupIntent::class, $resource);
+        self::assertInstanceOf(\Erikwang2013\Stripe\SetupIntent::class, $resource);
     }
 }

@@ -2,14 +2,14 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Service\Checkout;
+namespace Erikwang2013\Stripe\Service\Checkout;
 
 /**
  * Service factory class for API resources in the Checkout namespace.
  *
  * @property SessionService $sessions
  */
-class CheckoutServiceFactory extends \Stripe\Service\AbstractServiceFactory
+class CheckoutServiceFactory extends \Erikwang2013\Stripe\Service\AbstractServiceFactory
 {
     /**
      * @var array<string, string>

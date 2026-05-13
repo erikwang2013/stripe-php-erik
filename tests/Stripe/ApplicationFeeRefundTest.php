@@ -1,11 +1,11 @@
 <?php
 
-namespace Stripe;
+namespace Erikwang2013\Stripe;
 
 /**
  * @internal
  *
- * @covers \Stripe\ApplicationFeeRefund
+ * @covers \Erikwang2013\Stripe\ApplicationFeeRefund
  */
 final class ApplicationFeeRefundTest extends TestCase
 {

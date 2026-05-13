@@ -1,19 +1,19 @@
 <?php
 
-namespace Stripe\Service\Issuing;
+namespace Erikwang2013\Stripe\Service\Issuing;
 
 /**
  * @internal
  *
- * @covers \Stripe\Service\Issuing\DisputeService
+ * @covers \Erikwang2013\Stripe\Service\Issuing\DisputeService
  */
-final class DisputeServiceTest extends \Stripe\TestCase
+final class DisputeServiceTest extends \Erikwang2013\Stripe\TestCase
 {
-    use \Stripe\TestHelper;
+    use \Erikwang2013\Stripe\TestHelper;
 
     const TEST_RESOURCE_ID = 'idp_123';
 
-    /** @var \Stripe\StripeClient */
+    /** @var \Erikwang2013\Stripe\StripeClient */
     private $client;
 
     /** @var DisputeService */
@@ -24,7 +24,7 @@ final class DisputeServiceTest extends \Stripe\TestCase
      */
     protected function setUpService()
     {
-        $this->client = new \Stripe\StripeClient(['api_key' => 'sk_test_123', 'api_base' => MOCK_URL]);
+        $this->client = new \Erikwang2013\Stripe\StripeClient(['api_key' => 'sk_test_123', 'api_base' => MOCK_URL]);
         $this->service = new DisputeService($this->client);
     }
 
@@ -36,7 +36,7 @@ final class DisputeServiceTest extends \Stripe\TestCase
         );
         $resources = $this->service->all();
         self::compatAssertIsArray($resources->data);
-        self::assertInstanceOf(\Stripe\Issuing\Dispute::class, $resources->data[0]);
+        self::assertInstanceOf(\Erikwang2013\Stripe\Issuing\Dispute::class, $resources->data[0]);
     }
 
     public function testCreate()
@@ -51,7 +51,7 @@ final class DisputeServiceTest extends \Stripe\TestCase
             $params
         );
         $resource = $this->service->create($params);
-        self::assertInstanceOf(\Stripe\Issuing\Dispute::class, $resource);
+        self::assertInstanceOf(\Erikwang2013\Stripe\Issuing\Dispute::class, $resource);
     }
 
     public function testRetrieve()
@@ -61,7 +61,7 @@ final class DisputeServiceTest extends \Stripe\TestCase
             '/v1/issuing/disputes/' . self::TEST_RESOURCE_ID
         );
         $resource = $this->service->retrieve(self::TEST_RESOURCE_ID);
-        self::assertInstanceOf(\Stripe\Issuing\Dispute::class, $resource);
+        self::assertInstanceOf(\Erikwang2013\Stripe\Issuing\Dispute::class, $resource);
     }
 
     public function testUpdate()
@@ -74,7 +74,7 @@ final class DisputeServiceTest extends \Stripe\TestCase
         $resource = $this->service->update(self::TEST_RESOURCE_ID, [
             'metadata' => ['key' => 'value'],
         ]);
-        self::assertInstanceOf(\Stripe\Issuing\Dispute::class, $resource);
+        self::assertInstanceOf(\Erikwang2013\Stripe\Issuing\Dispute::class, $resource);
     }
 
     public function testSubmit()
@@ -87,6 +87,6 @@ final class DisputeServiceTest extends \Stripe\TestCase
         $resource = $this->service->submit(self::TEST_RESOURCE_ID, [
             'metadata' => ['key' => 'value'],
         ]);
-        self::assertInstanceOf(\Stripe\Issuing\Dispute::class, $resource);
+        self::assertInstanceOf(\Erikwang2013\Stripe\Issuing\Dispute::class, $resource);
     }
 }

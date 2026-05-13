@@ -1,6 +1,6 @@
 <?php
 
-namespace Stripe;
+namespace Erikwang2013\Stripe;
 
 /**
  * @internal
@@ -38,7 +38,7 @@ final class StripeTelemetryTest extends TestCase
         $requestheaders = null;
 
         $stub = $this
-            ->getMockBuilder('\Stripe\HttpClient\ClientInterface')
+            ->getMockBuilder('\Erikwang2013\Stripe\HttpClient\ClientInterface')
             ->setMethods(['request'])
             ->getMock()
         ;
@@ -82,7 +82,7 @@ final class StripeTelemetryTest extends TestCase
         $requestheaders = null;
 
         $stub = $this
-            ->getMockBuilder('\Stripe\HttpClient\ClientInterface')
+            ->getMockBuilder('\Erikwang2013\Stripe\HttpClient\ClientInterface')
             ->setMethods(['request'])
             ->getMock()
         ;
@@ -133,7 +133,7 @@ final class StripeTelemetryTest extends TestCase
         $requestheaders = null;
 
         $stub = $this
-            ->getMockBuilder('\Stripe\HttpClient\ClientInterface')
+            ->getMockBuilder('\Erikwang2013\Stripe\HttpClient\ClientInterface')
             ->setMethods(['request'])
             ->getMock()
         ;

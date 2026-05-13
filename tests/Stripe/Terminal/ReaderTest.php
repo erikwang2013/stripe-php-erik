@@ -1,15 +1,15 @@
 <?php
 
-namespace Stripe\Terminal;
+namespace Erikwang2013\Stripe\Terminal;
 
 /**
  * @internal
  *
- * @covers \Stripe\Terminal\Reader
+ * @covers \Erikwang2013\Stripe\Terminal\Reader
  */
-final class ReaderTest extends \Stripe\TestCase
+final class ReaderTest extends \Erikwang2013\Stripe\TestCase
 {
-    use \Stripe\TestHelper;
+    use \Erikwang2013\Stripe\TestHelper;
 
     const TEST_RESOURCE_ID = 'rdr_123';
 

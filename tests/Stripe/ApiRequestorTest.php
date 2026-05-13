@@ -1,14 +1,14 @@
 <?php
 
-namespace Stripe;
+namespace Erikwang2013\Stripe;
 
-use Stripe\Exception\TemporarySessionExpiredException;
-use Stripe\HttpClient\CurlClient;
+use Erikwang2013\Stripe\Exception\TemporarySessionExpiredException;
+use Erikwang2013\Stripe\HttpClient\CurlClient;
 
 /**
  * @internal
  *
- * @covers \Stripe\ApiRequestor
+ * @covers \Erikwang2013\Stripe\ApiRequestor
  */
 final class ApiRequestorTest extends TestCase
 {

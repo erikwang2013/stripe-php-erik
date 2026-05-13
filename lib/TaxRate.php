@@ -2,7 +2,7 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe;
+namespace Erikwang2013\Stripe;
 
 /**
  * Tax rates can be applied to <a href="/invoicing/taxes/tax-rates">invoices</a>, <a href="/billing/taxes/tax-rates">subscriptions</a> and <a href="/payments/checkout/use-manual-tax-rates">Checkout Sessions</a> to collect tax.

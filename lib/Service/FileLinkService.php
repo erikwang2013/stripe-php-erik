@@ -2,12 +2,12 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Service;
+namespace Erikwang2013\Stripe\Service;
 
 /**
- * @phpstan-import-type RequestOptionsArray from \Stripe\Util\RequestOptions
+ * @phpstan-import-type RequestOptionsArray from \Erikwang2013\Stripe\Util\RequestOptions
  *
- * @psalm-import-type RequestOptionsArray from \Stripe\Util\RequestOptions
+ * @psalm-import-type RequestOptionsArray from \Erikwang2013\Stripe\Util\RequestOptions
  */
 class FileLinkService extends AbstractService
 {
@@ -15,11 +15,11 @@ class FileLinkService extends AbstractService
      * Returns a list of file links.
      *
      * @param null|array{created?: array|int, ending_before?: string, expand?: string[], expired?: bool, file?: string, limit?: int, starting_after?: string} $params
-     * @param null|RequestOptionsArray|\Stripe\Util\RequestOptions $opts
+     * @param null|RequestOptionsArray|\Erikwang2013\Stripe\Util\RequestOptions $opts
      *
-     * @return \Stripe\Collection<\Stripe\FileLink>
+     * @return \Erikwang2013\Stripe\Collection<\Erikwang2013\Stripe\FileLink>
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public function all($params = null, $opts = null)
     {
@@ -30,11 +30,11 @@ class FileLinkService extends AbstractService
      * Creates a new file link object.
      *
      * @param null|array{expand?: string[], expires_at?: int, file: string, metadata?: null|array<string, string>} $params
-     * @param null|RequestOptionsArray|\Stripe\Util\RequestOptions $opts
+     * @param null|RequestOptionsArray|\Erikwang2013\Stripe\Util\RequestOptions $opts
      *
-     * @return \Stripe\FileLink
+     * @return \Erikwang2013\Stripe\FileLink
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public function create($params = null, $opts = null)
     {
@@ -46,11 +46,11 @@ class FileLinkService extends AbstractService
      *
      * @param string $id
      * @param null|array{expand?: string[]} $params
-     * @param null|RequestOptionsArray|\Stripe\Util\RequestOptions $opts
+     * @param null|RequestOptionsArray|\Erikwang2013\Stripe\Util\RequestOptions $opts
      *
-     * @return \Stripe\FileLink
+     * @return \Erikwang2013\Stripe\FileLink
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public function retrieve($id, $params = null, $opts = null)
     {
@@ -62,11 +62,11 @@ class FileLinkService extends AbstractService
      *
      * @param string $id
      * @param null|array{expand?: string[], expires_at?: null|array|int|string, metadata?: null|array<string, string>} $params
-     * @param null|RequestOptionsArray|\Stripe\Util\RequestOptions $opts
+     * @param null|RequestOptionsArray|\Erikwang2013\Stripe\Util\RequestOptions $opts
      *
-     * @return \Stripe\FileLink
+     * @return \Erikwang2013\Stripe\FileLink
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public function update($id, $params = null, $opts = null)
     {

@@ -2,7 +2,7 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Terminal;
+namespace Erikwang2013\Stripe\Terminal;
 
 /**
  * A Configurations object represents how features should be configured for terminal readers.
@@ -10,25 +10,25 @@ namespace Stripe\Terminal;
  *
  * @property string $id Unique identifier for the object.
  * @property string $object String representing the object's type. Objects of the same type share the same value.
- * @property null|(object{splashscreen?: string|\Stripe\File}&\Stripe\StripeObject) $bbpos_wisepad3
- * @property null|(object{splashscreen?: string|\Stripe\File}&\Stripe\StripeObject) $bbpos_wisepos_e
- * @property null|(object{enabled: bool}&\Stripe\StripeObject) $cellular
+ * @property null|(object{splashscreen?: string|\Erikwang2013\Stripe\File}&\Erikwang2013\Stripe\StripeObject) $bbpos_wisepad3
+ * @property null|(object{splashscreen?: string|\Erikwang2013\Stripe\File}&\Erikwang2013\Stripe\StripeObject) $bbpos_wisepos_e
+ * @property null|(object{enabled: bool}&\Erikwang2013\Stripe\StripeObject) $cellular
  * @property null|bool $is_account_default Whether this Configuration is the default for your account
  * @property bool $livemode If the object exists in live mode, the value is <code>true</code>. If the object exists in test mode, the value is <code>false</code>.
  * @property null|string $name String indicating the name of the Configuration object, set by the user
- * @property null|(object{enabled: null|bool}&\Stripe\StripeObject) $offline
- * @property null|(object{end_hour: int, start_hour: int}&\Stripe\StripeObject) $reboot_window
- * @property null|(object{splashscreen?: string|\Stripe\File}&\Stripe\StripeObject) $stripe_s700
- * @property null|(object{splashscreen?: string|\Stripe\File}&\Stripe\StripeObject) $stripe_s710
- * @property null|(object{aed?: (object{fixed_amounts?: null|int[], percentages?: null|int[], smart_tip_threshold?: int}&\Stripe\StripeObject), aud?: (object{fixed_amounts?: null|int[], percentages?: null|int[], smart_tip_threshold?: int}&\Stripe\StripeObject), cad?: (object{fixed_amounts?: null|int[], percentages?: null|int[], smart_tip_threshold?: int}&\Stripe\StripeObject), chf?: (object{fixed_amounts?: null|int[], percentages?: null|int[], smart_tip_threshold?: int}&\Stripe\StripeObject), czk?: (object{fixed_amounts?: null|int[], percentages?: null|int[], smart_tip_threshold?: int}&\Stripe\StripeObject), dkk?: (object{fixed_amounts?: null|int[], percentages?: null|int[], smart_tip_threshold?: int}&\Stripe\StripeObject), eur?: (object{fixed_amounts?: null|int[], percentages?: null|int[], smart_tip_threshold?: int}&\Stripe\StripeObject), gbp?: (object{fixed_amounts?: null|int[], percentages?: null|int[], smart_tip_threshold?: int}&\Stripe\StripeObject), gip?: (object{fixed_amounts?: null|int[], percentages?: null|int[], smart_tip_threshold?: int}&\Stripe\StripeObject), hkd?: (object{fixed_amounts?: null|int[], percentages?: null|int[], smart_tip_threshold?: int}&\Stripe\StripeObject), huf?: (object{fixed_amounts?: null|int[], percentages?: null|int[], smart_tip_threshold?: int}&\Stripe\StripeObject), jpy?: (object{fixed_amounts?: null|int[], percentages?: null|int[], smart_tip_threshold?: int}&\Stripe\StripeObject), mxn?: (object{fixed_amounts?: null|int[], percentages?: null|int[], smart_tip_threshold?: int}&\Stripe\StripeObject), myr?: (object{fixed_amounts?: null|int[], percentages?: null|int[], smart_tip_threshold?: int}&\Stripe\StripeObject), nok?: (object{fixed_amounts?: null|int[], percentages?: null|int[], smart_tip_threshold?: int}&\Stripe\StripeObject), nzd?: (object{fixed_amounts?: null|int[], percentages?: null|int[], smart_tip_threshold?: int}&\Stripe\StripeObject), pln?: (object{fixed_amounts?: null|int[], percentages?: null|int[], smart_tip_threshold?: int}&\Stripe\StripeObject), ron?: (object{fixed_amounts?: null|int[], percentages?: null|int[], smart_tip_threshold?: int}&\Stripe\StripeObject), sek?: (object{fixed_amounts?: null|int[], percentages?: null|int[], smart_tip_threshold?: int}&\Stripe\StripeObject), sgd?: (object{fixed_amounts?: null|int[], percentages?: null|int[], smart_tip_threshold?: int}&\Stripe\StripeObject), usd?: (object{fixed_amounts?: null|int[], percentages?: null|int[], smart_tip_threshold?: int}&\Stripe\StripeObject)}&\Stripe\StripeObject) $tipping
- * @property null|(object{splashscreen?: string|\Stripe\File}&\Stripe\StripeObject) $verifone_p400
- * @property null|(object{enterprise_eap_peap?: (object{ca_certificate_file?: string, password: string, ssid: string, username: string}&\Stripe\StripeObject), enterprise_eap_tls?: (object{ca_certificate_file?: string, client_certificate_file: string, private_key_file: string, private_key_file_password?: string, ssid: string}&\Stripe\StripeObject), personal_psk?: (object{password: string, ssid: string}&\Stripe\StripeObject), type: string}&\Stripe\StripeObject) $wifi
+ * @property null|(object{enabled: null|bool}&\Erikwang2013\Stripe\StripeObject) $offline
+ * @property null|(object{end_hour: int, start_hour: int}&\Erikwang2013\Stripe\StripeObject) $reboot_window
+ * @property null|(object{splashscreen?: string|\Erikwang2013\Stripe\File}&\Erikwang2013\Stripe\StripeObject) $stripe_s700
+ * @property null|(object{splashscreen?: string|\Erikwang2013\Stripe\File}&\Erikwang2013\Stripe\StripeObject) $stripe_s710
+ * @property null|(object{aed?: (object{fixed_amounts?: null|int[], percentages?: null|int[], smart_tip_threshold?: int}&\Erikwang2013\Stripe\StripeObject), aud?: (object{fixed_amounts?: null|int[], percentages?: null|int[], smart_tip_threshold?: int}&\Erikwang2013\Stripe\StripeObject), cad?: (object{fixed_amounts?: null|int[], percentages?: null|int[], smart_tip_threshold?: int}&\Erikwang2013\Stripe\StripeObject), chf?: (object{fixed_amounts?: null|int[], percentages?: null|int[], smart_tip_threshold?: int}&\Erikwang2013\Stripe\StripeObject), czk?: (object{fixed_amounts?: null|int[], percentages?: null|int[], smart_tip_threshold?: int}&\Erikwang2013\Stripe\StripeObject), dkk?: (object{fixed_amounts?: null|int[], percentages?: null|int[], smart_tip_threshold?: int}&\Erikwang2013\Stripe\StripeObject), eur?: (object{fixed_amounts?: null|int[], percentages?: null|int[], smart_tip_threshold?: int}&\Erikwang2013\Stripe\StripeObject), gbp?: (object{fixed_amounts?: null|int[], percentages?: null|int[], smart_tip_threshold?: int}&\Erikwang2013\Stripe\StripeObject), gip?: (object{fixed_amounts?: null|int[], percentages?: null|int[], smart_tip_threshold?: int}&\Erikwang2013\Stripe\StripeObject), hkd?: (object{fixed_amounts?: null|int[], percentages?: null|int[], smart_tip_threshold?: int}&\Erikwang2013\Stripe\StripeObject), huf?: (object{fixed_amounts?: null|int[], percentages?: null|int[], smart_tip_threshold?: int}&\Erikwang2013\Stripe\StripeObject), jpy?: (object{fixed_amounts?: null|int[], percentages?: null|int[], smart_tip_threshold?: int}&\Erikwang2013\Stripe\StripeObject), mxn?: (object{fixed_amounts?: null|int[], percentages?: null|int[], smart_tip_threshold?: int}&\Erikwang2013\Stripe\StripeObject), myr?: (object{fixed_amounts?: null|int[], percentages?: null|int[], smart_tip_threshold?: int}&\Erikwang2013\Stripe\StripeObject), nok?: (object{fixed_amounts?: null|int[], percentages?: null|int[], smart_tip_threshold?: int}&\Erikwang2013\Stripe\StripeObject), nzd?: (object{fixed_amounts?: null|int[], percentages?: null|int[], smart_tip_threshold?: int}&\Erikwang2013\Stripe\StripeObject), pln?: (object{fixed_amounts?: null|int[], percentages?: null|int[], smart_tip_threshold?: int}&\Erikwang2013\Stripe\StripeObject), ron?: (object{fixed_amounts?: null|int[], percentages?: null|int[], smart_tip_threshold?: int}&\Erikwang2013\Stripe\StripeObject), sek?: (object{fixed_amounts?: null|int[], percentages?: null|int[], smart_tip_threshold?: int}&\Erikwang2013\Stripe\StripeObject), sgd?: (object{fixed_amounts?: null|int[], percentages?: null|int[], smart_tip_threshold?: int}&\Erikwang2013\Stripe\StripeObject), usd?: (object{fixed_amounts?: null|int[], percentages?: null|int[], smart_tip_threshold?: int}&\Erikwang2013\Stripe\StripeObject)}&\Erikwang2013\Stripe\StripeObject) $tipping
+ * @property null|(object{splashscreen?: string|\Erikwang2013\Stripe\File}&\Erikwang2013\Stripe\StripeObject) $verifone_p400
+ * @property null|(object{enterprise_eap_peap?: (object{ca_certificate_file?: string, password: string, ssid: string, username: string}&\Erikwang2013\Stripe\StripeObject), enterprise_eap_tls?: (object{ca_certificate_file?: string, client_certificate_file: string, private_key_file: string, private_key_file_password?: string, ssid: string}&\Erikwang2013\Stripe\StripeObject), personal_psk?: (object{password: string, ssid: string}&\Erikwang2013\Stripe\StripeObject), type: string}&\Erikwang2013\Stripe\StripeObject) $wifi
  */
-class Configuration extends \Stripe\ApiResource
+class Configuration extends \Erikwang2013\Stripe\ApiResource
 {
     const OBJECT_NAME = 'terminal.configuration';
 
-    use \Stripe\ApiOperations\Update;
+    use \Erikwang2013\Stripe\ApiOperations\Update;
 
     /**
      * Creates a new <code>Configuration</code> object.
@@ -38,7 +38,7 @@ class Configuration extends \Stripe\ApiResource
      *
      * @return Configuration the created resource
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public static function create($params = null, $options = null)
     {
@@ -46,7 +46,7 @@ class Configuration extends \Stripe\ApiResource
         $url = static::classUrl();
 
         list($response, $opts) = static::_staticRequest('post', $url, $params, $options);
-        $obj = \Stripe\Util\Util::convertToStripeObject($response->json, $opts);
+        $obj = \Erikwang2013\Stripe\Util\Util::convertToStripeObject($response->json, $opts);
         $obj->setLastResponse($response);
 
         return $obj;
@@ -60,7 +60,7 @@ class Configuration extends \Stripe\ApiResource
      *
      * @return Configuration the deleted resource
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public function delete($params = null, $opts = null)
     {
@@ -79,15 +79,15 @@ class Configuration extends \Stripe\ApiResource
      * @param null|array{ending_before?: string, expand?: string[], is_account_default?: bool, limit?: int, starting_after?: string} $params
      * @param null|array|string $opts
      *
-     * @return \Stripe\Collection<Configuration> of ApiResources
+     * @return \Erikwang2013\Stripe\Collection<Configuration> of ApiResources
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public static function all($params = null, $opts = null)
     {
         $url = static::classUrl();
 
-        return static::_requestPage($url, \Stripe\Collection::class, $params, $opts);
+        return static::_requestPage($url, \Erikwang2013\Stripe\Collection::class, $params, $opts);
     }
 
     /**
@@ -98,11 +98,11 @@ class Configuration extends \Stripe\ApiResource
      *
      * @return Configuration
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public static function retrieve($id, $opts = null)
     {
-        $opts = \Stripe\Util\RequestOptions::parse($opts);
+        $opts = \Erikwang2013\Stripe\Util\RequestOptions::parse($opts);
         $instance = new static($id, $opts);
         $instance->refresh();
 
@@ -118,7 +118,7 @@ class Configuration extends \Stripe\ApiResource
      *
      * @return Configuration the updated resource
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public static function update($id, $params = null, $opts = null)
     {
@@ -126,7 +126,7 @@ class Configuration extends \Stripe\ApiResource
         $url = static::resourceUrl($id);
 
         list($response, $opts) = static::_staticRequest('post', $url, $params, $opts);
-        $obj = \Stripe\Util\Util::convertToStripeObject($response->json, $opts);
+        $obj = \Erikwang2013\Stripe\Util\Util::convertToStripeObject($response->json, $opts);
         $obj->setLastResponse($response);
 
         return $obj;

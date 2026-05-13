@@ -1,11 +1,11 @@
 <?php
 
-namespace Stripe;
+namespace Erikwang2013\Stripe;
 
 /**
  * @internal
  *
- * @covers \Stripe\TransferReversal
+ * @covers \Erikwang2013\Stripe\TransferReversal
  */
 final class TransferReversalTest extends TestCase
 {

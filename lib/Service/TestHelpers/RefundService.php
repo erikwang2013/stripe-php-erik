@@ -2,25 +2,25 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Service\TestHelpers;
+namespace Erikwang2013\Stripe\Service\TestHelpers;
 
 /**
- * @phpstan-import-type RequestOptionsArray from \Stripe\Util\RequestOptions
+ * @phpstan-import-type RequestOptionsArray from \Erikwang2013\Stripe\Util\RequestOptions
  *
- * @psalm-import-type RequestOptionsArray from \Stripe\Util\RequestOptions
+ * @psalm-import-type RequestOptionsArray from \Erikwang2013\Stripe\Util\RequestOptions
  */
-class RefundService extends \Stripe\Service\AbstractService
+class RefundService extends \Erikwang2013\Stripe\Service\AbstractService
 {
     /**
      * Expire a refund with a status of <code>requires_action</code>.
      *
      * @param string $id
      * @param null|array{expand?: string[]} $params
-     * @param null|RequestOptionsArray|\Stripe\Util\RequestOptions $opts
+     * @param null|RequestOptionsArray|\Erikwang2013\Stripe\Util\RequestOptions $opts
      *
-     * @return \Stripe\Refund
+     * @return \Erikwang2013\Stripe\Refund
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public function expire($id, $params = null, $opts = null)
     {

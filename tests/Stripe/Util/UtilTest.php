@@ -1,15 +1,15 @@
 <?php
 
-namespace Stripe\Util;
+namespace Erikwang2013\Stripe\Util;
 
 /**
  * @internal
  *
- * @covers \Stripe\Util\Util
+ * @covers \Erikwang2013\Stripe\Util\Util
  */
-final class UtilTest extends \Stripe\TestCase
+final class UtilTest extends \Erikwang2013\Stripe\TestCase
 {
-    use \Stripe\TestHelper;
+    use \Erikwang2013\Stripe\TestHelper;
 
     public function testIsList()
     {

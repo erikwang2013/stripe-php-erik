@@ -1,15 +1,15 @@
 <?php
 
-namespace Stripe\Service;
+namespace Erikwang2013\Stripe\Service;
 
 /**
  * @internal
  *
- * @covers \Stripe\Service\CoreServiceFactory
+ * @covers \Erikwang2013\Stripe\Service\CoreServiceFactory
  */
-final class CoreServiceFactoryTest extends \Stripe\TestCase
+final class CoreServiceFactoryTest extends \Erikwang2013\Stripe\TestCase
 {
-    /** @var \Stripe\StripeClient */
+    /** @var \Erikwang2013\Stripe\StripeClient */
     private $client;
 
     /** @var CoreServiceFactory */
@@ -20,7 +20,7 @@ final class CoreServiceFactoryTest extends \Stripe\TestCase
      */
     protected function setUpService()
     {
-        $this->client = new \Stripe\StripeClient(['api_key' => 'sk_test_123', 'api_base' => MOCK_URL]);
+        $this->client = new \Erikwang2013\Stripe\StripeClient(['api_key' => 'sk_test_123', 'api_base' => MOCK_URL]);
         $this->serviceFactory = new CoreServiceFactory($this->client);
     }
 

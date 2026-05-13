@@ -1,11 +1,11 @@
 <?php
 
-namespace Stripe;
+namespace Erikwang2013\Stripe;
 
 /**
  * @internal
  *
- * @covers \Stripe\SearchResult
+ * @covers \Erikwang2013\Stripe\SearchResult
  */
 final class SearchResultTest extends TestCase
 {

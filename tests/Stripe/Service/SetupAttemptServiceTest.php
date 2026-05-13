@@ -1,17 +1,17 @@
 <?php
 
-namespace Stripe\Service;
+namespace Erikwang2013\Stripe\Service;
 
 /**
  * @internal
  *
- * @covers \Stripe\Service\SetupAttemptService
+ * @covers \Erikwang2013\Stripe\Service\SetupAttemptService
  */
-final class SetupAttemptServiceTest extends \Stripe\TestCase
+final class SetupAttemptServiceTest extends \Erikwang2013\Stripe\TestCase
 {
-    use \Stripe\TestHelper;
+    use \Erikwang2013\Stripe\TestHelper;
 
-    /** @var \Stripe\StripeClient */
+    /** @var \Erikwang2013\Stripe\StripeClient */
     private $client;
 
     /** @var SetupAttemptService */
@@ -22,7 +22,7 @@ final class SetupAttemptServiceTest extends \Stripe\TestCase
      */
     protected function setUpService()
     {
-        $this->client = new \Stripe\StripeClient(['api_key' => 'sk_test_123', 'api_base' => MOCK_URL]);
+        $this->client = new \Erikwang2013\Stripe\StripeClient(['api_key' => 'sk_test_123', 'api_base' => MOCK_URL]);
         $this->service = new SetupAttemptService($this->client);
     }
 
@@ -36,6 +36,6 @@ final class SetupAttemptServiceTest extends \Stripe\TestCase
             'setup_intent' => 'si_123',
         ]);
         self::compatAssertIsArray($resources->data);
-        self::assertInstanceOf(\Stripe\SetupAttempt::class, $resources->data[0]);
+        self::assertInstanceOf(\Erikwang2013\Stripe\SetupAttempt::class, $resources->data[0]);
     }
 }

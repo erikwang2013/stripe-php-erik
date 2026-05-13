@@ -1,11 +1,11 @@
 <?php
 
-namespace Stripe\V2;
+namespace Erikwang2013\Stripe\V2;
 
 /**
  * Class V2 Collection.
  *
- * @template TStripeObject of \Stripe\StripeObject
+ * @template TStripeObject of \Erikwang2013\Stripe\StripeObject
  *
  * @template-implements \IteratorAggregate<TStripeObject>
  *
@@ -13,18 +13,18 @@ namespace Stripe\V2;
  * @property null|string $previous_page_url
  * @property TStripeObject[] $data
  */
-class Collection extends \Stripe\StripeObject implements \Countable, \IteratorAggregate
+class Collection extends \Erikwang2013\Stripe\StripeObject implements \Countable, \IteratorAggregate
 {
     const OBJECT_NAME = 'list';
 
-    use \Stripe\ApiOperations\Request;
+    use \Erikwang2013\Stripe\ApiOperations\Request;
 
     /**
      * @return string the base URL for the given class
      */
     public static function baseUrl()
     {
-        return \Stripe\Stripe::$apiBase;
+        return \Erikwang2013\Stripe\Stripe::$apiBase;
     }
 
     /**
@@ -41,7 +41,7 @@ class Collection extends \Stripe\StripeObject implements \Countable, \IteratorAg
             . 'return an object with a `data` (which is the data '
             . "array). You likely want to call ->data[{$k}])";
 
-        throw new \Stripe\Exception\InvalidArgumentException($msg);
+        throw new \Erikwang2013\Stripe\Exception\InvalidArgumentException($msg);
     }
 
     /**
@@ -78,7 +78,7 @@ class Collection extends \Stripe\StripeObject implements \Countable, \IteratorAg
      *    encountered, the next page will be fetched automatically for
      *    continued iteration.
      *
-     * @throws \Stripe\Exception\ApiErrorException
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException
      */
     public function autoPagingIterator()
     {
@@ -101,7 +101,7 @@ class Collection extends \Stripe\StripeObject implements \Countable, \IteratorAg
                 [],
                 'v2'
             );
-            $obj = \Stripe\Util\Util::convertToStripeObject($response, $opts, 'v2');
+            $obj = \Erikwang2013\Stripe\Util\Util::convertToStripeObject($response, $opts, 'v2');
             /** @phpstan-ignore-next-line */
             $page = $obj->data;
             /** @phpstan-ignore-next-line */

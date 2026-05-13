@@ -2,24 +2,24 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Service\Treasury;
+namespace Erikwang2013\Stripe\Service\Treasury;
 
 /**
- * @phpstan-import-type RequestOptionsArray from \Stripe\Util\RequestOptions
+ * @phpstan-import-type RequestOptionsArray from \Erikwang2013\Stripe\Util\RequestOptions
  *
- * @psalm-import-type RequestOptionsArray from \Stripe\Util\RequestOptions
+ * @psalm-import-type RequestOptionsArray from \Erikwang2013\Stripe\Util\RequestOptions
  */
-class DebitReversalService extends \Stripe\Service\AbstractService
+class DebitReversalService extends \Erikwang2013\Stripe\Service\AbstractService
 {
     /**
      * Returns a list of DebitReversals.
      *
      * @param null|array{ending_before?: string, expand?: string[], financial_account: string, limit?: int, received_debit?: string, resolution?: string, starting_after?: string, status?: string} $params
-     * @param null|RequestOptionsArray|\Stripe\Util\RequestOptions $opts
+     * @param null|RequestOptionsArray|\Erikwang2013\Stripe\Util\RequestOptions $opts
      *
-     * @return \Stripe\Collection<\Stripe\Treasury\DebitReversal>
+     * @return \Erikwang2013\Stripe\Collection<\Erikwang2013\Stripe\Treasury\DebitReversal>
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public function all($params = null, $opts = null)
     {
@@ -30,11 +30,11 @@ class DebitReversalService extends \Stripe\Service\AbstractService
      * Reverses a ReceivedDebit and creates a DebitReversal object.
      *
      * @param null|array{expand?: string[], metadata?: array<string, string>, received_debit: string} $params
-     * @param null|RequestOptionsArray|\Stripe\Util\RequestOptions $opts
+     * @param null|RequestOptionsArray|\Erikwang2013\Stripe\Util\RequestOptions $opts
      *
-     * @return \Stripe\Treasury\DebitReversal
+     * @return \Erikwang2013\Stripe\Treasury\DebitReversal
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public function create($params = null, $opts = null)
     {
@@ -46,11 +46,11 @@ class DebitReversalService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array{expand?: string[]} $params
-     * @param null|RequestOptionsArray|\Stripe\Util\RequestOptions $opts
+     * @param null|RequestOptionsArray|\Erikwang2013\Stripe\Util\RequestOptions $opts
      *
-     * @return \Stripe\Treasury\DebitReversal
+     * @return \Erikwang2013\Stripe\Treasury\DebitReversal
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public function retrieve($id, $params = null, $opts = null)
     {

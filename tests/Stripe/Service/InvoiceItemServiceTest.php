@@ -1,19 +1,19 @@
 <?php
 
-namespace Stripe\Service;
+namespace Erikwang2013\Stripe\Service;
 
 /**
  * @internal
  *
- * @covers \Stripe\Service\InvoiceItemService
+ * @covers \Erikwang2013\Stripe\Service\InvoiceItemService
  */
-final class InvoiceItemServiceTest extends \Stripe\TestCase
+final class InvoiceItemServiceTest extends \Erikwang2013\Stripe\TestCase
 {
-    use \Stripe\TestHelper;
+    use \Erikwang2013\Stripe\TestHelper;
 
     const TEST_RESOURCE_ID = 'ii_123';
 
-    /** @var \Stripe\StripeClient */
+    /** @var \Erikwang2013\Stripe\StripeClient */
     private $client;
 
     /** @var InvoiceItemService */
@@ -24,7 +24,7 @@ final class InvoiceItemServiceTest extends \Stripe\TestCase
      */
     protected function setUpService()
     {
-        $this->client = new \Stripe\StripeClient(['api_key' => 'sk_test_123', 'api_base' => MOCK_URL]);
+        $this->client = new \Erikwang2013\Stripe\StripeClient(['api_key' => 'sk_test_123', 'api_base' => MOCK_URL]);
         $this->service = new InvoiceItemService($this->client);
     }
 
@@ -36,7 +36,7 @@ final class InvoiceItemServiceTest extends \Stripe\TestCase
         );
         $resources = $this->service->all();
         self::compatAssertIsArray($resources->data);
-        self::assertInstanceOf(\Stripe\InvoiceItem::class, $resources->data[0]);
+        self::assertInstanceOf(\Erikwang2013\Stripe\InvoiceItem::class, $resources->data[0]);
     }
 
     public function testCreate()
@@ -50,7 +50,7 @@ final class InvoiceItemServiceTest extends \Stripe\TestCase
             'currency' => 'usd',
             'customer' => 'cus_123',
         ]);
-        self::assertInstanceOf(\Stripe\InvoiceItem::class, $resource);
+        self::assertInstanceOf(\Erikwang2013\Stripe\InvoiceItem::class, $resource);
     }
 
     public function testDelete()
@@ -60,7 +60,7 @@ final class InvoiceItemServiceTest extends \Stripe\TestCase
             '/v1/invoiceitems/' . self::TEST_RESOURCE_ID
         );
         $resource = $this->service->delete(self::TEST_RESOURCE_ID);
-        self::assertInstanceOf(\Stripe\InvoiceItem::class, $resource);
+        self::assertInstanceOf(\Erikwang2013\Stripe\InvoiceItem::class, $resource);
     }
 
     public function testRetrieve()
@@ -70,7 +70,7 @@ final class InvoiceItemServiceTest extends \Stripe\TestCase
             '/v1/invoiceitems/' . self::TEST_RESOURCE_ID
         );
         $resource = $this->service->retrieve(self::TEST_RESOURCE_ID);
-        self::assertInstanceOf(\Stripe\InvoiceItem::class, $resource);
+        self::assertInstanceOf(\Erikwang2013\Stripe\InvoiceItem::class, $resource);
     }
 
     public function testUpdate()
@@ -82,6 +82,6 @@ final class InvoiceItemServiceTest extends \Stripe\TestCase
         $resource = $this->service->update(self::TEST_RESOURCE_ID, [
             'metadata' => ['key' => 'value'],
         ]);
-        self::assertInstanceOf(\Stripe\InvoiceItem::class, $resource);
+        self::assertInstanceOf(\Erikwang2013\Stripe\InvoiceItem::class, $resource);
     }
 }

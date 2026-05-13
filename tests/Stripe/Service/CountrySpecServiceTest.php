@@ -1,19 +1,19 @@
 <?php
 
-namespace Stripe\Service;
+namespace Erikwang2013\Stripe\Service;
 
 /**
  * @internal
  *
- * @covers \Stripe\Service\CountrySpecService
+ * @covers \Erikwang2013\Stripe\Service\CountrySpecService
  */
-final class CountrySpecServiceTest extends \Stripe\TestCase
+final class CountrySpecServiceTest extends \Erikwang2013\Stripe\TestCase
 {
-    use \Stripe\TestHelper;
+    use \Erikwang2013\Stripe\TestHelper;
 
     const TEST_RESOURCE_ID = 'US';
 
-    /** @var \Stripe\StripeClient */
+    /** @var \Erikwang2013\Stripe\StripeClient */
     private $client;
 
     /** @var CountrySpecService */
@@ -24,7 +24,7 @@ final class CountrySpecServiceTest extends \Stripe\TestCase
      */
     protected function setUpService()
     {
-        $this->client = new \Stripe\StripeClient(['api_key' => 'sk_test_123', 'api_base' => MOCK_URL]);
+        $this->client = new \Erikwang2013\Stripe\StripeClient(['api_key' => 'sk_test_123', 'api_base' => MOCK_URL]);
         $this->service = new CountrySpecService($this->client);
     }
 
@@ -36,7 +36,7 @@ final class CountrySpecServiceTest extends \Stripe\TestCase
         );
         $resources = $this->service->all();
         self::compatAssertIsArray($resources->data);
-        self::assertInstanceOf(\Stripe\CountrySpec::class, $resources->data[0]);
+        self::assertInstanceOf(\Erikwang2013\Stripe\CountrySpec::class, $resources->data[0]);
     }
 
     public function testRetrieve()
@@ -46,6 +46,6 @@ final class CountrySpecServiceTest extends \Stripe\TestCase
             '/v1/country_specs/' . self::TEST_RESOURCE_ID
         );
         $resource = $this->service->retrieve(self::TEST_RESOURCE_ID);
-        self::assertInstanceOf(\Stripe\CountrySpec::class, $resource);
+        self::assertInstanceOf(\Erikwang2013\Stripe\CountrySpec::class, $resource);
     }
 }

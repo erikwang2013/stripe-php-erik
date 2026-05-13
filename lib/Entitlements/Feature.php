@@ -2,7 +2,7 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Entitlements;
+namespace Erikwang2013\Stripe\Entitlements;
 
 /**
  * A feature represents a monetizable ability or functionality in your system.
@@ -13,14 +13,14 @@ namespace Stripe\Entitlements;
  * @property bool $active Inactive features cannot be attached to new products and will not be returned from the features list endpoint.
  * @property bool $livemode If the object exists in live mode, the value is <code>true</code>. If the object exists in test mode, the value is <code>false</code>.
  * @property string $lookup_key A unique key you provide as your own system identifier. This may be up to 80 characters.
- * @property \Stripe\StripeObject $metadata Set of key-value pairs that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
+ * @property \Erikwang2013\Stripe\StripeObject $metadata Set of key-value pairs that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
  * @property string $name The feature's name, for your own purpose, not meant to be displayable to the customer.
  */
-class Feature extends \Stripe\ApiResource
+class Feature extends \Erikwang2013\Stripe\ApiResource
 {
     const OBJECT_NAME = 'entitlements.feature';
 
-    use \Stripe\ApiOperations\Update;
+    use \Erikwang2013\Stripe\ApiOperations\Update;
 
     /**
      * Creates a feature.
@@ -30,7 +30,7 @@ class Feature extends \Stripe\ApiResource
      *
      * @return Feature the created resource
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public static function create($params = null, $options = null)
     {
@@ -38,7 +38,7 @@ class Feature extends \Stripe\ApiResource
         $url = static::classUrl();
 
         list($response, $opts) = static::_staticRequest('post', $url, $params, $options);
-        $obj = \Stripe\Util\Util::convertToStripeObject($response->json, $opts);
+        $obj = \Erikwang2013\Stripe\Util\Util::convertToStripeObject($response->json, $opts);
         $obj->setLastResponse($response);
 
         return $obj;
@@ -50,15 +50,15 @@ class Feature extends \Stripe\ApiResource
      * @param null|array{archived?: bool, ending_before?: string, expand?: string[], limit?: int, lookup_key?: string, starting_after?: string} $params
      * @param null|array|string $opts
      *
-     * @return \Stripe\Collection<Feature> of ApiResources
+     * @return \Erikwang2013\Stripe\Collection<Feature> of ApiResources
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public static function all($params = null, $opts = null)
     {
         $url = static::classUrl();
 
-        return static::_requestPage($url, \Stripe\Collection::class, $params, $opts);
+        return static::_requestPage($url, \Erikwang2013\Stripe\Collection::class, $params, $opts);
     }
 
     /**
@@ -69,11 +69,11 @@ class Feature extends \Stripe\ApiResource
      *
      * @return Feature
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public static function retrieve($id, $opts = null)
     {
-        $opts = \Stripe\Util\RequestOptions::parse($opts);
+        $opts = \Erikwang2013\Stripe\Util\RequestOptions::parse($opts);
         $instance = new static($id, $opts);
         $instance->refresh();
 
@@ -89,7 +89,7 @@ class Feature extends \Stripe\ApiResource
      *
      * @return Feature the updated resource
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public static function update($id, $params = null, $opts = null)
     {
@@ -97,7 +97,7 @@ class Feature extends \Stripe\ApiResource
         $url = static::resourceUrl($id);
 
         list($response, $opts) = static::_staticRequest('post', $url, $params, $opts);
-        $obj = \Stripe\Util\Util::convertToStripeObject($response->json, $opts);
+        $obj = \Erikwang2013\Stripe\Util\Util::convertToStripeObject($response->json, $opts);
         $obj->setLastResponse($response);
 
         return $obj;

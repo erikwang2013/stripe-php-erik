@@ -2,20 +2,20 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Issuing;
+namespace Erikwang2013\Stripe\Issuing;
 
 /**
  * A Physical Bundle represents the bundle of physical items - card stock, carrier letter, and envelope - that is shipped to a cardholder when you create a physical card.
  *
  * @property string $id Unique identifier for the object.
  * @property string $object String representing the object's type. Objects of the same type share the same value.
- * @property (object{card_logo: string, carrier_text: string, second_line: string}&\Stripe\StripeObject) $features
+ * @property (object{card_logo: string, carrier_text: string, second_line: string}&\Erikwang2013\Stripe\StripeObject) $features
  * @property bool $livemode If the object exists in live mode, the value is <code>true</code>. If the object exists in test mode, the value is <code>false</code>.
  * @property string $name Friendly display name.
  * @property string $status Whether this physical bundle can be used to create cards.
  * @property string $type Whether this physical bundle is a standard Stripe offering or custom-made for you.
  */
-class PhysicalBundle extends \Stripe\ApiResource
+class PhysicalBundle extends \Erikwang2013\Stripe\ApiResource
 {
     const OBJECT_NAME = 'issuing.physical_bundle';
 
@@ -33,15 +33,15 @@ class PhysicalBundle extends \Stripe\ApiResource
      * @param null|array{ending_before?: string, expand?: string[], limit?: int, starting_after?: string, status?: string, type?: string} $params
      * @param null|array|string $opts
      *
-     * @return \Stripe\Collection<PhysicalBundle> of ApiResources
+     * @return \Erikwang2013\Stripe\Collection<PhysicalBundle> of ApiResources
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public static function all($params = null, $opts = null)
     {
         $url = static::classUrl();
 
-        return static::_requestPage($url, \Stripe\Collection::class, $params, $opts);
+        return static::_requestPage($url, \Erikwang2013\Stripe\Collection::class, $params, $opts);
     }
 
     /**
@@ -52,11 +52,11 @@ class PhysicalBundle extends \Stripe\ApiResource
      *
      * @return PhysicalBundle
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public static function retrieve($id, $opts = null)
     {
-        $opts = \Stripe\Util\RequestOptions::parse($opts);
+        $opts = \Erikwang2013\Stripe\Util\RequestOptions::parse($opts);
         $instance = new static($id, $opts);
         $instance->refresh();
 

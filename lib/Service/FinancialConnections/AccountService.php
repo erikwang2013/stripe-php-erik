@@ -2,24 +2,24 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Service\FinancialConnections;
+namespace Erikwang2013\Stripe\Service\FinancialConnections;
 
 /**
- * @phpstan-import-type RequestOptionsArray from \Stripe\Util\RequestOptions
+ * @phpstan-import-type RequestOptionsArray from \Erikwang2013\Stripe\Util\RequestOptions
  *
- * @psalm-import-type RequestOptionsArray from \Stripe\Util\RequestOptions
+ * @psalm-import-type RequestOptionsArray from \Erikwang2013\Stripe\Util\RequestOptions
  */
-class AccountService extends \Stripe\Service\AbstractService
+class AccountService extends \Erikwang2013\Stripe\Service\AbstractService
 {
     /**
      * Returns a list of Financial Connections <code>Account</code> objects.
      *
      * @param null|array{account_holder?: array{account?: string, customer?: string, customer_account?: string}, ending_before?: string, expand?: string[], limit?: int, session?: string, starting_after?: string} $params
-     * @param null|RequestOptionsArray|\Stripe\Util\RequestOptions $opts
+     * @param null|RequestOptionsArray|\Erikwang2013\Stripe\Util\RequestOptions $opts
      *
-     * @return \Stripe\Collection<\Stripe\FinancialConnections\Account>
+     * @return \Erikwang2013\Stripe\Collection<\Erikwang2013\Stripe\FinancialConnections\Account>
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public function all($params = null, $opts = null)
     {
@@ -31,11 +31,11 @@ class AccountService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array{ending_before?: string, expand?: string[], limit?: int, ownership: string, starting_after?: string} $params
-     * @param null|RequestOptionsArray|\Stripe\Util\RequestOptions $opts
+     * @param null|RequestOptionsArray|\Erikwang2013\Stripe\Util\RequestOptions $opts
      *
-     * @return \Stripe\Collection<\Stripe\FinancialConnections\AccountOwner>
+     * @return \Erikwang2013\Stripe\Collection<\Erikwang2013\Stripe\FinancialConnections\AccountOwner>
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public function allOwners($id, $params = null, $opts = null)
     {
@@ -49,11 +49,11 @@ class AccountService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array{expand?: string[]} $params
-     * @param null|RequestOptionsArray|\Stripe\Util\RequestOptions $opts
+     * @param null|RequestOptionsArray|\Erikwang2013\Stripe\Util\RequestOptions $opts
      *
-     * @return \Stripe\FinancialConnections\Account
+     * @return \Erikwang2013\Stripe\FinancialConnections\Account
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public function disconnect($id, $params = null, $opts = null)
     {
@@ -65,11 +65,11 @@ class AccountService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array{expand?: string[], features: string[]} $params
-     * @param null|RequestOptionsArray|\Stripe\Util\RequestOptions $opts
+     * @param null|RequestOptionsArray|\Erikwang2013\Stripe\Util\RequestOptions $opts
      *
-     * @return \Stripe\FinancialConnections\Account
+     * @return \Erikwang2013\Stripe\FinancialConnections\Account
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public function refresh($id, $params = null, $opts = null)
     {
@@ -81,11 +81,11 @@ class AccountService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array{expand?: string[]} $params
-     * @param null|RequestOptionsArray|\Stripe\Util\RequestOptions $opts
+     * @param null|RequestOptionsArray|\Erikwang2013\Stripe\Util\RequestOptions $opts
      *
-     * @return \Stripe\FinancialConnections\Account
+     * @return \Erikwang2013\Stripe\FinancialConnections\Account
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public function retrieve($id, $params = null, $opts = null)
     {
@@ -99,11 +99,11 @@ class AccountService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array{expand?: string[], features: string[]} $params
-     * @param null|RequestOptionsArray|\Stripe\Util\RequestOptions $opts
+     * @param null|RequestOptionsArray|\Erikwang2013\Stripe\Util\RequestOptions $opts
      *
-     * @return \Stripe\FinancialConnections\Account
+     * @return \Erikwang2013\Stripe\FinancialConnections\Account
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public function subscribe($id, $params = null, $opts = null)
     {
@@ -116,11 +116,11 @@ class AccountService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array{expand?: string[], features: string[]} $params
-     * @param null|RequestOptionsArray|\Stripe\Util\RequestOptions $opts
+     * @param null|RequestOptionsArray|\Erikwang2013\Stripe\Util\RequestOptions $opts
      *
-     * @return \Stripe\FinancialConnections\Account
+     * @return \Erikwang2013\Stripe\FinancialConnections\Account
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public function unsubscribe($id, $params = null, $opts = null)
     {

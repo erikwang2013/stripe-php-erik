@@ -1,15 +1,15 @@
 <?php
 
-namespace Stripe\Exception\OAuth;
+namespace Erikwang2013\Stripe\Exception\OAuth;
 
 /**
  * @internal
  *
- * @covers \Stripe\Exception\OAuth\OAuthErrorException
+ * @covers \Erikwang2013\Stripe\Exception\OAuth\OAuthErrorException
  */
-final class OAuthErrorExceptionTest extends \Stripe\TestCase
+final class OAuthErrorExceptionTest extends \Erikwang2013\Stripe\TestCase
 {
-    use \Stripe\TestHelper;
+    use \Erikwang2013\Stripe\TestHelper;
 
     public function createFixture()
     {

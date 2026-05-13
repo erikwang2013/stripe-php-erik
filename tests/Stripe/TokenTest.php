@@ -1,11 +1,11 @@
 <?php
 
-namespace Stripe;
+namespace Erikwang2013\Stripe;
 
 /**
  * @internal
  *
- * @covers \Stripe\Token
+ * @covers \Erikwang2013\Stripe\Token
  */
 final class TokenTest extends TestCase
 {

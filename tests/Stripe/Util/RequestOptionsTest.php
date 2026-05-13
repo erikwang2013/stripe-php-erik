@@ -1,15 +1,15 @@
 <?php
 
-namespace Stripe\Util;
+namespace Erikwang2013\Stripe\Util;
 
 /**
  * @internal
  *
- * @covers \Stripe\Util\RequestOptions
+ * @covers \Erikwang2013\Stripe\Util\RequestOptions
  */
-final class RequestOptionsTest extends \Stripe\TestCase
+final class RequestOptionsTest extends \Erikwang2013\Stripe\TestCase
 {
-    use \Stripe\TestHelper;
+    use \Erikwang2013\Stripe\TestHelper;
 
     public function testParseString()
     {
@@ -21,7 +21,7 @@ final class RequestOptionsTest extends \Stripe\TestCase
 
     public function testParseStringStrict()
     {
-        $this->expectException(\Stripe\Exception\InvalidArgumentException::class);
+        $this->expectException(\Erikwang2013\Stripe\Exception\InvalidArgumentException::class);
         $this->compatExpectExceptionMessageMatches('#Do not pass a string for request options.#');
 
         $opts = RequestOptions::parse('foo', true);
@@ -95,7 +95,7 @@ final class RequestOptionsTest extends \Stripe\TestCase
 
     public function testParseArrayWithAPIKeyAndUnexpectedKeysStrict()
     {
-        $this->expectException(\Stripe\Exception\InvalidArgumentException::class);
+        $this->expectException(\Erikwang2013\Stripe\Exception\InvalidArgumentException::class);
         $this->expectExceptionMessage('Got unexpected keys in options array: foo');
 
         $opts = RequestOptions::parse(
@@ -121,7 +121,7 @@ final class RequestOptionsTest extends \Stripe\TestCase
 
     public function testParseWrongType()
     {
-        $this->expectException(\Stripe\Exception\InvalidArgumentException::class);
+        $this->expectException(\Erikwang2013\Stripe\Exception\InvalidArgumentException::class);
 
         $opts = RequestOptions::parse(5);
     }

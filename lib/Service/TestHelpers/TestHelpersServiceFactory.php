@@ -2,7 +2,7 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Service\TestHelpers;
+namespace Erikwang2013\Stripe\Service\TestHelpers;
 
 /**
  * Service factory class for API resources in the TestHelpers namespace.
@@ -15,7 +15,7 @@ namespace Stripe\Service\TestHelpers;
  * @property TestClockService $testClocks
  * @property Treasury\TreasuryServiceFactory $treasury
  */
-class TestHelpersServiceFactory extends \Stripe\Service\AbstractServiceFactory
+class TestHelpersServiceFactory extends \Erikwang2013\Stripe\Service\AbstractServiceFactory
 {
     /**
      * @var array<string, string>

@@ -2,7 +2,7 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe;
+namespace Erikwang2013\Stripe;
 
 /**
  * Prices define the unit cost, currency, and (optional) billing cycle for both recurring and one-time purchases of products.

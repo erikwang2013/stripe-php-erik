@@ -11,11 +11,11 @@
  *   - 发布配置文件 config/stripe.php
  *   - 提供 'stripe' 别名和 Facade 支持
  */
-namespace Stripe\Laravel;
+namespace Erikwang2013\Stripe\Laravel;
 
 use Illuminate\Support\ServiceProvider;
-use Stripe\Stripe;
-use Stripe\StripeClient;
+use Erikwang2013\Stripe\Stripe;
+use Erikwang2013\Stripe\StripeClient;
 
 class StripeServiceProvider extends ServiceProvider
 {

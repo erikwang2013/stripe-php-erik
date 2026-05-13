@@ -2,24 +2,24 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Service\Reporting;
+namespace Erikwang2013\Stripe\Service\Reporting;
 
 /**
- * @phpstan-import-type RequestOptionsArray from \Stripe\Util\RequestOptions
+ * @phpstan-import-type RequestOptionsArray from \Erikwang2013\Stripe\Util\RequestOptions
  *
- * @psalm-import-type RequestOptionsArray from \Stripe\Util\RequestOptions
+ * @psalm-import-type RequestOptionsArray from \Erikwang2013\Stripe\Util\RequestOptions
  */
-class ReportRunService extends \Stripe\Service\AbstractService
+class ReportRunService extends \Erikwang2013\Stripe\Service\AbstractService
 {
     /**
      * Returns a list of Report Runs, with the most recent appearing first.
      *
      * @param null|array{created?: array|int, ending_before?: string, expand?: string[], limit?: int, starting_after?: string} $params
-     * @param null|RequestOptionsArray|\Stripe\Util\RequestOptions $opts
+     * @param null|RequestOptionsArray|\Erikwang2013\Stripe\Util\RequestOptions $opts
      *
-     * @return \Stripe\Collection<\Stripe\Reporting\ReportRun>
+     * @return \Erikwang2013\Stripe\Collection<\Erikwang2013\Stripe\Reporting\ReportRun>
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public function all($params = null, $opts = null)
     {
@@ -31,11 +31,11 @@ class ReportRunService extends \Stripe\Service\AbstractService
      * a <a href="https://stripe.com/docs/keys#test-live-modes">live-mode API key</a>.).
      *
      * @param null|array{expand?: string[], parameters?: array{columns?: string[], connected_account?: string, currency?: string, interval_end?: int, interval_start?: int, payout?: string, reporting_category?: string, timezone?: string}, report_type: string} $params
-     * @param null|RequestOptionsArray|\Stripe\Util\RequestOptions $opts
+     * @param null|RequestOptionsArray|\Erikwang2013\Stripe\Util\RequestOptions $opts
      *
-     * @return \Stripe\Reporting\ReportRun
+     * @return \Erikwang2013\Stripe\Reporting\ReportRun
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public function create($params = null, $opts = null)
     {
@@ -47,11 +47,11 @@ class ReportRunService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array{expand?: string[]} $params
-     * @param null|RequestOptionsArray|\Stripe\Util\RequestOptions $opts
+     * @param null|RequestOptionsArray|\Erikwang2013\Stripe\Util\RequestOptions $opts
      *
-     * @return \Stripe\Reporting\ReportRun
+     * @return \Erikwang2013\Stripe\Reporting\ReportRun
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public function retrieve($id, $params = null, $opts = null)
     {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Stripe\Service;
+namespace Erikwang2013\Stripe\Service;
 
 class OAuthService extends AbstractService
 {
@@ -10,9 +10,9 @@ class OAuthService extends AbstractService
      * @param 'delete'|'get'|'post' $method the HTTP method
      * @param string $path the path of the request
      * @param array $params the parameters of the request
-     * @param array|\Stripe\Util\RequestOptions $opts the special modifiers of the request
+     * @param array|\Erikwang2013\Stripe\Util\RequestOptions $opts the special modifiers of the request
      *
-     * @return \Stripe\StripeObject the object returned by Stripe's Connect API
+     * @return \Erikwang2013\Stripe\StripeObject the object returned by Stripe's Connect API
      */
     protected function requestConnect($method, $path, $params, $opts)
     {
@@ -41,7 +41,7 @@ class OAuthService extends AbstractService
         if (!\array_key_exists('response_type', $params)) {
             $params['response_type'] = 'code';
         }
-        $query = \Stripe\Util\Util::encodeParameters($params);
+        $query = \Erikwang2013\Stripe\Util\Util::encodeParameters($params);
 
         return $base . '/oauth/authorize?' . $query;
     }
@@ -53,9 +53,9 @@ class OAuthService extends AbstractService
      * @param null|array $params
      * @param null|array $opts
      *
-     * @return \Stripe\StripeObject object containing the response from the API
+     * @return \Erikwang2013\Stripe\StripeObject object containing the response from the API
      *
-     * @throws \Stripe\Exception\OAuth\OAuthErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\OAuth\OAuthErrorException if the request fails
      */
     public function token($params = null, $opts = null)
     {
@@ -71,9 +71,9 @@ class OAuthService extends AbstractService
      * @param null|array $params
      * @param null|array $opts
      *
-     * @return \Stripe\StripeObject object containing the response from the API
+     * @return \Erikwang2013\Stripe\StripeObject object containing the response from the API
      *
-     * @throws \Stripe\Exception\OAuth\OAuthErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\OAuth\OAuthErrorException if the request fails
      */
     public function deauthorize($params = null, $opts = null)
     {
@@ -92,7 +92,7 @@ class OAuthService extends AbstractService
         }
         if (null === $clientId) {
             $msg = 'No client_id provided. (HINT: set your client_id using '
-              . '`new \Stripe\StripeClient([clientId => <CLIENT-ID>
+              . '`new \Erikwang2013\Stripe\StripeClient([clientId => <CLIENT-ID>
                 ])`)".  You can find your client_ids '
               . 'in your Stripe dashboard at '
               . 'https://dashboard.stripe.com/account/applications/settings, '
@@ -100,7 +100,7 @@ class OAuthService extends AbstractService
               . 'https://stripe.com/docs/connect/standard-accounts for details, '
               . 'or email support@stripe.com if you have any questions.';
 
-            throw new \Stripe\Exception\AuthenticationException($msg);
+            throw new \Erikwang2013\Stripe\Exception\AuthenticationException($msg);
         }
 
         return $clientId;
@@ -116,28 +116,28 @@ class OAuthService extends AbstractService
     }
 
     /**
-     * @param array|\Stripe\Util\RequestOptions $opts the special modifiers of the request
+     * @param array|\Erikwang2013\Stripe\Util\RequestOptions $opts the special modifiers of the request
      *
-     * @return \Stripe\Util\RequestOptions
+     * @return \Erikwang2013\Stripe\Util\RequestOptions
      *
-     * @throws \Stripe\Exception\InvalidArgumentException
+     * @throws \Erikwang2013\Stripe\Exception\InvalidArgumentException
      */
     private function _parseOpts($opts)
     {
         if (\is_array($opts)) {
             if (\array_key_exists('connect_base', $opts)) {
                 // Throw an exception for the convenience of anybody migrating to
-                // \Stripe\Service\OAuthService from \Stripe\OAuth, where `connect_base`
+                // \Erikwang2013\Stripe\Service\OAuthService from \Erikwang2013\Stripe\OAuth, where `connect_base`
                 // was the name of the parameter that behaves as `api_base` does here.
-                throw new \Stripe\Exception\InvalidArgumentException('Use `api_base`, not `connect_base`');
+                throw new \Erikwang2013\Stripe\Exception\InvalidArgumentException('Use `api_base`, not `connect_base`');
             }
         }
 
-        return \Stripe\Util\RequestOptions::parse($opts);
+        return \Erikwang2013\Stripe\Util\RequestOptions::parse($opts);
     }
 
     /**
-     * @param \Stripe\Util\RequestOptions $opts
+     * @param \Erikwang2013\Stripe\Util\RequestOptions $opts
      *
      * @return string
      */

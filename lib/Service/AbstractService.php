@@ -1,6 +1,6 @@
 <?php
 
-namespace Stripe\Service;
+namespace Erikwang2013\Stripe\Service;
 
 /**
  * Abstract base class for all services.
@@ -8,19 +8,19 @@ namespace Stripe\Service;
 abstract class AbstractService
 {
     /**
-     * @var \Stripe\StripeClientInterface
+     * @var \Erikwang2013\Stripe\StripeClientInterface
      */
     protected $client;
 
     /**
-     * @var \Stripe\StripeStreamingClientInterface
+     * @var \Erikwang2013\Stripe\StripeStreamingClientInterface
      */
     protected $streamingClient;
 
     /**
      * Initializes a new instance of the {@link AbstractService} class.
      *
-     * @param \Stripe\StripeClientInterface $client
+     * @param \Erikwang2013\Stripe\StripeClientInterface $client
      */
     public function __construct($client)
     {
@@ -31,7 +31,7 @@ abstract class AbstractService
     /**
      * Gets the client used by this service to send requests.
      *
-     * @return \Stripe\StripeClientInterface
+     * @return \Erikwang2013\Stripe\StripeClientInterface
      */
     public function getClient()
     {
@@ -41,7 +41,7 @@ abstract class AbstractService
     /**
      * Gets the client used by this service to send requests.
      *
-     * @return \Stripe\StripeStreamingClientInterface
+     * @return \Erikwang2013\Stripe\StripeStreamingClientInterface
      */
     public function getStreamingClient()
     {
@@ -79,10 +79,10 @@ abstract class AbstractService
 
     protected function request($method, $path, $params, $opts, $schemas = null)
     {
-        $apiMode = \Stripe\Util\Util::getApiMode($path);
+        $apiMode = \Erikwang2013\Stripe\Util\Util::getApiMode($path);
         $params = self::formatParams($params, $apiMode);
         if (null !== $schemas && isset($schemas['request_schema'])) {
-            $params = \Stripe\Util\Int64::coerceRequestParams($params, $schemas['request_schema']);
+            $params = \Erikwang2013\Stripe\Util\Int64::coerceRequestParams($params, $schemas['request_schema']);
         }
 
         return $this->getClient()->request($method, $path, $params, $opts);
@@ -90,17 +90,17 @@ abstract class AbstractService
 
     protected function requestStream($method, $path, $readBodyChunkCallable, $params, $opts)
     {
-        $apiMode = \Stripe\Util\Util::getApiMode($path);
+        $apiMode = \Erikwang2013\Stripe\Util\Util::getApiMode($path);
 
         return $this->getStreamingClient()->requestStream($method, $path, $readBodyChunkCallable, self::formatParams($params, $apiMode), $opts);
     }
 
     protected function requestCollection($method, $path, $params, $opts, $schemas = null)
     {
-        $apiMode = \Stripe\Util\Util::getApiMode($path);
+        $apiMode = \Erikwang2013\Stripe\Util\Util::getApiMode($path);
         $params = self::formatParams($params, $apiMode);
         if (null !== $schemas && isset($schemas['request_schema'])) {
-            $params = \Stripe\Util\Int64::coerceRequestParams($params, $schemas['request_schema']);
+            $params = \Erikwang2013\Stripe\Util\Int64::coerceRequestParams($params, $schemas['request_schema']);
         }
 
         return $this->getClient()->requestCollection($method, $path, $params, $opts);
@@ -108,10 +108,10 @@ abstract class AbstractService
 
     protected function requestSearchResult($method, $path, $params, $opts, $schemas = null)
     {
-        $apiMode = \Stripe\Util\Util::getApiMode($path);
+        $apiMode = \Erikwang2013\Stripe\Util\Util::getApiMode($path);
         $params = self::formatParams($params, $apiMode);
         if (null !== $schemas && isset($schemas['request_schema'])) {
-            $params = \Stripe\Util\Int64::coerceRequestParams($params, $schemas['request_schema']);
+            $params = \Erikwang2013\Stripe\Util\Int64::coerceRequestParams($params, $schemas['request_schema']);
         }
 
         return $this->getClient()->requestSearchResult($method, $path, $params, $opts);
@@ -123,7 +123,7 @@ abstract class AbstractService
             if (null === $id || '' === \trim($id)) {
                 $msg = 'The resource ID cannot be null or whitespace.';
 
-                throw new \Stripe\Exception\InvalidArgumentException($msg);
+                throw new \Erikwang2013\Stripe\Exception\InvalidArgumentException($msg);
             }
         }
 

@@ -1,11 +1,11 @@
 <?php
 
-namespace Stripe;
+namespace Erikwang2013\Stripe;
 
 /**
  * @internal
  *
- * @covers \Stripe\WebhookEndpoint
+ * @covers \Erikwang2013\Stripe\WebhookEndpoint
  */
 final class WebhookEndpointTest extends TestCase
 {

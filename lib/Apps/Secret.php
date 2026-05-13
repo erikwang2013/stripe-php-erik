@@ -2,7 +2,7 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Apps;
+namespace Erikwang2013\Stripe\Apps;
 
 /**
  * Secret Store is an API that allows Stripe Apps developers to securely persist secrets for use by UI Extensions and app backends.
@@ -23,9 +23,9 @@ namespace Stripe\Apps;
  * @property bool $livemode If the object exists in live mode, the value is <code>true</code>. If the object exists in test mode, the value is <code>false</code>.
  * @property string $name A name for the secret that's unique within the scope.
  * @property null|string $payload The plaintext secret value to be stored.
- * @property (object{type: string, user?: string}&\Stripe\StripeObject) $scope
+ * @property (object{type: string, user?: string}&\Erikwang2013\Stripe\StripeObject) $scope
  */
-class Secret extends \Stripe\ApiResource
+class Secret extends \Erikwang2013\Stripe\ApiResource
 {
     const OBJECT_NAME = 'apps.secret';
 
@@ -37,7 +37,7 @@ class Secret extends \Stripe\ApiResource
      *
      * @return Secret the created resource
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public static function create($params = null, $options = null)
     {
@@ -45,7 +45,7 @@ class Secret extends \Stripe\ApiResource
         $url = static::classUrl();
 
         list($response, $opts) = static::_staticRequest('post', $url, $params, $options);
-        $obj = \Stripe\Util\Util::convertToStripeObject($response->json, $opts);
+        $obj = \Erikwang2013\Stripe\Util\Util::convertToStripeObject($response->json, $opts);
         $obj->setLastResponse($response);
 
         return $obj;
@@ -57,15 +57,15 @@ class Secret extends \Stripe\ApiResource
      * @param null|array{ending_before?: string, expand?: string[], limit?: int, scope: array{type: string, user?: string}, starting_after?: string} $params
      * @param null|array|string $opts
      *
-     * @return \Stripe\Collection<Secret> of ApiResources
+     * @return \Erikwang2013\Stripe\Collection<Secret> of ApiResources
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public static function all($params = null, $opts = null)
     {
         $url = static::classUrl();
 
-        return static::_requestPage($url, \Stripe\Collection::class, $params, $opts);
+        return static::_requestPage($url, \Erikwang2013\Stripe\Collection::class, $params, $opts);
     }
 
     /**
@@ -74,13 +74,13 @@ class Secret extends \Stripe\ApiResource
      *
      * @return Secret the deleted secret
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public static function deleteWhere($params = null, $opts = null)
     {
         $url = static::classUrl() . '/delete';
         list($response, $opts) = static::_staticRequest('post', $url, $params, $opts);
-        $obj = \Stripe\Util\Util::convertToStripeObject($response->json, $opts);
+        $obj = \Erikwang2013\Stripe\Util\Util::convertToStripeObject($response->json, $opts);
         $obj->setLastResponse($response);
 
         return $obj;
@@ -92,13 +92,13 @@ class Secret extends \Stripe\ApiResource
      *
      * @return Secret the finded secret
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public static function find($params = null, $opts = null)
     {
         $url = static::classUrl() . '/find';
         list($response, $opts) = static::_staticRequest('get', $url, $params, $opts);
-        $obj = \Stripe\Util\Util::convertToStripeObject($response->json, $opts);
+        $obj = \Erikwang2013\Stripe\Util\Util::convertToStripeObject($response->json, $opts);
         $obj->setLastResponse($response);
 
         return $obj;

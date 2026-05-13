@@ -2,7 +2,7 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Issuing;
+namespace Erikwang2013\Stripe\Issuing;
 
 /**
  * An issuing token object is created when an issued card is added to a digital wallet. As a <a href="https://docs.stripe.com/issuing">card issuer</a>, you can <a href="https://docs.stripe.com/issuing/controls/token-management">view and manage these tokens</a> through Stripe.
@@ -15,16 +15,16 @@ namespace Stripe\Issuing;
  * @property null|string $last4 The last four digits of the token.
  * @property bool $livemode If the object exists in live mode, the value is <code>true</code>. If the object exists in test mode, the value is <code>false</code>.
  * @property string $network The token service provider / card network associated with the token.
- * @property null|(object{device?: (object{device_fingerprint?: string, ip_address?: string, location?: string, name?: string, phone_number?: string, type?: string}&\Stripe\StripeObject), mastercard?: (object{card_reference_id?: string, token_reference_id: string, token_requestor_id: string, token_requestor_name?: string}&\Stripe\StripeObject), type: string, visa?: (object{card_reference_id: null|string, token_reference_id: string, token_requestor_id: string, token_risk_score?: string}&\Stripe\StripeObject), wallet_provider?: (object{account_id?: string, account_trust_score?: int, card_number_source?: string, cardholder_address?: (object{line1: string, postal_code: string}&\Stripe\StripeObject), cardholder_name?: string, device_trust_score?: int, hashed_account_email_address?: string, reason_codes?: string[], suggested_decision?: string, suggested_decision_version?: string}&\Stripe\StripeObject)}&\Stripe\StripeObject) $network_data
+ * @property null|(object{device?: (object{device_fingerprint?: string, ip_address?: string, location?: string, name?: string, phone_number?: string, type?: string}&\Erikwang2013\Stripe\StripeObject), mastercard?: (object{card_reference_id?: string, token_reference_id: string, token_requestor_id: string, token_requestor_name?: string}&\Erikwang2013\Stripe\StripeObject), type: string, visa?: (object{card_reference_id: null|string, token_reference_id: string, token_requestor_id: string, token_risk_score?: string}&\Erikwang2013\Stripe\StripeObject), wallet_provider?: (object{account_id?: string, account_trust_score?: int, card_number_source?: string, cardholder_address?: (object{line1: string, postal_code: string}&\Erikwang2013\Stripe\StripeObject), cardholder_name?: string, device_trust_score?: int, hashed_account_email_address?: string, reason_codes?: string[], suggested_decision?: string, suggested_decision_version?: string}&\Erikwang2013\Stripe\StripeObject)}&\Erikwang2013\Stripe\StripeObject) $network_data
  * @property int $network_updated_at Time at which the token was last updated by the card network. Measured in seconds since the Unix epoch.
  * @property string $status The usage state of the token.
  * @property null|string $wallet_provider The digital wallet for this token, if one was used.
  */
-class Token extends \Stripe\ApiResource
+class Token extends \Erikwang2013\Stripe\ApiResource
 {
     const OBJECT_NAME = 'issuing.token';
 
-    use \Stripe\ApiOperations\Update;
+    use \Erikwang2013\Stripe\ApiOperations\Update;
 
     const NETWORK_MASTERCARD = 'mastercard';
     const NETWORK_VISA = 'visa';
@@ -44,15 +44,15 @@ class Token extends \Stripe\ApiResource
      * @param null|array{card: string, created?: array|int, ending_before?: string, expand?: string[], limit?: int, starting_after?: string, status?: string} $params
      * @param null|array|string $opts
      *
-     * @return \Stripe\Collection<Token> of ApiResources
+     * @return \Erikwang2013\Stripe\Collection<Token> of ApiResources
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public static function all($params = null, $opts = null)
     {
         $url = static::classUrl();
 
-        return static::_requestPage($url, \Stripe\Collection::class, $params, $opts);
+        return static::_requestPage($url, \Erikwang2013\Stripe\Collection::class, $params, $opts);
     }
 
     /**
@@ -63,11 +63,11 @@ class Token extends \Stripe\ApiResource
      *
      * @return Token
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public static function retrieve($id, $opts = null)
     {
-        $opts = \Stripe\Util\RequestOptions::parse($opts);
+        $opts = \Erikwang2013\Stripe\Util\RequestOptions::parse($opts);
         $instance = new static($id, $opts);
         $instance->refresh();
 
@@ -84,7 +84,7 @@ class Token extends \Stripe\ApiResource
      *
      * @return Token the updated resource
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public static function update($id, $params = null, $opts = null)
     {
@@ -92,7 +92,7 @@ class Token extends \Stripe\ApiResource
         $url = static::resourceUrl($id);
 
         list($response, $opts) = static::_staticRequest('post', $url, $params, $opts);
-        $obj = \Stripe\Util\Util::convertToStripeObject($response->json, $opts);
+        $obj = \Erikwang2013\Stripe\Util\Util::convertToStripeObject($response->json, $opts);
         $obj->setLastResponse($response);
 
         return $obj;

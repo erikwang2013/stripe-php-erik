@@ -2,30 +2,30 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Issuing;
+namespace Erikwang2013\Stripe\Issuing;
 
 /**
  * A Personalization Design is a logical grouping of a Physical Bundle, card logo, and carrier text that represents a product line.
  *
  * @property string $id Unique identifier for the object.
  * @property string $object String representing the object's type. Objects of the same type share the same value.
- * @property null|string|\Stripe\File $card_logo The file for the card logo to use with physical bundles that support card logos. Must have a <code>purpose</code> value of <code>issuing_logo</code>.
- * @property null|(object{footer_body: null|string, footer_title: null|string, header_body: null|string, header_title: null|string}&\Stripe\StripeObject) $carrier_text Hash containing carrier text, for use with physical bundles that support carrier text.
+ * @property null|string|\Erikwang2013\Stripe\File $card_logo The file for the card logo to use with physical bundles that support card logos. Must have a <code>purpose</code> value of <code>issuing_logo</code>.
+ * @property null|(object{footer_body: null|string, footer_title: null|string, header_body: null|string, header_title: null|string}&\Erikwang2013\Stripe\StripeObject) $carrier_text Hash containing carrier text, for use with physical bundles that support carrier text.
  * @property int $created Time at which the object was created. Measured in seconds since the Unix epoch.
  * @property bool $livemode If the object exists in live mode, the value is <code>true</code>. If the object exists in test mode, the value is <code>false</code>.
  * @property null|string $lookup_key A lookup key used to retrieve personalization designs dynamically from a static string. This may be up to 200 characters.
- * @property \Stripe\StripeObject $metadata Set of <a href="https://docs.stripe.com/api/metadata">key-value pairs</a> that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
+ * @property \Erikwang2013\Stripe\StripeObject $metadata Set of <a href="https://docs.stripe.com/api/metadata">key-value pairs</a> that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
  * @property null|string $name Friendly display name.
  * @property PhysicalBundle|string $physical_bundle The physical bundle object belonging to this personalization design.
- * @property (object{is_default: bool, is_platform_default: null|bool}&\Stripe\StripeObject) $preferences
- * @property (object{card_logo: null|string[], carrier_text: null|string[]}&\Stripe\StripeObject) $rejection_reasons
+ * @property (object{is_default: bool, is_platform_default: null|bool}&\Erikwang2013\Stripe\StripeObject) $preferences
+ * @property (object{card_logo: null|string[], carrier_text: null|string[]}&\Erikwang2013\Stripe\StripeObject) $rejection_reasons
  * @property string $status Whether this personalization design can be used to create cards.
  */
-class PersonalizationDesign extends \Stripe\ApiResource
+class PersonalizationDesign extends \Erikwang2013\Stripe\ApiResource
 {
     const OBJECT_NAME = 'issuing.personalization_design';
 
-    use \Stripe\ApiOperations\Update;
+    use \Erikwang2013\Stripe\ApiOperations\Update;
 
     const STATUS_ACTIVE = 'active';
     const STATUS_INACTIVE = 'inactive';
@@ -40,7 +40,7 @@ class PersonalizationDesign extends \Stripe\ApiResource
      *
      * @return PersonalizationDesign the created resource
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public static function create($params = null, $options = null)
     {
@@ -48,7 +48,7 @@ class PersonalizationDesign extends \Stripe\ApiResource
         $url = static::classUrl();
 
         list($response, $opts) = static::_staticRequest('post', $url, $params, $options);
-        $obj = \Stripe\Util\Util::convertToStripeObject($response->json, $opts);
+        $obj = \Erikwang2013\Stripe\Util\Util::convertToStripeObject($response->json, $opts);
         $obj->setLastResponse($response);
 
         return $obj;
@@ -62,15 +62,15 @@ class PersonalizationDesign extends \Stripe\ApiResource
      * @param null|array{ending_before?: string, expand?: string[], limit?: int, lookup_keys?: string[], preferences?: array{is_default?: bool, is_platform_default?: bool}, starting_after?: string, status?: string} $params
      * @param null|array|string $opts
      *
-     * @return \Stripe\Collection<PersonalizationDesign> of ApiResources
+     * @return \Erikwang2013\Stripe\Collection<PersonalizationDesign> of ApiResources
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public static function all($params = null, $opts = null)
     {
         $url = static::classUrl();
 
-        return static::_requestPage($url, \Stripe\Collection::class, $params, $opts);
+        return static::_requestPage($url, \Erikwang2013\Stripe\Collection::class, $params, $opts);
     }
 
     /**
@@ -81,11 +81,11 @@ class PersonalizationDesign extends \Stripe\ApiResource
      *
      * @return PersonalizationDesign
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public static function retrieve($id, $opts = null)
     {
-        $opts = \Stripe\Util\RequestOptions::parse($opts);
+        $opts = \Erikwang2013\Stripe\Util\RequestOptions::parse($opts);
         $instance = new static($id, $opts);
         $instance->refresh();
 
@@ -101,7 +101,7 @@ class PersonalizationDesign extends \Stripe\ApiResource
      *
      * @return PersonalizationDesign the updated resource
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public static function update($id, $params = null, $opts = null)
     {
@@ -109,7 +109,7 @@ class PersonalizationDesign extends \Stripe\ApiResource
         $url = static::resourceUrl($id);
 
         list($response, $opts) = static::_staticRequest('post', $url, $params, $opts);
-        $obj = \Stripe\Util\Util::convertToStripeObject($response->json, $opts);
+        $obj = \Erikwang2013\Stripe\Util\Util::convertToStripeObject($response->json, $opts);
         $obj->setLastResponse($response);
 
         return $obj;

@@ -10,10 +10,10 @@
  *   在 app/service.php 中注册，或通过 composer auto-discovery 自动加载。
  *   Register in app/service.php or auto-load via composer.
  */
-namespace Stripe\ThinkPHP;
+namespace Erikwang2013\Stripe\ThinkPHP;
 
-use Stripe\Stripe;
-use Stripe\StripeClient;
+use Erikwang2013\Stripe\Stripe;
+use Erikwang2013\Stripe\StripeClient;
 use think\Service;
 
 class StripeService extends Service

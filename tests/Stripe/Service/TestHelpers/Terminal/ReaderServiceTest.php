@@ -1,19 +1,19 @@
 <?php
 
-namespace Stripe\Service\TestHelpers\Terminal;
+namespace Erikwang2013\Stripe\Service\TestHelpers\Terminal;
 
 /**
  * @internal
  *
- * @covers \Stripe\Service\TestHelpers\Terminal\ReaderService
+ * @covers \Erikwang2013\Stripe\Service\TestHelpers\Terminal\ReaderService
  */
-final class ReaderServiceTest extends \Stripe\TestCase
+final class ReaderServiceTest extends \Erikwang2013\Stripe\TestCase
 {
-    use \Stripe\TestHelper;
+    use \Erikwang2013\Stripe\TestHelper;
 
     const TEST_RESOURCE_ID = 'tml_123';
 
-    /** @var \Stripe\StripeClient */
+    /** @var \Erikwang2013\Stripe\StripeClient */
     private $client;
 
     /** @var ReaderService */
@@ -24,7 +24,7 @@ final class ReaderServiceTest extends \Stripe\TestCase
      */
     protected function setUpService()
     {
-        $this->client = new \Stripe\StripeClient(['api_key' => 'sk_test_123', 'api_base' => MOCK_URL]);
+        $this->client = new \Erikwang2013\Stripe\StripeClient(['api_key' => 'sk_test_123', 'api_base' => MOCK_URL]);
         $this->service = new ReaderService($this->client);
     }
 
@@ -35,6 +35,6 @@ final class ReaderServiceTest extends \Stripe\TestCase
             '/v1/test_helpers/terminal/readers/' . self::TEST_RESOURCE_ID . '/present_payment_method'
         );
         $resource = $this->service->presentPaymentMethod(self::TEST_RESOURCE_ID);
-        self::assertInstanceOf(\Stripe\Terminal\Reader::class, $resource);
+        self::assertInstanceOf(\Erikwang2013\Stripe\Terminal\Reader::class, $resource);
     }
 }

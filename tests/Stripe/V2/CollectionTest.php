@@ -1,15 +1,15 @@
 <?php
 
-namespace Stripe\V2;
+namespace Erikwang2013\Stripe\V2;
 
 /**
  * @internal
  *
- * @covers \Stripe\Collection
+ * @covers \Erikwang2013\Stripe\Collection
  */
-final class CollectionTest extends \Stripe\TestCase
+final class CollectionTest extends \Erikwang2013\Stripe\TestCase
 {
-    use \Stripe\TestHelper;
+    use \Erikwang2013\Stripe\TestHelper;
 
     /** @var Collection */
     private $fixture;
@@ -31,7 +31,7 @@ final class CollectionTest extends \Stripe\TestCase
 
     public function testOffsetGetNumericIndex()
     {
-        $this->expectException(\Stripe\Exception\InvalidArgumentException::class);
+        $this->expectException(\Erikwang2013\Stripe\Exception\InvalidArgumentException::class);
         $this->compatExpectExceptionMessageMatches('/You tried to access the \d index/');
 
         $this->fixture[0];
@@ -171,7 +171,7 @@ final class CollectionTest extends \Stripe\TestCase
 
     public function testForwardsRequestOpts()
     {
-        $curlClientStub = $this->getMockBuilder(\Stripe\HttpClient\CurlClient::class)
+        $curlClientStub = $this->getMockBuilder(\Erikwang2013\Stripe\HttpClient\CurlClient::class)
             ->setMethods(['executeRequestWithRetries'])
             ->getMock()
         ;
@@ -198,7 +198,7 @@ final class CollectionTest extends \Stripe\TestCase
             }))
         ;
 
-        \Stripe\ApiRequestor::setHttpClient($curlClientStub);
+        \Erikwang2013\Stripe\ApiRequestor::setHttpClient($curlClientStub);
 
         $seen = [];
         foreach ($this->fixture->autoPagingIterator() as $item) {

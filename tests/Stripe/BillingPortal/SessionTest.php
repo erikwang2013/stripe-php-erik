@@ -1,15 +1,15 @@
 <?php
 
-namespace Stripe\BillingPortal;
+namespace Erikwang2013\Stripe\BillingPortal;
 
 /**
  * @internal
  *
- * @covers \Stripe\BillingPortal\Session
+ * @covers \Erikwang2013\Stripe\BillingPortal\Session
  */
-final class SessionTest extends \Stripe\TestCase
+final class SessionTest extends \Erikwang2013\Stripe\TestCase
 {
-    use \Stripe\TestHelper;
+    use \Erikwang2013\Stripe\TestHelper;
 
     const TEST_RESOURCE_ID = 'pts_123';
 

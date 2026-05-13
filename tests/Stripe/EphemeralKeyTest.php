@@ -1,11 +1,11 @@
 <?php
 
-namespace Stripe;
+namespace Erikwang2013\Stripe;
 
 /**
  * @internal
  *
- * @covers \Stripe\EphemeralKey
+ * @covers \Erikwang2013\Stripe\EphemeralKey
  */
 final class EphemeralKeyTest extends TestCase
 {

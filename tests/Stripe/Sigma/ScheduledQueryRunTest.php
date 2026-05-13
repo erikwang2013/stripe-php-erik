@@ -1,15 +1,15 @@
 <?php
 
-namespace Stripe\Sigma;
+namespace Erikwang2013\Stripe\Sigma;
 
 /**
  * @internal
  *
- * @covers \Stripe\Sigma\ScheduledQueryRun
+ * @covers \Erikwang2013\Stripe\Sigma\ScheduledQueryRun
  */
-final class ScheduledQueryRunTest extends \Stripe\TestCase
+final class ScheduledQueryRunTest extends \Erikwang2013\Stripe\TestCase
 {
-    use \Stripe\TestHelper;
+    use \Erikwang2013\Stripe\TestHelper;
 
     const TEST_RESOURCE_ID = 'sqr_123';
 

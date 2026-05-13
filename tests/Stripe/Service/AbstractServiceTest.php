@@ -1,17 +1,17 @@
 <?php
 
-namespace Stripe\Service;
+namespace Erikwang2013\Stripe\Service;
 
 /**
  * @internal
  *
- * @covers \Stripe\Service\AbstractService
+ * @covers \Erikwang2013\Stripe\Service\AbstractService
  */
-final class AbstractServiceTest extends \Stripe\TestCase
+final class AbstractServiceTest extends \Erikwang2013\Stripe\TestCase
 {
     const TEST_RESOURCE_ID = '25OFF';
 
-    /** @var \Stripe\StripeClient */
+    /** @var \Erikwang2013\Stripe\StripeClient */
     private $client;
 
     /** @var CouponService */
@@ -25,7 +25,7 @@ final class AbstractServiceTest extends \Stripe\TestCase
      */
     public function setUpMockService()
     {
-        $this->client = new \Stripe\StripeClient(['api_key' => 'sk_test_123', 'api_base' => MOCK_URL]);
+        $this->client = new \Erikwang2013\Stripe\StripeClient(['api_key' => 'sk_test_123', 'api_base' => MOCK_URL]);
         // Testing with CouponService, because testing abstract classes is hard in PHP :/
         $this->service = new CouponService($this->client);
     }
@@ -41,7 +41,7 @@ final class AbstractServiceTest extends \Stripe\TestCase
 
     public function testNullGetsEmptyStringified()
     {
-        $this->expectException(\Stripe\Exception\InvalidRequestException::class);
+        $this->expectException(\Erikwang2013\Stripe\Exception\InvalidRequestException::class);
         $this->service->update('id', [
             'doesnotexist' => null,
         ]);
@@ -49,7 +49,7 @@ final class AbstractServiceTest extends \Stripe\TestCase
 
     public function testRetrieveThrowsIfIdNullIsNull()
     {
-        $this->expectException(\Stripe\Exception\InvalidArgumentException::class);
+        $this->expectException(\Erikwang2013\Stripe\Exception\InvalidArgumentException::class);
         $this->expectExceptionMessage('The resource ID cannot be null or whitespace.');
 
         $this->service->retrieve(null);
@@ -57,7 +57,7 @@ final class AbstractServiceTest extends \Stripe\TestCase
 
     public function testRetrieveThrowsIfIdNullIsEmpty()
     {
-        $this->expectException(\Stripe\Exception\InvalidArgumentException::class);
+        $this->expectException(\Erikwang2013\Stripe\Exception\InvalidArgumentException::class);
         $this->expectExceptionMessage('The resource ID cannot be null or whitespace.');
 
         $this->service->retrieve('');
@@ -65,7 +65,7 @@ final class AbstractServiceTest extends \Stripe\TestCase
 
     public function testRetrieveThrowsIfIdNullIsWhitespace()
     {
-        $this->expectException(\Stripe\Exception\InvalidArgumentException::class);
+        $this->expectException(\Erikwang2013\Stripe\Exception\InvalidArgumentException::class);
         $this->expectExceptionMessage('The resource ID cannot be null or whitespace.');
 
         $this->service->retrieve(' ');
@@ -130,7 +130,7 @@ final class AbstractServiceTest extends \Stripe\TestCase
     public function testRequestPreservesNullForV2Path()
     {
         $capturedParams = null;
-        $mockClient = $this->createMock(\Stripe\StripeClientInterface::class);
+        $mockClient = $this->createMock(\Erikwang2013\Stripe\StripeClientInterface::class);
         $mockClient->expects(self::once())
             ->method('request')
             ->with(
@@ -143,7 +143,7 @@ final class AbstractServiceTest extends \Stripe\TestCase
                 }),
                 self::anything()
             )
-            ->willReturn(\Stripe\StripeObject::constructFrom([]))
+            ->willReturn(\Erikwang2013\Stripe\StripeObject::constructFrom([]))
         ;
 
         $service = new ConcreteTestService($mockClient);
@@ -160,7 +160,7 @@ final class AbstractServiceTest extends \Stripe\TestCase
     public function testRequestConvertsNullToEmptyStringForV1Path()
     {
         $capturedParams = null;
-        $mockClient = $this->createMock(\Stripe\StripeClientInterface::class);
+        $mockClient = $this->createMock(\Erikwang2013\Stripe\StripeClientInterface::class);
         $mockClient->expects(self::once())
             ->method('request')
             ->with(
@@ -173,7 +173,7 @@ final class AbstractServiceTest extends \Stripe\TestCase
                 }),
                 self::anything()
             )
-            ->willReturn(\Stripe\StripeObject::constructFrom([]))
+            ->willReturn(\Erikwang2013\Stripe\StripeObject::constructFrom([]))
         ;
 
         $service = new ConcreteTestService($mockClient);
@@ -189,7 +189,7 @@ final class AbstractServiceTest extends \Stripe\TestCase
     public function testRequestCoercesInt64ParamsWhenSchemaProvided()
     {
         $capturedParams = null;
-        $mockClient = $this->createMock(\Stripe\StripeClientInterface::class);
+        $mockClient = $this->createMock(\Erikwang2013\Stripe\StripeClientInterface::class);
         $mockClient->expects(self::once())
             ->method('request')
             ->with(
@@ -202,7 +202,7 @@ final class AbstractServiceTest extends \Stripe\TestCase
                 }),
                 self::anything()
             )
-            ->willReturn(\Stripe\StripeObject::constructFrom([]))
+            ->willReturn(\Erikwang2013\Stripe\StripeObject::constructFrom([]))
         ;
 
         $service = new ConcreteTestService($mockClient);
@@ -223,7 +223,7 @@ final class AbstractServiceTest extends \Stripe\TestCase
     public function testRequestDoesNotCoerceWithoutSchema()
     {
         $capturedParams = null;
-        $mockClient = $this->createMock(\Stripe\StripeClientInterface::class);
+        $mockClient = $this->createMock(\Erikwang2013\Stripe\StripeClientInterface::class);
         $mockClient->expects(self::once())
             ->method('request')
             ->with(
@@ -236,7 +236,7 @@ final class AbstractServiceTest extends \Stripe\TestCase
                 }),
                 self::anything()
             )
-            ->willReturn(\Stripe\StripeObject::constructFrom([]))
+            ->willReturn(\Erikwang2013\Stripe\StripeObject::constructFrom([]))
         ;
 
         $service = new ConcreteTestService($mockClient);
@@ -248,7 +248,7 @@ final class AbstractServiceTest extends \Stripe\TestCase
     public function testRequestCollectionCoercesInt64Params()
     {
         $capturedParams = null;
-        $mockClient = $this->createMock(\Stripe\StripeClientInterface::class);
+        $mockClient = $this->createMock(\Erikwang2013\Stripe\StripeClientInterface::class);
         $mockClient->expects(self::once())
             ->method('requestCollection')
             ->with(
@@ -261,7 +261,7 @@ final class AbstractServiceTest extends \Stripe\TestCase
                 }),
                 self::anything()
             )
-            ->willReturn(\Stripe\Collection::constructFrom(['data' => []]))
+            ->willReturn(\Erikwang2013\Stripe\Collection::constructFrom(['data' => []]))
         ;
 
         $service = new ConcreteTestService($mockClient);
@@ -281,7 +281,7 @@ final class AbstractServiceTest extends \Stripe\TestCase
     public function testRequestSearchResultCoercesInt64Params()
     {
         $capturedParams = null;
-        $mockClient = $this->createMock(\Stripe\StripeClientInterface::class);
+        $mockClient = $this->createMock(\Erikwang2013\Stripe\StripeClientInterface::class);
         $mockClient->expects(self::once())
             ->method('requestSearchResult')
             ->with(
@@ -294,7 +294,7 @@ final class AbstractServiceTest extends \Stripe\TestCase
                 }),
                 self::anything()
             )
-            ->willReturn(\Stripe\SearchResult::constructFrom(['data' => []]))
+            ->willReturn(\Erikwang2013\Stripe\SearchResult::constructFrom(['data' => []]))
         ;
 
         $service = new ConcreteTestService($mockClient);

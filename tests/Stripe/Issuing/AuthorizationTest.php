@@ -1,15 +1,15 @@
 <?php
 
-namespace Stripe\Issuing;
+namespace Erikwang2013\Stripe\Issuing;
 
 /**
  * @internal
  *
- * @covers \Stripe\Issuing\Authorization
+ * @covers \Erikwang2013\Stripe\Issuing\Authorization
  */
-final class AuthorizationTest extends \Stripe\TestCase
+final class AuthorizationTest extends \Erikwang2013\Stripe\TestCase
 {
-    use \Stripe\TestHelper;
+    use \Erikwang2013\Stripe\TestHelper;
 
     const TEST_RESOURCE_ID = 'iauth_123';
 

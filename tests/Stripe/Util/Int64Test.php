@@ -1,13 +1,13 @@
 <?php
 
-namespace Stripe\Util;
+namespace Erikwang2013\Stripe\Util;
 
 /**
  * @internal
  *
- * @covers \Stripe\Util\Int64
+ * @covers \Erikwang2013\Stripe\Util\Int64
  */
-final class Int64Test extends \Stripe\TestCase
+final class Int64Test extends \Erikwang2013\Stripe\TestCase
 {
     // ——— coerceRequestParams ———
 

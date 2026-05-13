@@ -1,17 +1,17 @@
 <?php
 
-namespace Stripe\Service;
+namespace Erikwang2013\Stripe\Service;
 
 /**
  * @internal
  *
- * @covers \Stripe\Service\OAuthService
+ * @covers \Erikwang2013\Stripe\Service\OAuthService
  */
-final class OAuthServiceTest extends \Stripe\TestCase
+final class OAuthServiceTest extends \Erikwang2013\Stripe\TestCase
 {
-    use \Stripe\TestHelper;
+    use \Erikwang2013\Stripe\TestHelper;
 
-    /** @var \Stripe\StripeClient */
+    /** @var \Erikwang2013\Stripe\StripeClient */
     private $client;
 
     /** @var OAuthService */
@@ -19,13 +19,13 @@ final class OAuthServiceTest extends \Stripe\TestCase
 
     protected function setUpService()
     {
-        $this->client = new \Stripe\StripeClient(['api_key' => 'sk_test_123', 'api_base' => MOCK_URL, 'client_id' => 'ca_123']);
+        $this->client = new \Erikwang2013\Stripe\StripeClient(['api_key' => 'sk_test_123', 'api_base' => MOCK_URL, 'client_id' => 'ca_123']);
         $this->service = new OAuthService($this->client);
     }
 
     protected function setUpServiceWithNoClientId()
     {
-        $this->client = new \Stripe\StripeClient(['api_key' => 'sk_test_123', 'api_base' => MOCK_URL]);
+        $this->client = new \Erikwang2013\Stripe\StripeClient(['api_key' => 'sk_test_123', 'api_base' => MOCK_URL]);
         $this->service = new OAuthService($this->client);
     }
 
@@ -59,7 +59,7 @@ final class OAuthServiceTest extends \Stripe\TestCase
     public function testAuthorizeUrlRaisesAuthenticationErrorWhenNoClientId()
     {
         $this->setUpServiceWithNoClientId();
-        $this->expectException(\Stripe\Exception\AuthenticationException::class);
+        $this->expectException(\Erikwang2013\Stripe\Exception\AuthenticationException::class);
         $this->compatExpectExceptionMessageMatches('#No client_id provided#');
         $uriStr = $this->service->authorizeUrl();
     }
@@ -67,7 +67,7 @@ final class OAuthServiceTest extends \Stripe\TestCase
     public function testAuthorizeUrlRaisesInvalidArgumentExceptionWhenConnectBase()
     {
         $this->setUpService();
-        $this->expectException(\Stripe\Exception\InvalidArgumentException::class);
+        $this->expectException(\Erikwang2013\Stripe\Exception\InvalidArgumentException::class);
         $this->compatExpectExceptionMessageMatches('#Use `api_base`#');
         $uriStr = $this->service->authorizeUrl(null, ['connect_base' => 'foo']);
     }
@@ -75,7 +75,7 @@ final class OAuthServiceTest extends \Stripe\TestCase
     public function testDeauthorizeRaisesAuthenticationErrorWhenNoClientId()
     {
         $this->setUpServiceWithNoClientId();
-        $this->expectException(\Stripe\Exception\AuthenticationException::class);
+        $this->expectException(\Erikwang2013\Stripe\Exception\AuthenticationException::class);
         $this->compatExpectExceptionMessageMatches('#No client_id provided#');
         $this->service->deauthorize();
     }

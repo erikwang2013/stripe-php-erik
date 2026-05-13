@@ -2,7 +2,7 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe;
+namespace Erikwang2013\Stripe;
 
 /**
  * This object represents a customer of your business. Use it to <a href="https://docs.stripe.com/invoicing/customer">create recurring charges</a>, <a href="https://docs.stripe.com/payments/save-during-payment">save payment</a> and contact information,

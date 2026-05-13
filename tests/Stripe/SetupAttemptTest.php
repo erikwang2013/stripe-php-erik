@@ -1,11 +1,11 @@
 <?php
 
-namespace Stripe;
+namespace Erikwang2013\Stripe;
 
 /**
  * @internal
  *
- * @covers \Stripe\SetupAttempt
+ * @covers \Erikwang2013\Stripe\SetupAttempt
  */
 final class SetupAttemptTest extends TestCase
 {

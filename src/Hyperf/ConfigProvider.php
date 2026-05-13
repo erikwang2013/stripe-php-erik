@@ -6,10 +6,10 @@
  * 通过 Composer 自动发现，注册依赖和配置发布。
  * Auto-discovered via Composer. Registers dependencies and config publishing.
  */
-namespace Stripe\Hyperf;
+namespace Erikwang2013\Stripe\Hyperf;
 
-use Stripe\Stripe;
-use Stripe\StripeClient;
+use Erikwang2013\Stripe\Stripe;
+use Erikwang2013\Stripe\StripeClient;
 
 class ConfigProvider
 {

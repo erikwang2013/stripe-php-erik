@@ -1,15 +1,15 @@
 <?php
 
-namespace Stripe\Checkout;
+namespace Erikwang2013\Stripe\Checkout;
 
 /**
  * @internal
  *
- * @covers \Stripe\Checkout\Session
+ * @covers \Erikwang2013\Stripe\Checkout\Session
  */
-final class SessionTest extends \Stripe\TestCase
+final class SessionTest extends \Erikwang2013\Stripe\TestCase
 {
-    use \Stripe\TestHelper;
+    use \Erikwang2013\Stripe\TestHelper;
 
     const TEST_RESOURCE_ID = 'cs_123';
 
@@ -61,6 +61,6 @@ final class SessionTest extends \Stripe\TestCase
         );
         $resources = Session::allLineItems(self::TEST_RESOURCE_ID);
         self::compatAssertIsArray($resources->data);
-        self::assertInstanceOf(\Stripe\LineItem::class, $resources->data[0]);
+        self::assertInstanceOf(\Erikwang2013\Stripe\LineItem::class, $resources->data[0]);
     }
 }

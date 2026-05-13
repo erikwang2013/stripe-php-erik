@@ -2,12 +2,12 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Service;
+namespace Erikwang2013\Stripe\Service;
 
 /**
- * @phpstan-import-type RequestOptionsArray from \Stripe\Util\RequestOptions
+ * @phpstan-import-type RequestOptionsArray from \Erikwang2013\Stripe\Util\RequestOptions
  *
- * @psalm-import-type RequestOptionsArray from \Stripe\Util\RequestOptions
+ * @psalm-import-type RequestOptionsArray from \Erikwang2013\Stripe\Util\RequestOptions
  */
 class EphemeralKeyService extends AbstractService
 {
@@ -16,11 +16,11 @@ class EphemeralKeyService extends AbstractService
      *
      * @param string $id
      * @param null|array{expand?: string[]} $params
-     * @param null|RequestOptionsArray|\Stripe\Util\RequestOptions $opts
+     * @param null|RequestOptionsArray|\Erikwang2013\Stripe\Util\RequestOptions $opts
      *
-     * @return \Stripe\EphemeralKey
+     * @return \Erikwang2013\Stripe\EphemeralKey
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public function delete($id, $params = null, $opts = null)
     {
@@ -31,16 +31,16 @@ class EphemeralKeyService extends AbstractService
      * Creates a short-lived API key for a given resource.
      *
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Erikwang2013\Stripe\Util\RequestOptions $opts
      *
-     * @return \Stripe\EphemeralKey
+     * @return \Erikwang2013\Stripe\EphemeralKey
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public function create($params = null, $opts = null)
     {
         if (!$opts || !isset($opts['stripe_version'])) {
-            throw new \Stripe\Exception\InvalidArgumentException('stripe_version must be specified to create an ephemeral key');
+            throw new \Erikwang2013\Stripe\Exception\InvalidArgumentException('stripe_version must be specified to create an ephemeral key');
         }
 
         return $this->request('post', '/v1/ephemeral_keys', $params, $opts);

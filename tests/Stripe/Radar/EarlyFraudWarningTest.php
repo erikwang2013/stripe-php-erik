@@ -1,15 +1,15 @@
 <?php
 
-namespace Stripe\Radar;
+namespace Erikwang2013\Stripe\Radar;
 
 /**
  * @internal
  *
- * @covers \Stripe\Radar\EarlyFraudWarning
+ * @covers \Erikwang2013\Stripe\Radar\EarlyFraudWarning
  */
-final class EarlyFraudWarningTest extends \Stripe\TestCase
+final class EarlyFraudWarningTest extends \Erikwang2013\Stripe\TestCase
 {
-    use \Stripe\TestHelper;
+    use \Erikwang2013\Stripe\TestHelper;
 
     const TEST_RESOURCE_ID = 'issfr_123';
 

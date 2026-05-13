@@ -1,11 +1,11 @@
 <?php
 
-namespace Stripe;
+namespace Erikwang2013\Stripe;
 
 /**
  * @internal
  *
- * @covers \Stripe\PaymentMethod
+ * @covers \Erikwang2013\Stripe\PaymentMethod
  */
 final class PaymentMethodTest extends TestCase
 {

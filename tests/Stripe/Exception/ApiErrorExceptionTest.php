@@ -1,15 +1,15 @@
 <?php
 
-namespace Stripe\Exception;
+namespace Erikwang2013\Stripe\Exception;
 
 /**
  * @internal
  *
- * @covers \Stripe\Exception\ApiErrorException
+ * @covers \Erikwang2013\Stripe\Exception\ApiErrorException
  */
-final class ApiErrorExceptionTest extends \Stripe\TestCase
+final class ApiErrorExceptionTest extends \Erikwang2013\Stripe\TestCase
 {
-    use \Stripe\TestHelper;
+    use \Erikwang2013\Stripe\TestHelper;
 
     public function createFixture()
     {

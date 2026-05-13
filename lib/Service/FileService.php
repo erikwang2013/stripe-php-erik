@@ -2,12 +2,12 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Service;
+namespace Erikwang2013\Stripe\Service;
 
 /**
- * @phpstan-import-type RequestOptionsArray from \Stripe\Util\RequestOptions
+ * @phpstan-import-type RequestOptionsArray from \Erikwang2013\Stripe\Util\RequestOptions
  *
- * @psalm-import-type RequestOptionsArray from \Stripe\Util\RequestOptions
+ * @psalm-import-type RequestOptionsArray from \Erikwang2013\Stripe\Util\RequestOptions
  */
 class FileService extends AbstractService
 {
@@ -17,11 +17,11 @@ class FileService extends AbstractService
      * files at the top.
      *
      * @param null|array{created?: array|int, ending_before?: string, expand?: string[], limit?: int, purpose?: string, starting_after?: string} $params
-     * @param null|RequestOptionsArray|\Stripe\Util\RequestOptions $opts
+     * @param null|RequestOptionsArray|\Erikwang2013\Stripe\Util\RequestOptions $opts
      *
-     * @return \Stripe\Collection<\Stripe\File>
+     * @return \Erikwang2013\Stripe\Collection<\Erikwang2013\Stripe\File>
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public function all($params = null, $opts = null)
     {
@@ -35,11 +35,11 @@ class FileService extends AbstractService
      *
      * @param string $id
      * @param null|array{expand?: string[]} $params
-     * @param null|RequestOptionsArray|\Stripe\Util\RequestOptions $opts
+     * @param null|RequestOptionsArray|\Erikwang2013\Stripe\Util\RequestOptions $opts
      *
-     * @return \Stripe\File
+     * @return \Erikwang2013\Stripe\File
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public function retrieve($id, $params = null, $opts = null)
     {
@@ -50,20 +50,20 @@ class FileService extends AbstractService
      * Create a file.
      *
      * @param null|array $params
-     * @param null|array|\Stripe\Util\RequestOptions $opts
+     * @param null|array|\Erikwang2013\Stripe\Util\RequestOptions $opts
      *
-     * @return \Stripe\File
+     * @return \Erikwang2013\Stripe\File
      */
     public function create($params = null, $opts = null)
     {
-        $opts = \Stripe\Util\RequestOptions::parse($opts);
+        $opts = \Erikwang2013\Stripe\Util\RequestOptions::parse($opts);
         if (!isset($opts->apiBase)) {
             $opts->apiBase = $this->getClient()->getFilesBase();
         }
 
         // Manually flatten params, otherwise curl's multipart encoder will
         // choke on nested null|arrays.
-        $flatParams = \array_column(\Stripe\Util\Util::flattenParams($params), 1, 0);
+        $flatParams = \array_column(\Erikwang2013\Stripe\Util\Util::flattenParams($params), 1, 0);
 
         return $this->request('post', '/v1/files', $flatParams, $opts);
     }

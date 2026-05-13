@@ -2,24 +2,24 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Service\Apps;
+namespace Erikwang2013\Stripe\Service\Apps;
 
 /**
- * @phpstan-import-type RequestOptionsArray from \Stripe\Util\RequestOptions
+ * @phpstan-import-type RequestOptionsArray from \Erikwang2013\Stripe\Util\RequestOptions
  *
- * @psalm-import-type RequestOptionsArray from \Stripe\Util\RequestOptions
+ * @psalm-import-type RequestOptionsArray from \Erikwang2013\Stripe\Util\RequestOptions
  */
-class SecretService extends \Stripe\Service\AbstractService
+class SecretService extends \Erikwang2013\Stripe\Service\AbstractService
 {
     /**
      * List all secrets stored on the given scope.
      *
      * @param null|array{ending_before?: string, expand?: string[], limit?: int, scope: array{type: string, user?: string}, starting_after?: string} $params
-     * @param null|RequestOptionsArray|\Stripe\Util\RequestOptions $opts
+     * @param null|RequestOptionsArray|\Erikwang2013\Stripe\Util\RequestOptions $opts
      *
-     * @return \Stripe\Collection<\Stripe\Apps\Secret>
+     * @return \Erikwang2013\Stripe\Collection<\Erikwang2013\Stripe\Apps\Secret>
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public function all($params = null, $opts = null)
     {
@@ -30,11 +30,11 @@ class SecretService extends \Stripe\Service\AbstractService
      * Create or replace a secret in the secret store.
      *
      * @param null|array{expand?: string[], expires_at?: int, name: string, payload: string, scope: array{type: string, user?: string}} $params
-     * @param null|RequestOptionsArray|\Stripe\Util\RequestOptions $opts
+     * @param null|RequestOptionsArray|\Erikwang2013\Stripe\Util\RequestOptions $opts
      *
-     * @return \Stripe\Apps\Secret
+     * @return \Erikwang2013\Stripe\Apps\Secret
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public function create($params = null, $opts = null)
     {
@@ -45,11 +45,11 @@ class SecretService extends \Stripe\Service\AbstractService
      * Deletes a secret from the secret store by name and scope.
      *
      * @param null|array{expand?: string[], name: string, scope: array{type: string, user?: string}} $params
-     * @param null|RequestOptionsArray|\Stripe\Util\RequestOptions $opts
+     * @param null|RequestOptionsArray|\Erikwang2013\Stripe\Util\RequestOptions $opts
      *
-     * @return \Stripe\Apps\Secret
+     * @return \Erikwang2013\Stripe\Apps\Secret
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public function deleteWhere($params = null, $opts = null)
     {
@@ -60,11 +60,11 @@ class SecretService extends \Stripe\Service\AbstractService
      * Finds a secret in the secret store by name and scope.
      *
      * @param null|array{expand?: string[], name: string, scope: array{type: string, user?: string}} $params
-     * @param null|RequestOptionsArray|\Stripe\Util\RequestOptions $opts
+     * @param null|RequestOptionsArray|\Erikwang2013\Stripe\Util\RequestOptions $opts
      *
-     * @return \Stripe\Apps\Secret
+     * @return \Erikwang2013\Stripe\Apps\Secret
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public function find($params = null, $opts = null)
     {

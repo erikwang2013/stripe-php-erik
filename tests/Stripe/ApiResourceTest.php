@@ -1,6 +1,6 @@
 <?php
 
-namespace Stripe;
+namespace Erikwang2013\Stripe;
 
 // Fake resource that calls GET /v1/coupons/{coupon} but using
 // _requestStream to test the _requestStream interface.

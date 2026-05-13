@@ -2,14 +2,14 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Service\TestHelpers\Treasury;
+namespace Erikwang2013\Stripe\Service\TestHelpers\Treasury;
 
 /**
- * @phpstan-import-type RequestOptionsArray from \Stripe\Util\RequestOptions
+ * @phpstan-import-type RequestOptionsArray from \Erikwang2013\Stripe\Util\RequestOptions
  *
- * @psalm-import-type RequestOptionsArray from \Stripe\Util\RequestOptions
+ * @psalm-import-type RequestOptionsArray from \Erikwang2013\Stripe\Util\RequestOptions
  */
-class InboundTransferService extends \Stripe\Service\AbstractService
+class InboundTransferService extends \Erikwang2013\Stripe\Service\AbstractService
 {
     /**
      * Transitions a test mode created InboundTransfer to the <code>failed</code>
@@ -18,11 +18,11 @@ class InboundTransferService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array{expand?: string[], failure_details?: array{code?: string}} $params
-     * @param null|RequestOptionsArray|\Stripe\Util\RequestOptions $opts
+     * @param null|RequestOptionsArray|\Erikwang2013\Stripe\Util\RequestOptions $opts
      *
-     * @return \Stripe\Treasury\InboundTransfer
+     * @return \Erikwang2013\Stripe\Treasury\InboundTransfer
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public function fail($id, $params = null, $opts = null)
     {
@@ -36,11 +36,11 @@ class InboundTransferService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array{expand?: string[]} $params
-     * @param null|RequestOptionsArray|\Stripe\Util\RequestOptions $opts
+     * @param null|RequestOptionsArray|\Erikwang2013\Stripe\Util\RequestOptions $opts
      *
-     * @return \Stripe\Treasury\InboundTransfer
+     * @return \Erikwang2013\Stripe\Treasury\InboundTransfer
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public function returnInboundTransfer($id, $params = null, $opts = null)
     {
@@ -54,11 +54,11 @@ class InboundTransferService extends \Stripe\Service\AbstractService
      *
      * @param string $id
      * @param null|array{expand?: string[]} $params
-     * @param null|RequestOptionsArray|\Stripe\Util\RequestOptions $opts
+     * @param null|RequestOptionsArray|\Erikwang2013\Stripe\Util\RequestOptions $opts
      *
-     * @return \Stripe\Treasury\InboundTransfer
+     * @return \Erikwang2013\Stripe\Treasury\InboundTransfer
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public function succeed($id, $params = null, $opts = null)
     {

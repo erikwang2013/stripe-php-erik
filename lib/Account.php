@@ -2,7 +2,7 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe;
+namespace Erikwang2013\Stripe;
 
 /**
  * For new integrations, we recommend using the <a href="/api/v2/core/accounts">Accounts v2 API</a>, in place of /v1/accounts and /v1/customers to represent a user.

@@ -1,6 +1,6 @@
 <?php
 
-namespace Stripe\Util;
+namespace Erikwang2013\Stripe\Util;
 
 /**
  * Handles coercion between PHP int and JSON string for int64_string fields.

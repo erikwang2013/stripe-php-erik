@@ -2,7 +2,7 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe;
+namespace Erikwang2013\Stripe;
 
 /**
  * Each customer has a <a href="https://docs.stripe.com/api/customers/object#customer_object-balance">Balance</a> value,

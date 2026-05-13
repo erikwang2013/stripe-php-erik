@@ -2,7 +2,7 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Tax;
+namespace Erikwang2013\Stripe\Tax;
 
 /**
  * A Tax Calculation allows you to calculate the tax to collect from your customer.
@@ -14,18 +14,18 @@ namespace Stripe\Tax;
  * @property int $amount_total Total amount after taxes in the <a href="https://docs.stripe.com/currencies#minor-units">smallest currency unit</a>.
  * @property string $currency Three-letter <a href="https://www.iso.org/iso-4217-currency-codes.html">ISO currency code</a>, in lowercase. Must be a <a href="https://stripe.com/docs/currencies">supported currency</a>.
  * @property null|string $customer The ID of an existing <a href="https://docs.stripe.com/api/customers/object">Customer</a> used for the resource.
- * @property (object{address: null|(object{city: null|string, country: string, line1: null|string, line2: null|string, postal_code: null|string, state: null|string}&\Stripe\StripeObject), address_source: null|string, ip_address: null|string, tax_ids: (object{type: string, value: string}&\Stripe\StripeObject)[], taxability_override: string}&\Stripe\StripeObject) $customer_details
+ * @property (object{address: null|(object{city: null|string, country: string, line1: null|string, line2: null|string, postal_code: null|string, state: null|string}&\Erikwang2013\Stripe\StripeObject), address_source: null|string, ip_address: null|string, tax_ids: (object{type: string, value: string}&\Erikwang2013\Stripe\StripeObject)[], taxability_override: string}&\Erikwang2013\Stripe\StripeObject) $customer_details
  * @property null|int $expires_at Timestamp of date at which the tax calculation will expire.
- * @property null|\Stripe\Collection<CalculationLineItem> $line_items The list of items the customer is purchasing.
+ * @property null|\Erikwang2013\Stripe\Collection<CalculationLineItem> $line_items The list of items the customer is purchasing.
  * @property bool $livemode If the object exists in live mode, the value is <code>true</code>. If the object exists in test mode, the value is <code>false</code>.
- * @property null|(object{address: (object{city: null|string, country: string, line1: null|string, line2: null|string, postal_code: null|string, state: null|string}&\Stripe\StripeObject)}&\Stripe\StripeObject) $ship_from_details The details of the ship from location, such as the address.
- * @property null|(object{amount: int, amount_tax: int, shipping_rate?: string, tax_behavior: string, tax_breakdown?: ((object{amount: int, jurisdiction: (object{country: string, display_name: string, level: string, state: null|string}&\Stripe\StripeObject), sourcing: string, tax_rate_details: null|(object{display_name: string, percentage_decimal: string, tax_type: string}&\Stripe\StripeObject), taxability_reason: string, taxable_amount: int}&\Stripe\StripeObject))[], tax_code: string}&\Stripe\StripeObject) $shipping_cost The shipping cost details for the calculation.
+ * @property null|(object{address: (object{city: null|string, country: string, line1: null|string, line2: null|string, postal_code: null|string, state: null|string}&\Erikwang2013\Stripe\StripeObject)}&\Erikwang2013\Stripe\StripeObject) $ship_from_details The details of the ship from location, such as the address.
+ * @property null|(object{amount: int, amount_tax: int, shipping_rate?: string, tax_behavior: string, tax_breakdown?: ((object{amount: int, jurisdiction: (object{country: string, display_name: string, level: string, state: null|string}&\Erikwang2013\Stripe\StripeObject), sourcing: string, tax_rate_details: null|(object{display_name: string, percentage_decimal: string, tax_type: string}&\Erikwang2013\Stripe\StripeObject), taxability_reason: string, taxable_amount: int}&\Erikwang2013\Stripe\StripeObject))[], tax_code: string}&\Erikwang2013\Stripe\StripeObject) $shipping_cost The shipping cost details for the calculation.
  * @property int $tax_amount_exclusive The amount of tax to be collected on top of the line item prices.
  * @property int $tax_amount_inclusive The amount of tax already included in the line item prices.
- * @property ((object{amount: int, inclusive: bool, tax_rate_details: (object{country: null|string, flat_amount: null|(object{amount: int, currency: string}&\Stripe\StripeObject), percentage_decimal: string, rate_type: null|string, state: null|string, tax_type: null|string}&\Stripe\StripeObject), taxability_reason: string, taxable_amount: int}&\Stripe\StripeObject))[] $tax_breakdown Breakdown of individual tax amounts that add up to the total.
+ * @property ((object{amount: int, inclusive: bool, tax_rate_details: (object{country: null|string, flat_amount: null|(object{amount: int, currency: string}&\Erikwang2013\Stripe\StripeObject), percentage_decimal: string, rate_type: null|string, state: null|string, tax_type: null|string}&\Erikwang2013\Stripe\StripeObject), taxability_reason: string, taxable_amount: int}&\Erikwang2013\Stripe\StripeObject))[] $tax_breakdown Breakdown of individual tax amounts that add up to the total.
  * @property int $tax_date The calculation uses the tax rules and rates that are in effect at this timestamp. You can use a date up to 31 days in the past or up to 31 days in the future. If you use a future date, Stripe doesn't guarantee that the expected tax rules and rate being used match the actual rules and rate that will be in effect on that date. We deploy tax changes before their effective date, but not within a fixed window.
  */
-class Calculation extends \Stripe\ApiResource
+class Calculation extends \Erikwang2013\Stripe\ApiResource
 {
     const OBJECT_NAME = 'tax.calculation';
 
@@ -38,7 +38,7 @@ class Calculation extends \Stripe\ApiResource
      *
      * @return Calculation the created resource
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public static function create($params = null, $options = null)
     {
@@ -46,7 +46,7 @@ class Calculation extends \Stripe\ApiResource
         $url = static::classUrl();
 
         list($response, $opts) = static::_staticRequest('post', $url, $params, $options);
-        $obj = \Stripe\Util\Util::convertToStripeObject($response->json, $opts);
+        $obj = \Erikwang2013\Stripe\Util\Util::convertToStripeObject($response->json, $opts);
         $obj->setLastResponse($response);
 
         return $obj;
@@ -61,11 +61,11 @@ class Calculation extends \Stripe\ApiResource
      *
      * @return Calculation
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public static function retrieve($id, $opts = null)
     {
-        $opts = \Stripe\Util\RequestOptions::parse($opts);
+        $opts = \Erikwang2013\Stripe\Util\RequestOptions::parse($opts);
         $instance = new static($id, $opts);
         $instance->refresh();
 
@@ -77,15 +77,15 @@ class Calculation extends \Stripe\ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \Stripe\Collection<CalculationLineItem> list of calculation line items
+     * @return \Erikwang2013\Stripe\Collection<CalculationLineItem> list of calculation line items
      *
-     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     * @throws \Erikwang2013\Stripe\Exception\ApiErrorException if the request fails
      */
     public static function allLineItems($id, $params = null, $opts = null)
     {
         $url = static::resourceUrl($id) . '/line_items';
         list($response, $opts) = static::_staticRequest('get', $url, $params, $opts);
-        $obj = \Stripe\Util\Util::convertToStripeObject($response->json, $opts);
+        $obj = \Erikwang2013\Stripe\Util\Util::convertToStripeObject($response->json, $opts);
         $obj->setLastResponse($response);
 
         return $obj;

@@ -1,11 +1,11 @@
 <?php
 
-namespace Stripe;
+namespace Erikwang2013\Stripe;
 
 /**
  * @internal
  *
- * @covers \Stripe\FileLink
+ * @covers \Erikwang2013\Stripe\FileLink
  */
 final class FileLinkTest extends TestCase
 {

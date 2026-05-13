@@ -2,7 +2,7 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Service\Treasury;
+namespace Erikwang2013\Stripe\Service\Treasury;
 
 /**
  * Service factory class for API resources in the Treasury namespace.
@@ -18,7 +18,7 @@ namespace Stripe\Service\Treasury;
  * @property TransactionEntryService $transactionEntries
  * @property TransactionService $transactions
  */
-class TreasuryServiceFactory extends \Stripe\Service\AbstractServiceFactory
+class TreasuryServiceFactory extends \Erikwang2013\Stripe\Service\AbstractServiceFactory
 {
     /**
      * @var array<string, string>

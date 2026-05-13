@@ -1,6 +1,6 @@
 <?php
 
-namespace Stripe\Service;
+namespace Erikwang2013\Stripe\Service;
 
 /**
  * Service factory class for API resources in the root namespace.

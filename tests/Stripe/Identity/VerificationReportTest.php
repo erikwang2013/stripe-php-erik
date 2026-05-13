@@ -1,15 +1,15 @@
 <?php
 
-namespace Stripe\Identity;
+namespace Erikwang2013\Stripe\Identity;
 
 /**
  * @internal
  *
  * @coversNothing
  */
-final class VerificationReportTest extends \Stripe\TestCase
+final class VerificationReportTest extends \Erikwang2013\Stripe\TestCase
 {
-    use \Stripe\TestHelper;
+    use \Erikwang2013\Stripe\TestHelper;
     const TEST_RESOURCE_ID = 'vr_123';
 
     public function testIsListable()

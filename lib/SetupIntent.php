@@ -2,7 +2,7 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe;
+namespace Erikwang2013\Stripe;
 
 /**
  * A SetupIntent guides you through the process of setting up and saving a customer's payment credentials for future payments.

@@ -4,13 +4,13 @@
  * Stripe ThinkPHP 辅助类
  *
  * 用法 / Usage:
- *   \Stripe\ThinkPHP\StripeHelper::init();
- *   $stripe = \Stripe\ThinkPHP\StripeHelper::client();
+ *   \Erikwang2013\Stripe\ThinkPHP\StripeHelper::init();
+ *   $stripe = \Erikwang2013\Stripe\ThinkPHP\StripeHelper::client();
  */
-namespace Stripe\ThinkPHP;
+namespace Erikwang2013\Stripe\ThinkPHP;
 
-use Stripe\Stripe;
-use Stripe\StripeClient;
+use Erikwang2013\Stripe\Stripe;
+use Erikwang2013\Stripe\StripeClient;
 
 class StripeHelper
 {

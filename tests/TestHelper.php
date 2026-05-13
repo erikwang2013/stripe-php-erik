@@ -1,6 +1,6 @@
 <?php
 
-namespace Stripe;
+namespace Erikwang2013\Stripe;
 
 /**
  * Helper trait for Stripe test cases.
@@ -46,8 +46,8 @@ trait TestHelper
         Stripe::setAccountId(null);
 
         // Set up the HTTP client mocker
-        $this->clientMock = $this->createMock('\Stripe\HttpClient\ClientInterface');
-        $this->streamingClientMock = $this->createMock('\Stripe\HttpClient\StreamingClientInterface');
+        $this->clientMock = $this->createMock('\Erikwang2013\Stripe\HttpClient\ClientInterface');
+        $this->streamingClientMock = $this->createMock('\Erikwang2013\Stripe\HttpClient\StreamingClientInterface');
 
         // By default, use the real HTTP client
         ApiRequestor::setHttpClient(HttpClient\CurlClient::instance());

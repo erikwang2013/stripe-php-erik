@@ -1,19 +1,19 @@
 <?php
 
-namespace Stripe\Service;
+namespace Erikwang2013\Stripe\Service;
 
 /**
  * @internal
  *
- * @covers \Stripe\Service\ChargeService
+ * @covers \Erikwang2013\Stripe\Service\ChargeService
  */
-final class ChargeServiceTest extends \Stripe\TestCase
+final class ChargeServiceTest extends \Erikwang2013\Stripe\TestCase
 {
-    use \Stripe\TestHelper;
+    use \Erikwang2013\Stripe\TestHelper;
 
     const TEST_RESOURCE_ID = 'ch_123';
 
-    /** @var \Stripe\StripeClient */
+    /** @var \Erikwang2013\Stripe\StripeClient */
     private $client;
 
     /** @var ChargeService */
@@ -24,7 +24,7 @@ final class ChargeServiceTest extends \Stripe\TestCase
      */
     protected function setUpService()
     {
-        $this->client = new \Stripe\StripeClient(['api_key' => 'sk_test_123', 'api_base' => MOCK_URL]);
+        $this->client = new \Erikwang2013\Stripe\StripeClient(['api_key' => 'sk_test_123', 'api_base' => MOCK_URL]);
         $this->service = new ChargeService($this->client);
     }
 
@@ -36,7 +36,7 @@ final class ChargeServiceTest extends \Stripe\TestCase
         );
         $resources = $this->service->all();
         self::compatAssertIsArray($resources->data);
-        self::assertInstanceOf(\Stripe\Charge::class, $resources->data[0]);
+        self::assertInstanceOf(\Erikwang2013\Stripe\Charge::class, $resources->data[0]);
     }
 
     public function testSearch()
@@ -48,7 +48,7 @@ final class ChargeServiceTest extends \Stripe\TestCase
         $resources = $this->service->search(['query' => 'currency:"USD"']);
         self::compatAssertIsArray($resources->data);
         self::assertSame(1, $resources->total_count);
-        self::assertInstanceOf(\Stripe\Charge::class, $resources->data[0]);
+        self::assertInstanceOf(\Erikwang2013\Stripe\Charge::class, $resources->data[0]);
     }
 
     public function testCapture()
@@ -58,7 +58,7 @@ final class ChargeServiceTest extends \Stripe\TestCase
             '/v1/charges/' . self::TEST_RESOURCE_ID . '/capture'
         );
         $resource = $this->service->capture(self::TEST_RESOURCE_ID);
-        self::assertInstanceOf(\Stripe\Charge::class, $resource);
+        self::assertInstanceOf(\Erikwang2013\Stripe\Charge::class, $resource);
     }
 
     public function testCreate()
@@ -72,7 +72,7 @@ final class ChargeServiceTest extends \Stripe\TestCase
             'currency' => 'usd',
             'source' => 'tok_123',
         ]);
-        self::assertInstanceOf(\Stripe\Charge::class, $resource);
+        self::assertInstanceOf(\Erikwang2013\Stripe\Charge::class, $resource);
     }
 
     public function testRetrieve()
@@ -82,7 +82,7 @@ final class ChargeServiceTest extends \Stripe\TestCase
             '/v1/charges/' . self::TEST_RESOURCE_ID
         );
         $resource = $this->service->retrieve(self::TEST_RESOURCE_ID);
-        self::assertInstanceOf(\Stripe\Charge::class, $resource);
+        self::assertInstanceOf(\Erikwang2013\Stripe\Charge::class, $resource);
     }
 
     public function testUpdate()
@@ -94,6 +94,6 @@ final class ChargeServiceTest extends \Stripe\TestCase
         $resource = $this->service->update(self::TEST_RESOURCE_ID, [
             'metadata' => ['key' => 'value'],
         ]);
-        self::assertInstanceOf(\Stripe\Charge::class, $resource);
+        self::assertInstanceOf(\Erikwang2013\Stripe\Charge::class, $resource);
     }
 }

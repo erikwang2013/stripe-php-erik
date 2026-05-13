@@ -1,15 +1,15 @@
 <?php
 
-namespace Stripe\Radar;
+namespace Erikwang2013\Stripe\Radar;
 
 /**
  * @internal
  *
- * @covers \Stripe\Radar\ValueListItem
+ * @covers \Erikwang2013\Stripe\Radar\ValueListItem
  */
-final class ValueListItemTest extends \Stripe\TestCase
+final class ValueListItemTest extends \Erikwang2013\Stripe\TestCase
 {
-    use \Stripe\TestHelper;
+    use \Erikwang2013\Stripe\TestHelper;
 
     const TEST_RESOURCE_ID = 'rsli_123';
 

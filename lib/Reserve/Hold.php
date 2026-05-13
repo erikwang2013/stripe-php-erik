@@ -2,7 +2,7 @@
 
 // File generated from our OpenAPI spec
 
-namespace Stripe\Reserve;
+namespace Erikwang2013\Stripe\Reserve;
 
 /**
  * ReserveHolds are used to place a temporary ReserveHold on a merchant's funds.
@@ -16,14 +16,14 @@ namespace Stripe\Reserve;
  * @property string $currency Three-letter <a href="https://www.iso.org/iso-4217-currency-codes.html">ISO currency code</a>, in lowercase. Must be a <a href="https://stripe.com/docs/currencies">supported currency</a>.
  * @property null|bool $is_releasable Whether there are any funds available to release on this ReserveHold. Note that if the ReserveHold is in the process of being released, this could be false, even though the funds haven't been fully released yet.
  * @property bool $livemode If the object exists in live mode, the value is <code>true</code>. If the object exists in test mode, the value is <code>false</code>.
- * @property null|\Stripe\StripeObject $metadata Set of <a href="https://docs.stripe.com/api/metadata">key-value pairs</a> that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
+ * @property null|\Erikwang2013\Stripe\StripeObject $metadata Set of <a href="https://docs.stripe.com/api/metadata">key-value pairs</a> that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
  * @property string $reason The reason for the ReserveHold.
- * @property (object{release_after: null|int, scheduled_release: null|int}&\Stripe\StripeObject) $release_schedule
+ * @property (object{release_after: null|int, scheduled_release: null|int}&\Erikwang2013\Stripe\StripeObject) $release_schedule
  * @property null|Plan|string $reserve_plan The ReservePlan which produced this ReserveHold (i.e., resplan_123)
- * @property null|string|\Stripe\Charge $source_charge The Charge which funded this ReserveHold (e.g., ch_123)
+ * @property null|string|\Erikwang2013\Stripe\Charge $source_charge The Charge which funded this ReserveHold (e.g., ch_123)
  * @property string $source_type Which source balance type this ReserveHold reserves funds from. One of <code>bank_account</code>, <code>card</code>, or <code>fpx</code>.
  */
-class Hold extends \Stripe\ApiResource
+class Hold extends \Erikwang2013\Stripe\ApiResource
 {
     const OBJECT_NAME = 'reserve.hold';
 
