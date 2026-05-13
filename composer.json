@@ -1,6 +1,6 @@
 {
   "name": "erikwang2013/stripe-php-erik",
-  "description": "Stripe PHP Library",
+  "description": "Stripe PHP 库为 PHP 应用提供了便捷的 Stripe API 访问能力。它包含一套预定义的 API 资源类，可以动态地从 API 响应中初始化，兼容多种版本的 Stripe API。开箱即用，已适配以下框架：Laravel、Webman、Hyperf、ThinkPHP。",
   "keywords": [
     "stripe",
     "payment processing",
