@@ -1,0 +1,83 @@
+{
+  "name": "erikwang2013/stripe-php-erik",
+  "description": "Stripe PHP Library",
+  "keywords": [
+    "stripe",
+    "payment processing",
+    "api",
+    "erik",
+    "erikwang2013",
+    "webman",
+    "laravel",
+    "hyperf",
+    "thinkphp"
+  ],
+  "homepage": "https://erik.xyz/",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Stripe and contributors",
+      "homepage": "https://github.com/erikwang2013/stripe-php-erik/contributors"
+    }
+  ],
+  "require": {
+    "php": ">=7.2.0",
+    "ext-curl": "*",
+    "ext-json": "*",
+    "ext-mbstring": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^5.7 || ^9.0",
+    "friendsofphp/php-cs-fixer": "3.94.0",
+    "phpstan/phpstan": "^1.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "Stripe\\": "lib/",
+      "Stripe\\Laravel\\": "src/Laravel/",
+      "Stripe\\Hyperf\\": "src/Hyperf/",
+      "Stripe\\ThinkPHP\\": "src/ThinkPHP/",
+      "Stripe\\Webman\\": "src/Webman/"
+    },
+    "files": [
+      "lib/version_check.php"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Stripe\\": [
+        "tests/",
+        "tests/Stripe/"
+      ]
+    }
+  },
+  "suggest": {
+    "laravel/framework": "For Laravel integration with service provider and facade",
+    "hyperf/framework": "For Hyperf coroutine-safe integration",
+    "topthink/framework": "For ThinkPHP integration",
+    "workerman/webman-framework": "For webman integration"
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "2.0-dev"
+    },
+    "laravel": {
+      "providers": [
+        "Stripe\\Laravel\\StripeServiceProvider"
+      ],
+      "aliases": {
+        "Stripe": "Stripe\\Laravel\\Facade\\Stripe"
+      }
+    },
+    "hyperf": {
+      "config": "Stripe\\Hyperf\\ConfigProvider"
+    }
+  },
+  "config": {
+    "audit": {
+      "ignore": {
+        "PKSA-z3gr-8qht-p93v": "PHPUnit is only a dev dependency. Temporarily ignore PHPUnit security advisory to ensure continued support for PHP 5.6 in CI."
+      }
+    }
+  }
+}
