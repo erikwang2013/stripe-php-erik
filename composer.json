@@ -57,17 +57,6 @@
     "topthink/framework": "For ThinkPHP integration with service and helper",
     "workerman/webman-framework": "For webman integration with auto-config and helper"
   },
-  "scripts": {
-    "post-package-install": [
-      "Stripe\\Webman\\Install::install"
-    ],
-    "post-package-update": [
-      "Stripe\\Webman\\Install::install"
-    ],
-    "pre-package-uninstall": [
-      "Stripe\\Webman\\Install::uninstall"
-    ]
-  },
   "extra": {
     "branch-alias": {
       "dev-master": "2.0-dev"

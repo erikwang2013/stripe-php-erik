@@ -183,11 +183,11 @@ Install · 安装：
 composer require erikwang2013/stripe-php-erik
 ```
 
-安装时自动将配置拷贝到 `config/plugin/erikwang2013/stripe-php-erik/app.php`，webman 会自动识别并合并该配置。
+安装时自动将配置拷贝到 `config/plugin/stripe/app.php`，webman 会自动识别并合并该配置。
 
-On install, the config is automatically copied to `config/plugin/erikwang2013/stripe-php-erik/app.php`, which webman auto-detects and merges.
+On install, the config is automatically copied to `config/plugin/stripe/app.php`, which webman auto-detects and merges.
 
-The auto-generated config file · 自动生成的配置文件 `config/plugin/erikwang2013/stripe-php-erik/app.php`：
+The auto-generated config file · 自动生成的配置文件 `config/plugin/stripe/app.php`：
 
 ```php
 <?php
@@ -250,7 +250,7 @@ class StripeWebhook
     public function index(Request $request): Response
     {
         $signature = $request->header('Stripe-Signature');
-        $secret = config('plugin.erikwang2013.stripe-php-erik.webhook_secret');
+        $secret = config('plugin.stripe.webhook_secret');
 
         try {
             $event = Webhook::constructEvent(
