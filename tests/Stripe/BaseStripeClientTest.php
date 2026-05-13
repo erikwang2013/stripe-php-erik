@@ -225,7 +225,7 @@ final class BaseStripeClientTest extends TestCase
     public function testRequestCollectionThrowsForNonList()
     {
         $this->expectException(Exception\UnexpectedValueException::class);
-        $this->expectExceptionMessage('Expected to receive `Stripe\Collection` object from Stripe API. Instead received `Stripe\Charge`.');
+        $this->expectExceptionMessage('Expected to receive `Erikwang2013\Stripe\Collection` object from Stripe API. Instead received `Erikwang2013\Stripe\Charge`.');
 
         $client = new BaseStripeClient(['api_key' => 'sk_test_client', 'api_base' => MOCK_URL]);
         $client->requestCollection('get', '/v1/charges/ch_123', [], []);

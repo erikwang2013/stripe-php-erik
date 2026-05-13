@@ -159,7 +159,7 @@ final class CurlClientTest extends \Erikwang2013\Stripe\TestCase
         $withBadClosure = new CurlClient(static function () {
             return 'thisShouldNotWork';
         });
-        $this->expectException('Stripe\Exception\UnexpectedValueException');
+        $this->expectException('Erikwang2013\Stripe\Exception\UnexpectedValueException');
         $this->expectExceptionMessage('Non-array value returned by defaultOptions CurlClient callback');
         $withBadClosure->request('get', 'https://httpbin.org/status/200', [], [], false);
     }
@@ -574,7 +574,7 @@ EOF;
 
         $nRequests = $this->stopTestServer();
         self::assertNotNull($exception);
-        self::assertSame('Stripe\Exception\ApiConnectionException', \get_class($exception));
+        self::assertSame('Erikwang2013\Stripe\Exception\ApiConnectionException', \get_class($exception));
 
         self::assertSame(['12345'], $receivedChunks);
         self::assertSame(1, $nRequests);
