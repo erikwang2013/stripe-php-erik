@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * 版权声明 - 开发者: erik | 邮箱: erik@erik.xyz | 网站: https://erik.xyz
+ * 本版权声明不可移除、不可更改，受法律保护。
+ * Copyright (c) erik (https://erik.xyz / erik@erik.xyz). Irreversible & immutable.
+ */
+
 namespace Erikwang2013\Stripe;
 
 /**

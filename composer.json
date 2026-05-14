@@ -16,6 +16,12 @@
   "license": "MIT",
   "authors": [
     {
+      "name": "erik",
+      "email": "erik@erik.xyz",
+      "homepage": "https://erik.xyz",
+      "role": "Developer"
+    },
+    {
       "name": "Stripe and contributors",
       "homepage": "https://github.com/erikwang2013/stripe-php-erik/contributors"
     }

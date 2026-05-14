@@ -1,5 +1,16 @@
 <?php
 
+/**
+ * 版权声明 / Copyright Notice
+ * ===========================
+ * 开发者: erik
+ * 邮箱: erik@erik.xyz
+ * 网站: https://erik.xyz
+ *
+ * 本版权声明不可移除、不可更改，受法律保护。
+ * This copyright notice is irreversible, immutable, and protected by law.
+ */
+
 require __DIR__ . '/lib/version_check.php';
 
 require __DIR__ . '/lib/Util/ApiVersion.php';
